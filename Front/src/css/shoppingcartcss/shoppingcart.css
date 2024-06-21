@@ -1,0 +1,327 @@
+.container {
+  width: 100vw; /* w-full */
+  background-color: #F0F4F8; /* bg-white-a700 converted to hex color */
+  padding-bottom: 12px 55px; /* pb-[55px] */
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-bottom: 5px;
+  }
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-bottom: 37px;
+  }
+}
+.containerA {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+}
+
+.containerA > * + * {
+  margin-top: 33px;
+}
+.header {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  justify-content: space-between; 
+  gap: 5px;
+  padding: 20px 0 14px 0; 
+  width: 100%;
+  margin-top: -92px;
+  background-color: #CBD5E0;
+}
+.logo {
+  margin-bottom: 5px;
+  margin-left: 35px;
+  height: 30px;
+  width: 91px; 
+  object-fit: contain;
+}
+.narbar {
+  margin-right: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+ul {
+  margin-bottom: -7px !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+}
+.signin {
+  display: flex; /* flex */
+  height: 40px; /* h-[40px] */
+  min-width: 105px; /* min-w-[105px] */
+  flex-direction: row; /* flex-row */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+  border-radius: 10px; /* rounded-[10px] */
+  background-color: #8BC34A; /* bg-lime-800_01 converted to hex color */
+  padding-left: 30px; /* px-[30px] */
+  padding-right: 30px; /* px-[30px] */
+  text-align: center; /* text-center */
+  font-size: 16px; /* text-base */
+  color: #FFFFFF; /* text-white-a700 converted to hex color */
+}
+
+@media (min-width: 1024px) {
+  .signin {
+    font-size: 13px; /* lg:text-[13px] */
+  }
+}
+
+@media (max-width: 640px) {
+  .signin {
+    padding-left: 12px; /* sm:px-4 */
+    padding-right: 12px; /* sm:px-4 */
+  }
+}
+.dv{
+  width: 100vw;
+}
+.relative-container {
+  position: relative; /* relative */
+  height: 38px; /* h-[38px] */
+  width: 6%; /* w-[6%] */
+  padding-bottom: 0.5rem; /* pb-0.5 */
+  padding-left: 0.5rem; /* pl-0.5 */
+}
+
+@media (max-width: 640px) {
+  .relative-container {
+    width: 100%; /* sm:w-full */
+  }
+}
+.img-cart {
+  position: absolute;
+  bottom: 4.18px;
+  left: 2.29px;
+  margin: auto;
+  height: 29px;
+}
+.custom-badge {
+  position: absolute;
+  right: 0.14px;
+  top: 0;
+  margin: auto;
+  height: 16px;
+  width: 17px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom right, #ffffff, #000000);
+  padding-left: 5px;
+  padding-top: 1px;
+  font-family: 'Lato', sans-serif;
+  color: #FFFFFF;
+}
+.fdiv{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-self: stretch;
+  background-color: #FFFFFF;
+  padding: 0;
+}
+.fdiv p{
+  margin-left: 30px;
+  margin-top: 23px;
+}
+.text-stylingn {
+  margin-left: 86px; /* ml-[86px] */
+  margin-top: 52px; /* mt-[52px] */
+  letter-spacing: -1.28px; /* tracking-[-1.28px] */
+  font-size: 3.75rem; /* lg:text-5xl (assuming 5xl is equivalent to 3.75rem) */
+}
+.itms{
+  margin-bottom: 1rem; /* mb-4 (assuming 1rem = 4px) */
+}
+/* Equivalent CSS */
+.container2 {
+  margin-left: auto; /* mx-auto */
+  margin-right: auto; /* mx-auto */
+  display: flex; /* flex */
+  width: 100%; /* w-full */
+  max-width: 1381px; /* max-w-[1381px] */
+  align-items: flex-start; /* items-start */
+  justify-content: space-between; /* justify-between */
+  gap: 1.25rem; /* gap-5 (assuming 1rem = 16px, so 1.25rem = 20px) */
+  padding: 1.25rem; /* lg:p-5 (assuming 1rem = 16px, so 1.25rem = 20px) */
+}
+
+@media (max-width: 768px) {
+  .container2 {
+    flex-direction: column; /* md:flex-col */
+    padding: 1.25rem; /* md:p-5 (assuming 1rem = 16px, so 1.25rem = 20px) */
+  }
+}
+/* Equivalent CSS */
+.container3 {
+  display: flex; /* flex */
+  width: 63%; /* w-[63%] */
+  flex-direction: column; /* flex-col */
+  align-items: flex-start; /* items-start */
+  gap: 4.0625rem; /* gap-[65px] (assuming 1rem = 16px, so 4.0625rem = 65px) */
+}
+
+@media (max-width: 768px) {
+  .container3 {
+    width: 100%; /* md:w-full */
+    gap: 0.5rem; /* sm:gap-8 (assuming 1rem = 16px, so 0.5rem = 8px) */
+  }
+}
+/* Equivalent CSS */
+.container4 {
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  gap: 1.9375rem; /* gap-[31px] (assuming 1rem = 16px, so 1.9375rem = 31px) */
+  align-self: stretch; /* self-stretch */
+}
+/* Equivalent CSS */
+.Dis{
+  display: flex; /* flex */
+  width: 72%; /* w-[72%] */
+  justify-content: center; /* justify-center */
+  border-radius: 28px; /* rounded-[28px] */
+  background-color: #CBD5E0; /* bg-blue_gray-100 (replace with actual color) */
+  padding-left: 38px; /* pl-[38px] */
+}
+
+@media (max-width: 1024px) {
+  .Dis {
+    width: 100%; /* lg:w-full */
+  }
+}
+
+@media (max-width: 768px) {
+  .Dis {
+    width: 100%; /* md:w-full */
+    padding-left: 1rem; /* sm:pl-4 (assuming 1rem = 16px) */
+  }
+}
+/* Equivalent CSS */
+.discode {
+  display: flex; /* flex */
+  width: 100%; /* w-full */
+  align-items: center; /* items-center */
+  justify-content: space-between; /* justify-between */
+  gap: 1.25rem; /* gap-5 (assuming 1rem = 16px, so 1.25rem = 20px) */
+}
+/* Equivalent CSS */
+.txtheading {
+  color: #718096 !important; /* text-gray-600 */
+}
+/* Equivalent CSS */
+.applybtn{
+  display: flex; /* flex */
+  height: 56px; /* h-[56px] */
+  min-width: 179px; /* min-w-[179px] */
+  flex-direction: row; /* flex-row */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+  border-radius: 28px; /* rounded-[28px] */
+  background-color: #64c85c; /* bg-lime-800 (replace with actual color) */
+  padding-left: 35px; /* px-[35px] */
+  padding-right: 35px; /* px-[35px] */
+  text-align: center; /* text-center */
+  font-size: 1.75rem; /* text-xl (assuming 1rem = 16px, so 1.75rem = 28px) */
+  font-weight: 600; /* font-semibold */
+  color: #FFFFFF; /* text-white-a700 (replace with actual color) */
+}
+
+@media (max-width: 1024px) {
+  .applybtn {
+    font-size: 1.0625rem; /* lg:text-[17px] (assuming 1rem = 16px, so 1.0625rem = 17px) */
+  }
+}
+
+@media (max-width: 768px) {
+  .applybtn {
+    padding-left: 1rem; /* sm:px-4 (assuming 1rem = 16px) */
+    padding-right: 1rem; /* sm:px-4 (assuming 1rem = 16px) */
+  }
+}
+/* Equivalent CSS */
+.order-summ {
+  display: flex; /* flex */
+  width: 30%; /* w-[30%] */
+  flex-direction: column; /* flex-col */
+  align-items: flex-start; /* items-start */
+  justify-content: center; /* justify-center */
+  gap: 1.875rem; /* gap-[30px] (assuming 1rem = 16px, so 1.875rem = 30px) */
+  border-radius: 24px; /* rounded-[24px] */
+  border: 2px solid #D1D5DB; /* border-2 border-solid border-gray-300 (replace with actual color) */
+  background-color: #CBD5E0; /* bg-blue_gray-100 (replace with actual color) */
+  padding: 1.5rem; /* p-6 (assuming 1rem = 16px, so 1.5rem = 24px) */
+}
+
+@media (max-width: 768px) {
+  .order-summ {
+    width: 100%; /* md:w-full */
+  }
+}
+
+@media (max-width: 640px) {
+  .order-summ {
+    padding: 1rem; /* sm:p-4 (assuming 1rem = 16px) */
+  }
+}
+/* Equivalent CSS */
+.div-sub {
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  gap: 0.9375rem; /* gap-[15px] (assuming 1rem = 16px, so 0.9375rem = 15px) */
+  align-self: stretch; /* self-stretch */
+}
+.sub {
+  display: flex; /* flex */
+  flex-wrap: wrap; /* flex-wrap */
+  justify-content: space-between; /* justify-between */
+  gap: 1.25rem; /* gap-5 (assuming 1rem = 16px, so 1.25rem = 20px) */
+}
+.self-end{
+  align-self: flex-end;
+}
+.cash{
+  color: #065f46 !important;
+}
+.arrow-rght{
+  height: 32px;
+  width: 32px;
+}
+.payment {
+  display: flex; /* flex */
+  height: 48px; /* h-[48px] */
+  width: 100%; /* w-full */
+  flex-direction: row; /* flex-row */
+  align-items: center; /* items-center */
+  justify-content: center; /* justify-center */
+  gap: 2.1875rem; /* gap-[35px] (assuming 1rem = 16px, so 2.1875rem = 35px) */
+  border-radius: 16px; /* rounded-[16px] */
+  background-color: #84cc16; /* bg-lime-800 (replace with actual color value) */
+  padding-left: 1.5rem; /* pl-6 (assuming 1rem = 16px, so 1.5rem = 24px) */
+  padding-right: 1rem; /* pr-4 (assuming 1rem = 16px) */
+  text-align: center; /* text-center */
+  font-size: 1rem; /* text-base (assuming 1rem = 16px) */
+  font-weight: 600; /* font-semibold */
+  color: #ffffff; /* text-white-a700 */
+}
+
+@media (max-width: 1024px) {
+  .payment {
+    font-size: 0.8125rem; /* lg:text-[13px] (assuming 1rem = 16px, so 0.8125rem = 13px) */
+  }
+}
+
+@media (max-width: 640px) {
+  .payment {
+    padding-left: 1rem;
+  }
+}
