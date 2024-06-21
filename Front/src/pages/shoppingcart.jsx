@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 import { Helmet } from "react-helmet";
 import { Button, Img, Heading, Text } from "../components/shoppingcartcomponent";
 import ShoppingCartBracelet from "../components/shoppingcartcomponent/details";
-import "../css/shoppingcartcss/shoppingcart.css"; 
+import "../css/shoppingcartcss/shoppingcart.css";
 
 const data = [
   {},
@@ -101,11 +101,11 @@ export default function ShoppingcartPage() {
           <div className="container2">
             <div className="container3">
               <div className="container4">
-                {/* <Suspense fallback={<div>Loading feed...</div>}>
+                <Suspense fallback={<div>Loading feed...</div>}>
                   {data.map((d, index) => (
                     <ShoppingCartBracelet {...d} key={"shoppingcart" + index} />
                   ))}
-                </Suspense> */}
+                </Suspense>
               </div>
               <div className="Dis">
                 <div className="discode">

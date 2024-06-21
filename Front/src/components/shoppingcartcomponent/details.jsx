@@ -14,9 +14,9 @@ export default function ShoppingCartBracelet({
   return (
     <div
       {...props}
-      className={`${props.className} flex items-center pr-5 border-gray-300 border-2 border-solid bg-blue_gray-100 flex-1 rounded-[24px]`}
+      className={`${props.className} flex-container`}
     >
-      <div className="flex w-full items-center gap-6 sm:w-full">
+      <div className="flex-full">
         <Img src={braceletoneimage} alt="bracelet" className="h-[159px] w-[160px] object-cover" />
         <div className="flex flex-1 flex-col items-start">
           <div className="flex items-start justify-between gap-5 self-stretch">
