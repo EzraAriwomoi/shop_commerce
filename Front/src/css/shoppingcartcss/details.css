@@ -1,0 +1,126 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    border: 2px solid #D1D5DB;
+    background-color: #F1F5F9;
+    flex: 1;
+    border-radius: 24px;
+  }
+  .flex-full {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  @media (max-width: 640px) {
+    .flex-full {
+      width: 100%;
+    }
+  }
+  .image-cover {
+    height: 159px;
+    width: 160px;
+    object-fit: cover;
+  }
+.flex-column-start {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+.flex-start-between {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    align-self: stretch;
+  }
+.h5txt {
+    margin-top: 10px; /* mt-2.5 translates to 0.625rem or 10px */
+  }
+  
+  @media (max-width: 640px) {
+    .h5txt{
+      font-size: 17px;
+    }
+  }
+.imgcont {
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+.relative-container {
+    position: relative;
+    height: 18px;
+    width: 19%;
+  }
+  
+  @media (max-width: 640px) {
+    .relative-container {
+      height: auto;
+    }
+  }
+.bracelett {
+    height: 12px;
+    width: 12px;
+  }
+.absolute-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 18px;
+    width: 100%;
+  }
+.arrw {
+    height: 18px;
+  }
+.kescountertext {
+    margin-top: 8px;
+    color: #047857;
+  }
+.bdy {
+    margin-top: 17px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    align-self: stretch;
+  }
+.divhead {
+    margin-bottom: 5px;
+    display: flex;
+    width: 20%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background-color: #FFFFFF;
+  }
+.oneqtytext {
+    margin-bottom: 1px;
+    margin-left: 3px;
+    align-self: flex-end;
+    font-weight: 600;
+    font-size: 13px;
+  }
+.icn {
+    height: 32px;
+    width: 32px;
+  }
+.kescountertext1 {
+    color: #047857;
+  }
+  
+  @media (min-width: 640px) {
+    .kescountertext1 {
+      font-size: 17px;
+    }
+  }
+  

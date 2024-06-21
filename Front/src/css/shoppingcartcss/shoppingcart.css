@@ -350,28 +350,3 @@ ul {
 .ul a:hover {
   color: black;
 }
-
-
-/*Details.jsx*/
-
-.flex-container {
-  display: flex;
-  align-items: center;
-  padding-right: 20px;
-  border: 2px solid #D1D5DB;
-  background-color: #F1F5F9;
-  flex: 1;
-  border-radius: 24px;
-}
-.flex-full {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  gap: 24px;
-}
-
-@media (max-width: 640px) {
-  .flex-full {
-    width: 100%;
-  }
-}

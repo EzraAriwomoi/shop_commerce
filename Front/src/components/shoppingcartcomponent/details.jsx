@@ -1,7 +1,7 @@
 import { Heading, Img } from "./";
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import "../../css/shoppingcartcss/shoppingcart.css"; 
+import "../../css/shoppingcartcss/details.css"; 
 
 export default function ShoppingCartBracelet({
   braceletoneimage = "images/img_ed_o_neil_avvdz.png",
@@ -17,35 +17,27 @@ export default function ShoppingCartBracelet({
       className={`${props.className} flex-container`}
     >
       <div className="flex-full">
-        <Img src={braceletoneimage} alt="bracelet" className="h-[159px] w-[160px] object-cover" />
-        <div className="flex flex-1 flex-col items-start">
-          <div className="flex items-start justify-between gap-5 self-stretch">
-            <Heading as="h5" className="mt-2.5 sm:text-[17px]">
+        <Img src={braceletoneimage} alt="bracelet" className="image-cover" />
+        <div className="flex-column-start">
+          <div className="flex-start-between">
+            <Heading as="h5" className="h5txt">
               {bracelettwotext}
             </Heading>
-            <div className="flex w-[15%] justify-between gap-5">
-              <div className="relative h-[18px] w-[19%] sm:h-auto">
-                <Img src="images/img_user.svg" alt="bracelet" className="h-[12px] w-[12px]" />
-                <Img
-                  src="images/img_contrast.svg"
-                  alt="bracelet"
-                  className="absolute bottom-0 left-0 right-0 top-0 m-auto h-[18px] w-full"
-                />
-              </div>
-              <Img src="images/img_arrow_down.svg" alt="bracelet" className="h-[18px]" />
+            <div className="imgcont">
+              <Img src="images/img_arrow_down.svg" alt="bracelet" className="arrw" />
             </div>
           </div>
-          <Heading size="headings" as="p" className="mt-2 !text-green-800">
+          <Heading size="headings" as="p" className="kescountertext">
             {kescountertext}
           </Heading>
-          <div className="mt-[17px] flex items-start justify-between gap-5 self-stretch">
-            <div className="mb-[5px] flex w-[20%] items-center justify-between gap-5 rounded-[20px] border-2 border-solid border-black-900_0f bg-white-a700">
-              <Heading size="headingmd" as="h6" className="mb-1 ml-3 self-end !font-semibold sm:text-[13px]">
+          <div className="bdy">
+            <div className="divhead">
+              <Heading size="headingmd" as="h6" className="oneqtytext">
                 {oneqtytext}
               </Heading>
-              <Img src="images/img_edit.svg" alt="1_qty" className="h-[32px] w-[32px]" />
+              <Img src="images/img_edit.svg" alt="1_qty" className="icn" />
             </div>
-            <Heading as="h5" className="!text-green-800 sm:text-[17px]">
+            <Heading as="h5" className="kescountertext1">
               {kescountertext1}
             </Heading>
           </div>
