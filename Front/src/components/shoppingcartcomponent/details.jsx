@@ -14,6 +14,7 @@ export default function ShoppingCartBracelet({
   return (
     <div
       {...props}
+      // eslint-disable-next-line react/prop-types
       className={`${props.className} flex-container`}
     >
       <div className="flex-full">

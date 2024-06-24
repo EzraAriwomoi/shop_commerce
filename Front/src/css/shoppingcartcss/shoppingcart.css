@@ -1,7 +1,7 @@
 .container {
   width: 100vw;
   background-color: #F0F4F8;
-  padding-bottom: 12px 55px;
+  padding: 12px 55px; /* Fixed padding syntax */
 }
 
 @media (min-width: 768px) {
@@ -17,8 +17,10 @@
 }
 .containerA {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
+  max-width: 100%; /* Added to ensure the container does not overflow */
+  box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
 }
 
 .containerA > * + * {
@@ -29,18 +31,19 @@
   display: flex;
   flex-direction: row;
   align-self: stretch;
-  justify-content: space-between; 
+  justify-content: space-between;
   gap: 5px;
-  padding: 20px 0 14px 0; 
+  padding: 20px 0 14px 0;
   width: 100%;
   margin-top: -92px;
   background-color: #CBD5E0;
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
 }
 .logo {
   margin-bottom: 5px;
   margin-left: 35px;
   height: 30px;
-  width: 91px; 
+  width: 91px;
   object-fit: contain;
 }
 .narbar {
@@ -85,7 +88,7 @@ ul {
     padding-right: 12px;
   }
 }
-.dv{
+.dv {
   width: 100vw;
 }
 .relative-container {
@@ -94,6 +97,7 @@ ul {
   width: 6%;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
 }
 
 @media (max-width: 640px) {
@@ -122,7 +126,7 @@ ul {
   font-family: 'Lato', sans-serif;
   color: #FFFFFF;
 }
-.fdiv{
+.fdiv {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -130,7 +134,7 @@ ul {
   background-color: #FFFFFF;
   padding: 0;
 }
-.fdiv p{
+.fdiv p {
   margin-left: 30px;
   margin-top: 23px;
 }
@@ -140,7 +144,7 @@ ul {
   letter-spacing: -1.28px;
   font-size: 3.75rem;
 }
-.itms{
+.itms {
   margin-bottom: 1rem;
 }
 .container2 {
@@ -153,6 +157,7 @@ ul {
   justify-content: space-between;
   gap: 1.25rem;
   padding: 1.25rem;
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
 }
 
 @media (max-width: 768px) {
@@ -167,6 +172,7 @@ ul {
   flex-direction: column;
   align-items: flex-start;
   gap: 4.0625rem;
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
 }
 
 @media (max-width: 768px) {
@@ -181,13 +187,14 @@ ul {
   gap: 1.9375rem;
   align-self: stretch;
 }
-.Dis{
+.Dis {
   display: flex;
   width: 72%;
   justify-content: center;
   border-radius: 28px;
   background-color: #CBD5E0;
   padding-left: 38px;
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
 }
 
 @media (max-width: 1024px) {
@@ -212,7 +219,7 @@ ul {
 .txtheading {
   color: #718096 !important;
 }
-.applybtn{
+.applybtn {
   display: flex;
   height: 56px;
   min-width: 179px;
@@ -227,6 +234,7 @@ ul {
   font-size: 1.75rem;
   font-weight: 600;
   color: #FFFFFF;
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
 }
 
 @media (max-width: 1024px) {
@@ -252,6 +260,7 @@ ul {
   border: 2px solid #D1D5DB;
   background-color: #CBD5E0;
   padding: 1.5rem;
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
 }
 
 @media (max-width: 768px) {
@@ -277,13 +286,13 @@ ul {
   justify-content: space-between;
   gap: 1.25rem;
 }
-.self-end{
+.self-end {
   align-self: flex-end;
 }
-.cash{
+.cash {
   color: #065f46 !important;
 }
-.arrow-rght{
+.arrow-rght {
   height: 32px;
   width: 32px;
 }
@@ -303,6 +312,7 @@ ul {
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
+  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
 }
 
 @media (max-width: 1024px) {

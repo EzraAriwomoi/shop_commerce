@@ -6,12 +6,15 @@
     background-color: #F1F5F9;
     flex: 1;
     border-radius: 24px;
+    max-width: 100%; /* Added to ensure the flex container does not overflow */
+    box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
   }
   .flex-full {
     display: flex;
     width: 100%;
     align-items: center;
     gap: 24px;
+    flex-wrap: wrap; /* Added to allow wrapping on smaller screens */
   }
   
   @media (max-width: 640px) {
@@ -22,37 +25,41 @@
   .image-cover {
     height: 159px;
     width: 160px;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
     object-fit: cover;
+    max-width: 100%; /* Added to ensure image does not overflow */
   }
-.flex-column-start {
+  .flex-column-start {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: flex-start;
   }
-.flex-start-between {
+  .flex-start-between {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 20px;
     align-self: stretch;
+    width: 100%; /* Added to ensure proper spacing */
   }
-.h5txt {
+  .h5txt {
     margin-top: 10px; /* mt-2.5 translates to 0.625rem or 10px */
   }
   
   @media (max-width: 640px) {
-    .h5txt{
+    .h5txt {
       font-size: 17px;
     }
   }
-.imgcont {
+  .imgcont {
     display: flex;
     width: 15%;
     justify-content: space-between;
     gap: 20px;
   }
-.relative-container {
+  .relative-container {
     position: relative;
     height: 18px;
     width: 19%;
@@ -61,13 +68,14 @@
   @media (max-width: 640px) {
     .relative-container {
       height: auto;
+      width: 100%; /* Added to ensure proper sizing on smaller screens */
     }
   }
-.bracelett {
+  .bracelett {
     height: 12px;
     width: 12px;
   }
-.absolute-full {
+  .absolute-full {
     position: absolute;
     top: 0;
     left: 0;
@@ -77,14 +85,14 @@
     height: 18px;
     width: 100%;
   }
-.arrw {
+  .arrw {
     height: 18px;
   }
-.kescountertext {
+  .kescountertext {
     margin-top: 8px;
     color: #047857;
   }
-.bdy {
+  .bdy {
     margin-top: 17px;
     display: flex;
     align-items: flex-start;
@@ -92,7 +100,7 @@
     gap: 20px;
     align-self: stretch;
   }
-.divhead {
+  .divhead {
     margin-bottom: 5px;
     display: flex;
     width: 20%;
@@ -103,18 +111,18 @@
     border: 2px solid #000;
     background-color: #FFFFFF;
   }
-.oneqtytext {
+  .oneqtytext {
     margin-bottom: 1px;
     margin-left: 3px;
     align-self: flex-end;
     font-weight: 600;
     font-size: 13px;
   }
-.icn {
+  .icn {
     height: 32px;
     width: 32px;
   }
-.kescountertext1 {
+  .kescountertext1 {
     color: #047857;
   }
   
