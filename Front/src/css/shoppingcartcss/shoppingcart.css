@@ -12,71 +12,13 @@
   max-width: 100%; /* Ensure the container does not overflow */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
-
-.header {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  align-self: stretch;
-  justify-content: space-between;
-  gap: 5px;
-  padding: 10px 0 10px 0; /* Reduced padding */
-  width: 100%;
-  background-color: #CBD5E0;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
-}
-
-.logo {
-  margin-bottom: 5px;
-  margin-left: 10px; /* Reduced margin */
-  height: 30px;
-  width: 91px;
-  object-fit: contain;
-}
-
-.narbar {
-  margin-right: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-ul {
-  margin-bottom: -7px !important;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 11px;
-}
-
-.signin {
-  display: flex;
-  height: 40px;
-  min-width: 105px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background-color: #8BC34A;
-  padding-left: 12px; /* Reduced padding */
-  padding-right: 12px; /* Reduced padding */
-  text-align: center;
-  font-size: 16px;
-  color: #FFFFFF;
-}
-
-.dv {
-  width: 100vw;
-}
-
 .relative-container {
   position: relative;
   height: 38px;
   width: 6%;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  box-sizing: border-box;
 }
 
 .img-cart {
@@ -148,7 +90,7 @@ ul {
   justify-content: space-between;
   gap: 1.25rem;
   padding: 1.25rem;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  box-sizing: border-box;
 }
 
 .container3 {
@@ -156,8 +98,8 @@ ul {
   width: 63%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem; /* Reduced gap */
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
 .container4 {
@@ -173,7 +115,7 @@ ul {
   width: 30%;
   justify-content: flex-start;
   border-radius: 28px;
-  background-color: #CBD5E0;
+  background-color: #D9D9D9;
   padding-left: 20px;
   margin-right: 800px;
   box-sizing: border-box;
@@ -188,46 +130,48 @@ ul {
 }
 
 .txtheading {
-  color: #718096 !important;
-  font-size: 18px;
+  color: #747474 !important;
+  font-size: 15px;
+  font-family: 'arial';
 }
 
 .applybtn {
   display: flex;
-  height: 40px; /* Reduced height */
-  min-width: 100px; /* Reduced width */
+  height: 40px;
+  min-width: 100px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 20px; /* Reduced border-radius */
-  background-color: #64c85c;
-  padding-left: 20px; /* Reduced padding */
-  padding-right: 20px; /* Reduced padding */
+  border-radius: 20px;
+  background-color: #BFA102;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: center;
-  font-size: 1rem; /* Reduced font size */
+  font-size: 1rem;
   font-weight: 600;
   color: #FFFFFF;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  box-sizing: border-box;
 }
 
 .order-summ {
   display: flex;
-  width: 30%;
+  width: 28%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 1rem; /* Reduced gap */
+  gap: 1rem;
+  margin-right: 30px;
   border-radius: 24px;
   border: 2px solid #D1D5DB;
-  background-color: #CBD5E0;
-  padding: 1rem; /* Reduced padding */
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  background-color: #D9D9D9;
+  padding: 1rem;
+  box-sizing: border-box
 }
 
 .div-sub {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; /* Reduced gap */
+  gap: 0.5rem;
   align-self: stretch;
 }
 
@@ -235,7 +179,7 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 0.5rem; /* Reduced gap */
+  gap: 0.5rem;
 }
 
 .self-end {
@@ -243,31 +187,32 @@ ul {
 }
 
 .cash {
-  color: #065f46 !important;
+  color: #029522 !important;
+  font-size: 16px;
 }
 
 .arrow-rght {
-  height: 20px; /* Reduced height */
-  width: 20px; /* Reduced width */
+  height: 20px;
+  width: 20px;
 }
 
 .payment {
   display: flex;
-  height: 40px; /* Reduced height */
+  height: 40px;
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem; /* Reduced gap */
-  border-radius: 12px; /* Reduced border-radius */
-  background-color: #84cc16;
-  padding-left: 20px; /* Reduced padding */
-  padding-right: 10px; /* Reduced padding */
+  gap: 1.5rem;
+  border-radius: 12px;
+  background-color: #BFA102;
+  padding-left: 20px;
+  padding-right: 10px;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  box-sizing: border-box;
 }
 
 /* ul */
@@ -277,7 +222,7 @@ ul {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Reduced gap */
+  gap: 10px;
   justify-content: flex-start;
 }
 
