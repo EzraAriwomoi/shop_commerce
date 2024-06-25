@@ -102,6 +102,7 @@ export default function ShoppingcartPage() {
               3 items selected
             </Text>
           </div>
+          <div className="divider"></div> {/* Divider line */}
           <div className="container2">
             <div className="container3">
               <div className="container4">

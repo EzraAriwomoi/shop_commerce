@@ -21,14 +21,17 @@
   }
   
   .image-cover {
-    height: 100px; /* Reduced height */
+    height: 106px; /* Reduced height */
     width: 100px; /* Reduced width */
     object-fit: cover;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 21px;
   }
   
   .flex-column-start {
     display: flex;
     flex: 1;
+    padding-left: 8px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -63,8 +66,8 @@
   }
   
   .oneqtytext {
-    margin-bottom: 1px;
-    margin-left: 3px;
+    margin-bottom: 8px;
+    margin-left: 12px;
     align-self: flex-end;
     font-weight: 600;
     font-size: 13px;
@@ -74,4 +77,15 @@
     color: #047857;
     font-size: 14px; /* Reduced font size */
   }
-  
+  .divhead {
+    margin-bottom: 8px;
+    display: flex;
+    width: 15%;
+    height: 33px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    background-color: #FFFFFF;
+  }  
