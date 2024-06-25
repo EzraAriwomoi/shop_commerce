@@ -5,6 +5,7 @@ import { Button, Img, Heading, Text } from "../components/shoppingcartcomponent"
 import ShoppingCartBracelet from "../components/shoppingcartcomponent/details";
 import "../css/shoppingcartcss/shoppingcart.css";
 import NavBar from "../components/layout/NavBar";
+import Footer from "../components/layout/Footer";
 
 const data = [
   {},
@@ -94,8 +95,8 @@ export default function ShoppingcartPage() {
     {/* <div className="container"> */}
         <div className="containerA">
           
-          <div className="fdiv">
-            <Text size="textmd" as="p" className="text-stylingn">
+        <div className="fdiv">
+            <Text size="textmd" as="p" className="text-stylingn dot">
               My Cart
             </Text>
             <Text size="texts" as="p" className="itms">
@@ -111,16 +112,6 @@ export default function ShoppingcartPage() {
                     <ShoppingCartBracelet {...d} key={"shoppingcart" + index} />
                   ))}
                 </Suspense>
-              </div>
-              <div className="Dis">
-                <div className="discode">
-                  <Heading size="heading2xl" as="h1" className="txtheading">
-                    Discount code
-                  </Heading>
-                  <Button className="applybtn">
-                    Apply
-                  </Button>
-                </div>
               </div>
             </div>
             <div className="order-summ">
@@ -152,6 +143,18 @@ export default function ShoppingcartPage() {
               </Button>
             </div>
           </div>
+          <div className="divider"></div>
+          <div className="Dis">
+                <div className="discode">
+                  <Heading size="heading2xl" as="h1" className="txtheading">
+                    Discount code
+                  </Heading>
+                  <Button className="applybtn">
+                    Apply
+                  </Button>
+                </div>
+            </div>
+            <Footer />
         </div>
       {/* </div> */}
     </>

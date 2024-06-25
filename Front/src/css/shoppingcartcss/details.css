@@ -53,7 +53,7 @@
   .kescountertext {
     margin-top: 8px;
     color: #047857;
-    font-size: 14px; /* Reduced font size */
+    font-size: 17px;
   }
   
   .bdy {
@@ -75,7 +75,7 @@
   
   .kescountertext1 {
     color: #047857;
-    font-size: 14px; /* Reduced font size */
+    font-size: 16px; /* Reduced font size */
   }
   .divhead {
     margin-bottom: 8px;
@@ -88,4 +88,7 @@
     border-radius: 20px;
     border: 2px solid #000;
     background-color: #FFFFFF;
-  }  
+  }
+  .imgcont{
+    padding-top: 5px;
+  }
