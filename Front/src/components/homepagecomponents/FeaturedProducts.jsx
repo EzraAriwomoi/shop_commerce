@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
 
   return (
     <div className="featured-products">
-      <h1>Featured Products</h1>
+      <h3>Featured Products</h3>
       <div className="fp-div">
         {products.map((a) => {
           return <FPContainer productDetails={a} />;

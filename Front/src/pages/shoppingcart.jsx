@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { Button, Img, Heading, Text } from "../components/shoppingcartcomponent";
 import ShoppingCartBracelet from "../components/shoppingcartcomponent/details";
 import "../css/shoppingcartcss/shoppingcart.css";
+import NavBar from "../components/layout/NavBar";
 
 const data = [
   {},
@@ -30,7 +31,10 @@ export default function ShoppingcartPage() {
         <title>Shopping cart</title>
         <meta name="description" content="Web site created using create-react-app" />
       </Helmet>
-      <div className="dv">
+      <div>
+      <NavBar />
+      </div>
+      {/* <div className="dv">
       <header className="header">
             <Img
               src="images/img_header_logo.png"
@@ -86,7 +90,7 @@ export default function ShoppingcartPage() {
               </div>
             </div>
           </header>
-      </div>
+      </div> */}
     {/* <div className="container"> */}
         <div className="containerA">
           

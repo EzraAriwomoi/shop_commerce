@@ -1,116 +1,67 @@
 .flex-container {
     display: flex;
     align-items: center;
-    padding-right: 20px;
+    padding-right: 10px; /* Reduced padding */
     border: 2px solid #D1D5DB;
     background-color: #F1F5F9;
     flex: 1;
     border-radius: 24px;
-    max-width: 100%; /* Added to ensure the flex container does not overflow */
-    box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+    max-width: 100%; /* Ensure the flex container does not overflow */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    height: 200px; /* Set a specific height */
   }
+  
   .flex-full {
     display: flex;
     width: 100%;
     align-items: center;
-    gap: 24px;
-    flex-wrap: wrap; /* Added to allow wrapping on smaller screens */
+    gap: 12px; /* Reduced gap */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    height: 100%; /* Ensure it takes the full height of the parent */
   }
   
-  @media (max-width: 640px) {
-    .flex-full {
-      width: 100%;
-    }
-  }
   .image-cover {
-    height: 159px;
-    width: 160px;
-    border-top-left-radius: 24px;
-    border-bottom-left-radius: 24px;
+    height: 100px; /* Reduced height */
+    width: 100px; /* Reduced width */
     object-fit: cover;
-    max-width: 100%; /* Added to ensure image does not overflow */
   }
+  
   .flex-column-start {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: flex-start;
   }
+  
   .flex-start-between {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px; /* Reduced gap */
     align-self: stretch;
-    width: 100%; /* Added to ensure proper spacing */
+    width: 100%; /* Ensure proper spacing */
   }
+  
   .h5txt {
     margin-top: 10px; /* mt-2.5 translates to 0.625rem or 10px */
+    font-size: 14px; /* Reduced font size */
   }
   
-  @media (max-width: 640px) {
-    .h5txt {
-      font-size: 17px;
-    }
-  }
-  .imgcont {
-    display: flex;
-    width: 15%;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .relative-container {
-    position: relative;
-    height: 18px;
-    width: 19%;
-  }
-  
-  @media (max-width: 640px) {
-    .relative-container {
-      height: auto;
-      width: 100%; /* Added to ensure proper sizing on smaller screens */
-    }
-  }
-  .bracelett {
-    height: 12px;
-    width: 12px;
-  }
-  .absolute-full {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    height: 18px;
-    width: 100%;
-  }
-  .arrw {
-    height: 18px;
-  }
   .kescountertext {
     margin-top: 8px;
     color: #047857;
+    font-size: 14px; /* Reduced font size */
   }
+  
   .bdy {
-    margin-top: 17px;
+    margin-top: 10px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px; /* Reduced gap */
     align-self: stretch;
   }
-  .divhead {
-    margin-bottom: 5px;
-    display: flex;
-    width: 20%;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    border-radius: 20px;
-    border: 2px solid #000;
-    background-color: #FFFFFF;
-  }
+  
   .oneqtytext {
     margin-bottom: 1px;
     margin-left: 3px;
@@ -118,17 +69,9 @@
     font-weight: 600;
     font-size: 13px;
   }
-  .icn {
-    height: 32px;
-    width: 32px;
-  }
+  
   .kescountertext1 {
     color: #047857;
-  }
-  
-  @media (min-width: 640px) {
-    .kescountertext1 {
-      font-size: 17px;
-    }
+    font-size: 14px; /* Reduced font size */
   }
   

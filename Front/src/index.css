@@ -10,7 +10,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 16px;
+  transition: ease-in-out.5s;
 }
 
 input,
@@ -26,6 +26,10 @@ select {
 
 button:hover {
   scale: 0.9;
+  opacity: 0.8;
+}
+
+img:hover {
   opacity: 0.8;
 }
 

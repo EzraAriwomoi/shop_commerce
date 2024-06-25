@@ -1,31 +1,18 @@
 .container {
   width: 100vw;
   background-color: #F0F4F8;
-  padding: 12px 55px; /* Fixed padding syntax */
+  padding: 12px 15px; /* Reduced padding */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width */
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding-bottom: 5px;
-  }
-}
-
-@media (min-width: 640px) {
-  .container {
-    padding-bottom: 37px;
-  }
-}
 .containerA {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 100%; /* Added to ensure the container does not overflow */
-  box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+  max-width: 100%; /* Ensure the container does not overflow */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.containerA > * + * {
-  margin-top: 33px;
-}
 .header {
   position: absolute;
   display: flex;
@@ -33,19 +20,20 @@
   align-self: stretch;
   justify-content: space-between;
   gap: 5px;
-  padding: 20px 0 14px 0;
+  padding: 10px 0 10px 0; /* Reduced padding */
   width: 100%;
-  margin-top: -92px;
   background-color: #CBD5E0;
-  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
+
 .logo {
   margin-bottom: 5px;
-  margin-left: 35px;
+  margin-left: 10px; /* Reduced margin */
   height: 30px;
   width: 91px;
   object-fit: contain;
 }
+
 .narbar {
   margin-right: 0.5rem;
   display: flex;
@@ -54,12 +42,14 @@
   align-items: flex-end;
   justify-content: space-between;
 }
+
 ul {
   margin-bottom: -7px !important;
   display: flex;
   flex-wrap: wrap;
   gap: 11px;
 }
+
 .signin {
   display: flex;
   height: 40px;
@@ -69,42 +59,26 @@ ul {
   justify-content: center;
   border-radius: 10px;
   background-color: #8BC34A;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 12px; /* Reduced padding */
+  padding-right: 12px; /* Reduced padding */
   text-align: center;
   font-size: 16px;
   color: #FFFFFF;
 }
 
-@media (min-width: 1024px) {
-  .signin {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 640px) {
-  .signin {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
 .dv {
   width: 100vw;
 }
+
 .relative-container {
   position: relative;
   height: 38px;
   width: 6%;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
-  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
-@media (max-width: 640px) {
-  .relative-container {
-    width: 100%;
-  }
-}
 .img-cart {
   position: absolute;
   bottom: 4.18px;
@@ -112,6 +86,7 @@ ul {
   margin: auto;
   height: 29px;
 }
+
 .custom-badge {
   position: absolute;
   right: 0.14px;
@@ -126,27 +101,34 @@ ul {
   font-family: 'Lato', sans-serif;
   color: #FFFFFF;
 }
+
 .fdiv {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   align-self: stretch;
   background-color: #FFFFFF;
-  padding: 0;
+  padding-top: 68px;
+  padding-left: 40px;
 }
+
 .fdiv p {
-  margin-left: 30px;
+  margin-left: 10px; /* Reduced margin */
   margin-top: 23px;
 }
+
 .text-stylingn {
-  margin-left: 86px;
-  margin-top: 52px;
+  margin-left: 20px; /* Reduced margin */
+  margin-top: 20px; /* Reduced margin */
   letter-spacing: -1.28px;
-  font-size: 3.75rem;
+  font-size: 3rem; /* Reduced font size */
 }
+
 .itms {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 20px;
 }
+
 .container2 {
   margin-left: auto;
   margin-right: auto;
@@ -157,184 +139,133 @@ ul {
   justify-content: space-between;
   gap: 1.25rem;
   padding: 1.25rem;
-  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
-@media (max-width: 768px) {
-  .container2 {
-    flex-direction: column;
-    padding: 1.25rem;
-  }
-}
 .container3 {
   display: flex;
   width: 63%;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4.0625rem;
-  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
+  gap: 1rem; /* Reduced gap */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
-@media (max-width: 768px) {
-  .container3 {
-    width: 100%;
-    gap: 0.5rem;
-  }
-}
 .container4 {
   display: flex;
   flex-direction: column;
-  gap: 1.9375rem;
+  gap: 1rem; /* Reduced gap */
   align-self: stretch;
 }
+
 .Dis {
   display: flex;
   width: 72%;
   justify-content: center;
   border-radius: 28px;
   background-color: #CBD5E0;
-  padding-left: 38px;
-  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
+  padding-left: 20px; /* Reduced padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
-@media (max-width: 1024px) {
-  .Dis {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .Dis {
-    width: 100%;
-    padding-left: 1rem;
-  }
-}
 .discode {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 1rem; /* Reduced gap */
 }
+
 .txtheading {
   color: #718096 !important;
 }
+
 .applybtn {
   display: flex;
-  height: 56px;
-  min-width: 179px;
+  height: 40px; /* Reduced height */
+  min-width: 100px; /* Reduced width */
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  border-radius: 28px;
+  border-radius: 20px; /* Reduced border-radius */
   background-color: #64c85c;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 20px; /* Reduced padding */
+  padding-right: 20px; /* Reduced padding */
   text-align: center;
-  font-size: 1.75rem;
+  font-size: 1rem; /* Reduced font size */
   font-weight: 600;
   color: #FFFFFF;
-  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
-@media (max-width: 1024px) {
-  .applybtn {
-    font-size: 1.0625rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .applybtn {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
 .order-summ {
   display: flex;
   width: 30%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 1.875rem;
+  gap: 1rem; /* Reduced gap */
   border-radius: 24px;
   border: 2px solid #D1D5DB;
   background-color: #CBD5E0;
-  padding: 1.5rem;
-  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
+  padding: 1rem; /* Reduced padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
-@media (max-width: 768px) {
-  .order-summ {
-    width: 100%;
-  }
-}
-
-@media (max-width: 640px) {
-  .order-summ {
-    padding: 1rem;
-  }
-}
 .div-sub {
   display: flex;
   flex-direction: column;
-  gap: 0.9375rem;
+  gap: 0.5rem; /* Reduced gap */
   align-self: stretch;
 }
+
 .sub {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1.25rem;
+  gap: 0.5rem; /* Reduced gap */
 }
+
 .self-end {
   align-self: flex-end;
 }
+
 .cash {
   color: #065f46 !important;
 }
+
 .arrow-rght {
-  height: 32px;
-  width: 32px;
+  height: 20px; /* Reduced height */
+  width: 20px; /* Reduced width */
 }
+
 .payment {
   display: flex;
-  height: 48px;
+  height: 40px; /* Reduced height */
   width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 2.1875rem;
-  border-radius: 16px;
+  gap: 1.5rem; /* Reduced gap */
+  border-radius: 12px; /* Reduced border-radius */
   background-color: #84cc16;
-  padding-left: 1.5rem;
-  padding-right: 1rem;
+  padding-left: 20px; /* Reduced padding */
+  padding-right: 10px; /* Reduced padding */
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  box-sizing: border-box; /* Added to ensure padding and border are included in the element's total width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
-@media (max-width: 1024px) {
-  .payment {
-    font-size: 0.8125rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .payment {
-    padding-left: 1rem;
-  }
-}
-
-/*ul*/
+/* ul */
 .ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 11px;
+  gap: 10px; /* Reduced gap */
   justify-content: flex-start;
 }
 

@@ -3,7 +3,7 @@ import "../../css/homepagecss/homepage.css";
 const HMCategories = () => {
   return (
     <div className="home-catergories flex-col-left">
-      <h1>Explore our catergories</h1>
+      <h3>Explore our catergories</h3>
       <ul className="flex">
         <a href="#" className="flex">
           <li>Necklace</li>
