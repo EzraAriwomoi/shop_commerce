@@ -17,9 +17,9 @@ function App() {
         <Routes>
           <Route path="/" exact element={<HomePage />} />
           <Route path="/auth" element={<CustomerAuth />} />
-          <Route path="/productdetails" element={<ProductDetails />} />
+          <Route path="/productdetails/:productName" element={<ProductDetails />} />
           <Route path="/shoppingcart" element={<ShoppingcartPage/>} />
-          <Route path="/productlisting" element={<ProductListPage/>} />
+          <Route path="/products" element={<ProductListPage/>} />
         </Routes>
       </main>
     </Router>
