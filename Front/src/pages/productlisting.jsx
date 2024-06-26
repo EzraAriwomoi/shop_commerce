@@ -1,187 +1,75 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
+import ProductCard from '../pages/components/productcard/productcard';
 import { Frame } from "../pages/components/frame";
 import { Frame2 } from "../pages/components/frame";
-// import { Group } from "../pages/components/group/G1";
-// import { Group } from "../pages/components/group/G2";
 import "../css/productlistingcss/productlisting.css";
 import NavBar from "../components/layout/NavBar";
-// import Footer from "../components/layout/Footer";
+import Footer from "../components/layout/Footer";
 
-export default function ProductListPage(){
-  return (
-    <div className="product-list-page">
+const products = [
+  {
+    productName: "Necklace",
+    price: 2500,
+    imageUrl: "necklace.jpeg"
+  },
+  {
+    productName: "Jesus Bangles Bracelet",
+    price: 2000,
+    imageUrl: "Jesus Bangles Bracelet for Women Stainless Steel Gold Color Luxury Bracelets 2024 Free Shipping Jewelry pulseras mujer bijoux - B1261G.jpeg"
+  },
+  {
+    productName: "Silver ring",
+    price: 2000,
+    imageUrl: "ring.jpeg"
+  },
+  {
+    productName: "Handbracelet",
+    price: 2000,
+    imageUrl: "handbrace.jpg"
+  },
+  {
+    productName: "Basket",
+    price: 11000,
+    imageUrl: "Doghouse.jpg"
+  },
+  {
+    productName: "Rings Butterfly",
+    price: 2500,
+    imageUrl: "2pcs_set Rings Butterfly All-match Butterfly Hollow Simple Couple Rings Alloy.jpeg"
+  },
+  {
+    productName: "Buffalo artifact",
+    price: 7100,
+    imageUrl: "gor.jpg"
+  },
+  {
+    productName: "Calabash",
+    price: 6500,
+    imageUrl: "cal.jpg"
+  },
+  // Add more products as needed
+];
+
+const ProductListing = () => (
+    <div>
+      <div className="product-list-page">
       <div className="div-2">
         <NavBar />
-        <div className="frame-2">
-          <div className="group-wrapper">
-            <div className="group-2">
-              <img className="rectangle" alt="Rectangle" src="rectangle-9.png" />
-              <div className="overlap">
-                <div className="group-4" />
-                <div className="overlap-group-wrapper">
-                  <div className="overlap-group">
-                    <div className="text-wrapper-2">Product Name</div>
-                    <p className="kes">
-                      <span className="span">Kes:</span>
-                      <span className="text-wrapper-3"> 2000</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="frame-wrapper">
-                <div className="frame-3">
-                  <div className="text-wrapper-4">Add to cart</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="group-5">
-            <img className="rectangle" alt="Rectangle" src="image.png" />
-            <div className="overlap">
-              <div className="group-4" />
-              <div className="overlap-group-wrapper">
-                <div className="overlap-group">
-                  <div className="text-wrapper-2">Product Name</div>
-                  <p className="kes">
-                    <span className="span">Kes:</span>
-                    <span className="text-wrapper-3"> 2000</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="frame-wrapper">
-              <div className="frame-3">
-                <div className="text-wrapper-4">Add to cart</div>
-              </div>
-            </div>
-          </div>
-          <div className="group-5">
-            <img className="rectangle" alt="Rectangle" src="rectangle-9-2.png" />
-            <div className="overlap">
-              <div className="group-4" />
-              <div className="overlap-group-wrapper">
-                <div className="overlap-group">
-                  <div className="text-wrapper-2">Product Name</div>
-                  <p className="kes">
-                    <span className="span">Kes:</span>
-                    <span className="text-wrapper-3"> 2000</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="frame-wrapper">
-              <div className="frame-3">
-                <div className="text-wrapper-4">Add to cart</div>
-              </div>
-            </div>
-          </div>
-          <div className="group-5">
-            <img className="rectangle" alt="Rectangle" src="rectangle-9-3.png" />
-            <div className="overlap">
-              <div className="group-4" />
-              <div className="overlap-group-wrapper">
-                <div className="overlap-group">
-                  <div className="text-wrapper-2">Product Name</div>
-                  <p className="kes">
-                    <span className="span">Kes:</span>
-                    <span className="text-wrapper-3"> 2000</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="frame-wrapper">
-              <div className="frame-3">
-                <div className="text-wrapper-4">Add to cart</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="frame-4">
-          <div className="group-5">
-            <img className="rectangle" alt="Rectangle" src="rectangle-9-4.png" />
-            <div className="overlap">
-              <div className="group-4" />
-              <div className="overlap-group-wrapper">
-                <div className="overlap-group">
-                  <div className="text-wrapper-2">Product Name</div>
-                  <p className="kes">
-                    <span className="span">Kes:</span>
-                    <span className="text-wrapper-3"> 2000</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="frame-wrapper">
-              <div className="frame-3">
-                <div className="text-wrapper-4">Add to cart</div>
-              </div>
-            </div>
-          </div>
-          <div className="group-5">
-            <img className="rectangle" alt="Rectangle" src="rectangle-9-5.png" />
-            <div className="overlap">
-              <div className="group-4" />
-              <div className="overlap-group-wrapper">
-                <div className="overlap-group">
-                  <div className="text-wrapper-2">Product Name</div>
-                  <p className="kes">
-                    <span className="span">Kes:</span>
-                    <span className="text-wrapper-3"> 2000</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="frame-wrapper">
-              <div className="frame-3">
-                <div className="text-wrapper-4">Add to cart</div>
-              </div>
-            </div>
-          </div>
-          <div className="group-5">
-            <img className="rectangle" alt="Rectangle" src="rectangle-9-6.png" />
-            <div className="overlap">
-              <div className="group-4" />
-              <div className="overlap-group-wrapper">
-                <div className="overlap-group">
-                  <div className="text-wrapper-2">Product Name</div>
-                  <p className="kes">
-                    <span className="span">Kes:</span>
-                    <span className="text-wrapper-3"> 2000</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="frame-wrapper">
-              <div className="frame-3">
-                <div className="text-wrapper-4">Add to cart</div>
-              </div>
-            </div>
-          </div>
-          <div className="group-5">
-            <img className="rectangle" alt="Rectangle" src="rectangle-9-7.png" />
-            <div className="overlap">
-              <div className="group-4" />
-              <div className="overlap-group-wrapper">
-                <div className="overlap-group">
-                  <div className="text-wrapper-2">Product Name</div>
-                  <p className="kes">
-                    <span className="span">Kes:</span>
-                    <span className="text-wrapper-3"> 2000</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="frame-wrapper">
-              <div className="frame-3">
-                <div className="text-wrapper-4">Add to cart</div>
-              </div>
-            </div>
-          </div>
-        </div>
         <Frame className="" />
         <Frame2 className="" />
         <div className="divider1"></div>
+
+        <div className="frame-2">
+        {products.map((product, index) => (
+          <ProductCard
+            key={index}
+            productName={product.productName}
+            price={product.price}
+            imageUrl={product.imageUrl}
+          />
+        ))}
+      </div>
 
         <div className="frame-5">
           <div className="frame-6">
@@ -200,7 +88,10 @@ export default function ProductListPage(){
         </div>
       </div>
     </div>
+    
+    <Footer />
+    </div>
   );
-}
+export default ProductListing;
 
 

@@ -25,6 +25,8 @@
   display: inline-flex;
   gap: 30px;
   left: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
   position: absolute;
   top: 270px;
 }
@@ -84,7 +86,7 @@
 .product-list-page .text-wrapper-2 {
   color: #000000;
   font-family: "Inter-Bold", Helvetica;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   height: 19px;
   left: 0;
@@ -92,15 +94,15 @@
   line-height: normal;
   position: absolute;
   text-align: center;
-  top: 0;
+  bottom: 20px;
   white-space: nowrap;
 }
 
 .product-list-page .kes {
   color: transparent;
   font-family: "Inter-Regular", Helvetica;
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
   height: 16px;
   left: 1px;
   letter-spacing: 0;
@@ -119,11 +121,12 @@
 }
 
 .product-list-page .frame-wrapper {
-  height: 43px;
-  left: 159px;
+  height: 40px;
+  left: 182px;
   position: absolute;
-  top: 297px;
-  width: 107px;
+  top: 325px;
+  background: transparent;
+  width: 120px;
 }
 
 .product-list-page .frame-3 {
@@ -157,6 +160,11 @@
   height: 372px;
   position: relative;
   width: 297px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+.group-5:hover{
+  transform: translateY(-5px) scale(1.05);
 }
 
 .product-list-page .frame-4 {
