@@ -8,6 +8,7 @@ import HomePage from "./pages/homepage";
 // import NavBar from "./components/layout/NavBar";
 import ProductDetails from "./pages/ProductDetails";
 import ShoppingcartPage from "./pages/shoppingcart";
+import ProductListPage from "./pages/productlisting";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/auth" element={<CustomerAuth />} />
           <Route path="/productdetails" element={<ProductDetails />} />
           <Route path="/shoppingcart" element={<ShoppingcartPage/>} />
+          <Route path="/productlisting" element={<ProductListPage/>} />
         </Routes>
       </main>
     </Router>

@@ -1,0 +1,235 @@
+.product-list-page {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.product-list-page .div-2 {
+  background-color: #ffffff;
+  height: 1264px;
+  position: relative;
+  width: 1512px;
+}
+
+.product-list-page .group-3 {
+  background-image: url(./image.svg) !important;
+  left: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+}
+
+.product-list-page .frame-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 30px;
+  left: 40px;
+  position: absolute;
+  top: 270px;
+}
+
+.product-list-page .group-wrapper {
+  height: 372px;
+  position: relative;
+  width: 297px;
+}
+
+.product-list-page .group-2 {
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  height: 372px;
+  position: relative;
+}
+
+.product-list-page .rectangle {
+  height: 258px;
+  left: 10px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 275px;
+}
+
+.product-list-page .overlap {
+  height: 40px;
+  left: 5px;
+  position: absolute;
+  top: 302px;
+  width: 135px;
+}
+
+.product-list-page .group-4 {
+  height: 36px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 85px;
+}
+
+.product-list-page .overlap-group-wrapper {
+  height: 34px;
+  left: 20px;
+  position: absolute;
+  top: 0;
+  width: 115px;
+}
+
+.product-list-page .overlap-group {
+  height: 34px;
+  position: relative;
+  width: 111px;
+}
+
+.product-list-page .text-wrapper-2 {
+  color: #000000;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 16px;
+  font-weight: 700;
+  height: 19px;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  white-space: nowrap;
+}
+
+.product-list-page .kes {
+  color: transparent;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 13px;
+  font-weight: 400;
+  height: 16px;
+  left: 1px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 18px;
+}
+
+.product-list-page .span {
+  color: #000000;
+}
+
+.product-list-page .text-wrapper-3 {
+  color: #019422;
+}
+
+.product-list-page .frame-wrapper {
+  height: 43px;
+  left: 159px;
+  position: absolute;
+  top: 297px;
+  width: 107px;
+}
+
+.product-list-page .frame-3 {
+  align-items: center;
+  background-color: #8b4513;
+  border-radius: 20px;
+  display: inline-flex;
+  gap: 10px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 13px 16px;
+  position: relative;
+}
+
+.product-list-page .text-wrapper-4 {
+  color: #ffffff;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.product-list-page .group-5 {
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  height: 372px;
+  position: relative;
+  width: 297px;
+}
+
+.product-list-page .frame-4 {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 30px;
+  left: 40px;
+  position: absolute;
+  top: 700px;
+}
+
+.product-list-page .line {
+  height: 5px;
+  left: 122px;
+  object-fit: cover;
+  position: absolute;
+  top: 286px;
+  width: 1268px;
+}
+.product-list-page .frame-5 {
+  align-items: flex-end;
+  display: inline-flex;
+  gap: 5px;
+  left: 600px;
+  position: absolute;
+  top: 1182px;
+}
+
+.product-list-page .frame-6 {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #444343;
+  border-radius: 2px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 16px;
+  position: relative;
+}
+
+.product-list-page .text-wrapper-5 {
+  color: #000000;
+  font-family: "Inter-Light", Helvetica;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.product-list-page .text-wrapper-6 {
+  color: #000000;
+  font-family: "Inter-Light", Helvetica;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+.divider1 {
+    width: 94%;
+    height: 1.5px;
+    margin-top: 20px;
+    background-color: #D1D5DB;
+    margin-left: 50px;
+  }
