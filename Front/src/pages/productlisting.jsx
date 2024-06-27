@@ -81,7 +81,7 @@ const ProductListing = () => (
           <div className="frame-6">
             <div className="text-wrapper-5">3</div>
           </div>
-          <div className="text-wrapper-6">.....</div>
+          <div className="text-wrapper-6">....</div>
           <div className="frame-6">
             <div className="text-wrapper-5">4</div>
           </div>
