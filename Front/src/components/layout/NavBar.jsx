@@ -11,8 +11,8 @@ const NavBar = () => {
         <li>
           <a href="/products">Product</a>
         </li>
-        <li>Contact Us</li>
         <li>About Us</li>
+        <li>Contact Us</li>
         <li>My profile</li>
         <button>
           <a href="/auth">Sign In</a>
