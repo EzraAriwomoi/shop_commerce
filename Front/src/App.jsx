@@ -9,7 +9,7 @@ import HomePage from "./pages/homepage";
 import ProductDetails from "./pages/ProductDetails";
 import ShoppingcartPage from "./pages/shoppingcart";
 import ProductListPage from "./pages/productlisting";
-import MyAccount from "../src/components/myaccount/myaccount";
+import MyAccount from "./components/accountInfo/mainaccount";
 
 function App() {
   return (

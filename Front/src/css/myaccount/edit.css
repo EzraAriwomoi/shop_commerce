@@ -1,0 +1,150 @@
+.card1{
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 5px 0px;
+    color: rgb(49, 49, 51);
+    display: block;
+    height: 604px;
+    padding-top: 100px;
+}
+.header-edit{
+    display: flex;
+    align-items: center;
+    border-style: solid;
+    border-color: rgb(241, 241, 242);
+    min-height: 48px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+}
+.indx{
+    cursor: pointer;
+    display: block;
+    padding-right: 16px;
+}
+.head-edit{
+    color: rgb(49, 49, 51);
+    display: block;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 500;
+}
+.na{
+    height: 24px;
+    fill: grey;
+}
+.form{
+    display: flex;
+    flex-basis: auto;
+    max-width: 1184px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    width: 872px;
+}
+.col1{
+    display: flex;
+    flex-basis: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.fN{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(163, 163, 166);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(49, 49, 51);
+    cursor: text;
+    display: block;
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 400;
+    padding-block-end: 14px;
+    padding-block-start: 14px;
+    padding-inline-end: 16px;
+    padding-inline-start: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 14px;
+    text-align: start;
+    text-indent: 0px;
+    width: 404px;
+    word-spacing: 0px;
+}
+.lbl{
+    background-color: rgb(255, 255, 255);
+    color: rgb(117, 117, 122);
+    cursor: default;
+    font-family: 'Roboto';
+    font-size: 11px;
+    font-weight: 500;
+    left: 16px;
+    top: 0px;
+    max-width: calc(100% - 32px);
+    overflow: hidden;
+    padding-left: 4px;
+    line-height: 15.75px;
+    padding-right: 4px;
+    position: absolute;
+    text-wrap: nowrap;
+}
+.fname{
+    display: flex;
+    flex-direction: column;
+    margin-right: 32px;
+    min-height: 80px;
+    padding-top: 8px;
+    position: relative;
+}
+.lname{
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    position: relative;
+    padding-top: 8px;
+}
+.col2{
+    display: flex;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 872px;
+}
+.wth{
+    display: flex;
+    flex-basis: 50%;
+    padding-left: 8px;
+    padding-right: 16px;
+}
+.fiw{
+    position: relative;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.code{
+    display: block;
+    font-size: 15px;
+    height: 48px;
+    padding-bottom: 14px;
+    padding-left: 16px;
+    padding-top: 14px;
+    text-align: left;
+}
+.phonePrefix{
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: start;
+}
+.ent-phon{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+    margin-left: 16px;
+    min-height: 80px;
+    padding-top: 8px;
+}
