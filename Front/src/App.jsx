@@ -9,6 +9,7 @@ import HomePage from "./pages/homepage";
 import ProductDetails from "./pages/ProductDetails";
 import ShoppingcartPage from "./pages/shoppingcart";
 import ProductListPage from "./pages/productlisting";
+import MyAccount from "../src/components/myaccount/myaccount";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/productdetails/:productName" element={<ProductDetails />} />
           <Route path="/shoppingcart" element={<ShoppingcartPage/>} />
           <Route path="/products" element={<ProductListPage/>} />
+          <Route path="/myaccount" element={<MyAccount />} />
         </Routes>
       </main>
     </Router>
