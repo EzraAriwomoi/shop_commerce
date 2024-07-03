@@ -131,7 +131,69 @@ const Edit = () => {
                         <label className="lbl" htmlFor="fi-address2">Additional Information</label>
                     </div>
                 </div>
-                
+                <div className="col4">
+                    <div className="fi-w -fw -mrxl">
+                        <select
+                            required
+                            className="sel"
+                            id="fi-regionId"
+                            name="regionId"
+                            value={formData.regionId}
+                            onChange={handleChange}
+                        >
+                            <option value="" disabled>Please select</option>
+                            <option value="381">Baringo</option>
+                            <option value="387">Bomet</option>
+                            <option value="390">Bungoma</option>
+                            <option value="391">Busia</option>
+                            <option value="379">Elgeyo-Marakwet</option>
+                            <option value="366">Embu</option>
+                            <option value="359">Garissa</option>
+                            <option value="394">Homa Bay</option>
+                            <option value="363">Isiolo</option>
+                            <option value="385">Kajiado</option>
+                            <option value="388">Kakamega</option>
+                            <option value="386">Kericho</option>
+                            <option value="373">Kiambu</option>
+                            <option value="355">Kilifi</option>
+                            <option value="398">Kirinyaga</option>
+                            <option value="396">Kisii</option>
+                            <option value="393">Kisumu</option>
+                            <option value="367">Kitui</option>
+                            <option value="354">Kwale</option>
+                            <option value="382">Laikipia</option>
+                            <option value="357">Lamu</option>
+                            <option value="368">Machakos</option>
+                            <option value="369">Makueni</option>
+                            <option value="362">Marsabit</option>
+                            <option value="364">Meru</option>
+                            <option value="395">Migori</option>
+                            <option value="353">Mombasa</option>
+                            <option value="233" selected>Nairobi</option>
+                            <option value="383">Nakuru</option>
+                            <option value="380">Nandi</option>
+                            <option value="384">Narok</option>
+                            <option value="397">Nyamira</option>
+                            <option value="370">Nyandarua</option>
+                            <option value="371">Nyeri</option>
+                            <option value="376">Samburu</option>
+                            <option value="392">Siaya</option>
+                            <option value="358">Taita-Taveta</option>
+                            <option value="356">Tana River</option>
+                            <option value="365">Tharaka-Nithi</option>
+                            <option value="377">Trans-Nzoia</option>
+                            <option value="374">Turkana</option>
+                            <option value="378">Uasin Gishu</option>
+                            <option value="389">Vihiga</option>
+                            <option value="375">West Pokot</option>
+                        </select>
+                        <label className="lbl" htmlFor="fi-regionId">Region</label>
+                    </div>
+                    <div className="fi-w -fw">
+                       
+                        <label className="lbl" htmlFor="fi-cityId">City</label>
+                    </div>
+                </div>
                 <div className="col5">
                     <div className="-df -j-end -i-ctr -pam -hr">
                         <button className="btn _prim">Save</button>
