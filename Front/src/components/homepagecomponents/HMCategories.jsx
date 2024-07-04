@@ -2,9 +2,9 @@ import "../../css/homepagecss/homepage.css";
 
 const HMCategories = () => {
   return (
-    <div className="home-catergories flex-col-left">
+    <div className="home-catergories">
       <h3>Explore our catergories</h3>
-      <ul className="flex">
+      <ul>
         <a href="#" className="flex">
           <li>Necklace</li>
         </a>

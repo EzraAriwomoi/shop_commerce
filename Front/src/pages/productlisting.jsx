@@ -52,24 +52,24 @@ const products = [
 ];
 
 const ProductListing = () => (
-    <div>
-      <div className="product-list-page">
+  <>
+    <NavBar />
+    <div className="product-list-page">
       <div className="div-2">
-        <NavBar />
         <Frame className="" />
         <Frame2 className="" />
         <div className="divider1"></div>
 
         <div className="frame-2">
-        {products.map((product, index) => (
-          <ProductCard
-            key={index}
-            productName={product.productName}
-            price={product.price}
-            imageUrl={product.imageUrl}
-          />
-        ))}
-      </div>
+          {products.map((product, index) => (
+            <ProductCard
+              key={index}
+              productName={product.productName}
+              price={product.price}
+              imageUrl={product.imageUrl}
+            />
+          ))}
+        </div>
 
         <div className="frame-5">
           <div className="frame-6">
@@ -88,10 +88,9 @@ const ProductListing = () => (
         </div>
       </div>
     </div>
-    
     <Footer />
-    </div>
-  );
+  </>
+);
 export default ProductListing;
 
 

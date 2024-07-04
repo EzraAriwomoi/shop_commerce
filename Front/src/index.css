@@ -13,6 +13,7 @@
   transition: ease-in-out.5s;
 }
 
+
 input,
 button,
 select {
@@ -25,31 +26,12 @@ select {
 }
 
 button:hover {
-  scale: 0.9;
+  scale: 1.02;
   opacity: 0.8;
 }
 
 img:hover {
   opacity: 0.8;
-}
-
-a:link {
-  color: #1e90ff; /* DodgerBlue */
-}
-
-/* Visited link */
-a:visited {
-  color: #9400d3; /* DarkViolet */
-}
-
-/* Hover link */
-a:hover {
-  color: #ff4500; /* OrangeRed */
-}
-
-/* Active link */
-a:active {
-  color: #ff6347; /* Tomato */
 }
 
 /*Dont Change */

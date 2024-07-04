@@ -7,6 +7,7 @@ import HMCategories from "../components/homepagecomponents/HMCategories";
 import FeaturedProducts from "../components/homepagecomponents/FeaturedProducts";
 import HMExplore from "../components/homepagecomponents/HMExplore";
 import NavBar from "../components/layout/NavBar";
+import NavBar2 from "../components/layout/NavBar2";
 import Footer from "../components/layout/Footer";
 
 const homepage = () => {

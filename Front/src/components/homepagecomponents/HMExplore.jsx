@@ -2,7 +2,7 @@ import "../../css/homepagecss/homepage.css";
 
 const HMExplore = () => {
   return (
-    <div className="flex home-explore">
+    <div className="home-explore">
       <section className="he-image">
         <img src="/exploreimage.jpeg" />
       </section>

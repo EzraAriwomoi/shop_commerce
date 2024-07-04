@@ -5,8 +5,8 @@ import "../css/productdetails/productdetails.css";
 const ProductDetails = () => {
   return (
     <>
+      <NavBar />
       <div className="product-details">
-        <NavBar />
         <div className="pd-cont">
           <section className="pd-image-cont">
             <img src="/ring.jpeg" />

@@ -1,34 +1,26 @@
 // ProductCard.jsx
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import '../../../css/productlistingcss/productlisting.css';
-import { Button } from '../../../components/shoppingcartcomponent';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import "../../../css/productlistingcss/productlisting.css";
+import { Button } from "../../../components/shoppingcartcomponent";
 
 const ProductCard = ({ productName, price, imageUrl }) => (
-  <Link to={`/productdetails/${productName}`} className="group-5-link">
-    <div className="group-5">
-      <img className="rectangle" alt={productName} src={imageUrl} />
-      <div className="overlap">
-        <div className="group-4" />
-        <div className="overlap-group-wrapper">
-          <div className="overlap-group">
-            <div className="text-wrapper-2">{productName}</div>
-            <p className="kes">
-              <span className="span">Kes:</span>
-              <span className="text-wrapper-3"> {price}</span>
-            </p>
-          </div>
-        </div>
+  <div className="plp-card">
+    <a href={`/productdetails/${productName}`} className="plp-image">
+      <img src={imageUrl} />
+    </a>
+    <div className="plp-details">
+      <div className="plpd-details">
+        <h4>{productName}</h4>
+        <span>Kes: {price}</span>
       </div>
-      <Button className="frame-wrapper">
-        <div className="frame-3">
-          <div className="text-wrapper-4">Add to cart</div>
-        </div>
-      </Button>
+      <div className="plpd-btn">
+        <button>Add to Cart</button>
+      </div>
     </div>
-  </Link>
+  </div>
 );
 
 ProductCard.propTypes = {

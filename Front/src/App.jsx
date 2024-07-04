@@ -9,7 +9,11 @@ import HomePage from "./pages/homepage";
 import ProductDetails from "./pages/ProductDetails";
 import ShoppingcartPage from "./pages/shoppingcart";
 import ProductListPage from "./pages/productlisting";
-import MyAccount from "./components/accountInfo/mainaccount";
+import FAQPage from "./pages/FAQPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
+import MainAccount from "./components/accountInfo/mainaccount";
+import ContactUs from "./pages/ContactUs";
+import AboutUs from "./pages/aboutus";
 
 function App() {
   return (
@@ -18,10 +22,18 @@ function App() {
         <Routes>
           <Route path="/" exact element={<HomePage />} />
           <Route path="/auth" element={<CustomerAuth />} />
-          <Route path="/productdetails/:productName" element={<ProductDetails />} />
-          <Route path="/shoppingcart" element={<ShoppingcartPage/>} />
-          <Route path="/products" element={<ProductListPage/>} />
-          <Route path="/myaccount" element={<MyAccount />} />
+          <Route
+            path="/productdetails/:productName"
+            element={<ProductDetails />}
+          />
+          <Route path="/shoppingcart" element={<ShoppingcartPage />} />
+          <Route path="/products" element={<ProductListPage />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/resetpassword" element={<ResetPasswordPage />} />
+          <Route path="/myaccount" element={<MainAccount />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          
         </Routes>
       </main>
     </Router>

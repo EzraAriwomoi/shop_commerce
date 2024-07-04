@@ -1,0 +1,98 @@
+.container {
+  flex-direction: column;
+  margin: auto;
+  margin-top: 150px;
+  padding-bottom: 5px;
+  border-radius: 95px;
+  min-height: 3%;
+  width: 927px;
+  height: 620px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+.tittle {
+  font-size: 24px;
+  align-self: flex-start;
+  color: goldenrod;
+}
+.paragraph {
+  align-content: left;
+  text-orientation: sideways;
+
+  font-size: 15px;
+  color: black;
+}
+.form {
+  align-content: left;
+}
+.user_name {
+  align-content: left;
+  display: flex;
+  align-items: left;
+  width: 345px;
+  height: 46px;
+  color: goldenrod;
+  background: transparent;
+  border-color: lightblue;
+  border: 2px solid;
+  border-radius: 2%;
+  margin-top: 35px;
+}
+.user_email {
+  align-content: left;
+  align-items: left;
+  width: 345px;
+  height: 46px;
+  background: transparent;
+  border: 2px solid;
+  border-radius: 2%;
+  border-radius: 2%;
+  margin-top: 35px;
+  color: goldenrod;
+}
+.message {
+  align-content: left;
+  align-items: left;
+  width: 345px;
+  height: 73px;
+  background: transparent;
+  border-color: lightblue;
+  border: 2px solid;
+  border-radius: 2%;
+  border-radius: 2%;
+  margin-top: 40px;
+  color: goldenrod;
+}
+.button {
+  align-content: center;
+  align-items: center;
+  width: 345px;
+  height: 40px;
+  background: black;
+  border-color: black;
+  margin-top: 40px;
+  border-radius: 2px solid;
+  font-size: 15px;
+  color: white;
+}
+.details {
+  display: flex;
+  align-items: right;
+  margin-left: 390px;
+  color: black;
+  font-size: medium;
+}
+.image {
+  position: relative;
+  align-self: right;
+  align-items: right;
+
+  display: flex;
+  float: right;
+  max-width: 100%;
+  height: 450px;
+  margin: 10px;
+  padding-top: 45px;
+  padding-right: 80px;
+}
