@@ -3,15 +3,19 @@ import React, { useState } from 'react';
 import "../../css/myaccount/myaccount.css";
 import NavBar from "../layout/NavBar";
 
-// import AccountOverview from './subcomponents/myaccount';
-import Edit from './edit';
-
+import AccountOverview from './subcomponents/myaccount';
+import OrderHistory from './subcomponents/orderhistory';
+import SavedItems from './subcomponents/wishlist';
 
 const MyAccount = () => {
     const [activeLink, setActiveLink] = useState(1); // Default to "My Account"
 
     const handleLinkClick = (index) => {
         setActiveLink(index);
+    };
+
+    const handleAccountClick = () => {
+        setActiveLink(1);
     };
 
     return (
@@ -23,7 +27,7 @@ const MyAccount = () => {
                         href="#"
                         className={`eachpiece ${activeLink === 1 ? 'active' : ''}`}
                         id="account-menu"
-                        onClick={() => handleLinkClick(1)}
+                        onClick={handleAccountClick}
                     >
                         <svg className={`ic ${activeLink === 1 ? 'active' : ''}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                             <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
@@ -66,8 +70,9 @@ const MyAccount = () => {
                 </nav>
             </div>
 
-            {/* <AccountOverview /> */}
-            <Edit />
+            {activeLink === 1 && <AccountOverview />}
+            {activeLink === 2 && <OrderHistory />}
+            {activeLink === 3 && <SavedItems />}
         </div>
     );
 };

@@ -37,16 +37,22 @@
 .form{
     display: flex;
     flex-basis: auto;
+    flex-direction: column;
     max-width: 1184px;
     padding-bottom: 16px;
     padding-top: 16px;
     width: 872px;
+    position: relative;
 }
-.col1{
+.row {
     display: flex;
-    flex-basis: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.fname, .lname, .email, .location {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 48%;
 }
 .fN{
     background-color: rgb(255, 255, 255);
@@ -104,14 +110,6 @@
     position: relative;
     padding-top: 8px;
 }
-.col2{
-    display: flex;
-    flex-basis: 100%;
-    flex-shrink: 1;
-    padding-left: 8px;
-    padding-right: 8px;
-    width: 872px;
-}
 .wth{
     display: flex;
     flex-basis: 50%;
@@ -133,13 +131,13 @@
     padding-top: 14px;
     text-align: left;
 }
-.phonePrefix{
+.emailPrefix{
     font-family: Arial;
     font-size: 12px;
     font-weight: 400;
     text-align: start;
 }
-.ent-phon{
+.ent-email{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -147,4 +145,59 @@
     margin-left: 16px;
     min-height: 80px;
     padding-top: 8px;
+}
+.gen-loc{
+    box-sizing: border-box;
+    color: rgb(49, 49, 51);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+    min-height: 80px;
+    padding-top: 8px;
+    position: relative;
+}
+.location{
+    align-items: center;
+    background-attachment: scroll;
+    border-color: rgb(163, 163, 166);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: default;
+    display: block;
+    color: rgb(49, 49, 51);
+    font-size: 15px;
+    font-weight: 400;
+    height: 48px;
+    padding-left: 16px;
+    padding-right: 40px;
+    text-align: start;
+    width: 404px;
+}
+.col5{
+    display: flex;
+    justify-content: flex-end;
+}
+.divbtn{
+    align-items: center;
+    display: flex;
+    padding-right: 12px;
+    margin-top: auto;
+    margin-left: auto;
+    position: relative;
+}
+.btnsave{
+    align-items: flex-start;
+    background-color: gold;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-family: 'Roboto';
+    font-size: 13px;
+    font-weight: 500;
+    padding: 16px;
+    width: 10vw;
+    position: relative;
+    text-align: center;
 }

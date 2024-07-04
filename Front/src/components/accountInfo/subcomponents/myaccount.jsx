@@ -1,14 +1,26 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState } from 'react';
+import "../../../css/myaccount/myaccount.css";
+import Edit from '.././subcomponents/edit';
 
 const AccountOverview = () => {
+    const [editing, setEditing] = useState(false);
+
+    const handleEditClick = () => {
+        setEditing(true);
+    };
+
+    if (editing) {
+        return <Edit />;
+    }
+
     return (
         <section className="sect">
             <div className="card">
                 <header className="header">
                     <h1 className="ac-over">Account Overview</h1>
-                    <button className="btn-pen" aria-label="Edit Address">
-                        update
+                    <button className="btn-pen" aria-label="Edit Address" onClick={handleEditClick}>
+                        Update
                     </button>
                 </header>
                 <div className="row">
@@ -19,9 +31,9 @@ const AccountOverview = () => {
                             </header>
                             <div className="fig1">
                                 Name:
-                                <p className="nam-user">Ezra Ariwomoi</p>
+                                <p className="nam-user">user</p>
                                 Email:
-                                <p className="email-pass-user">kropezra@gmail.com</p>
+                                <p className="email-pass-user">email</p>
                                 Password:
                                 <p className="email-pass-user">********</p>
                             </div>
@@ -40,7 +52,7 @@ const AccountOverview = () => {
                                     <p className="def">Your shipping address:</p>
                                 </div>
                                 <address className="address">
-                                    <p>Kahawa Wendani/ Kenyatta University, Nairobi</p>
+                                    <p>Your location</p>
                                 </address>
                             </div>
                         </article>

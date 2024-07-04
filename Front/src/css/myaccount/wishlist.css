@@ -1,0 +1,96 @@
+.rowpass{
+    padding: 8px;
+    display: flex;
+    flex-shrink: 1;
+    max-width: 1184px;
+    width: 872px;
+}
+.colu{
+    display: block;
+    padding: 8px;
+    width: 856px;
+}
+.article{
+    display: flex;
+    border-color: rgb(212, 212, 214);
+    border-radius: 16px;
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(49, 49, 51);
+}
+.linkimg{
+    color: rgb(49, 49, 51);
+    cursor: pointer;
+    display: block;
+    padding: 8px;
+}
+.imgprod{
+    border-radius: 4px;
+    aspect-ratio: auto 104 / 104;
+    height: 104px;
+    width: 104px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+.nameproduct{
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+}
+.gp{
+    display: block;
+    margin-top: 25px;
+}
+.price{
+    font-size: 15px;
+    font-weight: 500;
+    font-family: 'Roboto';
+    display: block;
+    text-align: left;
+}
+.btns{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    flex-shrink: 0;
+    padding: 8px;
+}
+.btn_buy{
+    align-items: flex-start;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: gold;
+    transform: translateZ(0);
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-left: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    position: relative;
+}
+.btnremove{
+    align-items: center;
+    color: gold;
+    cursor: pointer;
+    display: inline-flex;
+    margin-right: 8px;
+    text-indent: 8px;
+    position: relative;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: transparent;
+}
+.bin{
+    fill: gold;
+    height: 16px;
+    width: 16px;
+}
