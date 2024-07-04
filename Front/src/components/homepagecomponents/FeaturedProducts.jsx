@@ -5,19 +5,19 @@ const FeaturedProducts = () => {
   const [products, setProducts] = useState([
     {
       productName: "Rings",
-      imageSrc: "/ring.jpeg",
+      imageSrc: "public/handbrace.jpg",
     },
     {
       productName: "Necklace",
-      imageSrc: "/necklace.jpeg",
+      imageSrc: "public/3 (copy 1).jpg",
     },
     {
       productName: "Rings",
-      imageSrc: "/ring.jpeg",
+      imageSrc: "public/26.jpg",
     },
     {
       productName: "Necklace",
-      imageSrc: "/necklace.jpeg",
+      imageSrc: "public/22.jpg",
     },
   ]);
 

@@ -11,20 +11,24 @@ const AboutPage = () => {
       <NavBar />
       <div className="about-page">
         <header className="about-header">
-          <h1>Kletos Jewelry</h1>
-          <p>Crafting Unique Pieces Since 1995</p>
+          <h1>Kletos</h1>
+          <p>Crafting Unique Pieces Since 1970</p>
         </header>
 
         <section className="our-story">
           <h2>Our Story</h2>
           <div className="story-content">
-            <img src="/ring.jpeg" alt="Our Workshop" className="story-image" />
+            <img
+              src="public/zuOPV13g-scaled.jpeg"
+              alt="Our Workshop"
+              className="story-image"
+            />
             <p>
-              Acme Jewelry was born out of a passion for creating unique,
-              handcrafted pieces that tell a story. Founded in 1995 by master
-              jeweler Jane Smith, our small workshop has grown into a beloved
-              boutique known for its exceptional craftsmanship and personalized
-              service.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+              exercitationem recusandae non harum cum qui ducimus aut nobis.
+              Quae ex molestiae, eius beatae ea, nisi, magni sit excepturi ipsa
+              neque incidunt! Aut nobis, a minima expedita placeat sint mollitia
+              beatae!
             </p>
           </div>
         </section>
@@ -67,17 +71,26 @@ const AboutPage = () => {
           <h2>Meet Our Team</h2>
           <div className="team-members">
             <div className="team-member">
-              <img src="/ring.jpeg" alt="Jane Smith" />
+              <img
+                src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+                alt="Jane Smith"
+              />
               <h3>Ezra</h3>
               <p>Founder & Master Jeweler</p>
             </div>
             <div className="team-member">
-              <img src="/ring.jpeg" alt="John Doe" />
+              <img
+                src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+                alt="John Doe"
+              />
               <h3>Rone Beatrice</h3>
               <p>Lead Designer</p>
             </div>
             <div className="team-member">
-              <img src="/ring.jpeg" alt="Emma Johnson" />
+              <img
+                src="https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+                alt="Emma Johnson"
+              />
               <h3>Consolata</h3>
               <p>Customer Experience Manager</p>
             </div>

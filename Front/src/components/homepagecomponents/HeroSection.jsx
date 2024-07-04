@@ -9,7 +9,7 @@ const HeroSection = () => {
         <button>Explore</button>
       </section>
       <section className="hero-image-section flex">
-        <img src="/heroimage.jpeg" />
+        <img src="https://img.freepik.com/premium-photo/individuals-engaged-traditional-african-crafts-modern-art-inspired-by-black-heritage_974247-51450.jpg" />
       </section>
     </div>
   );

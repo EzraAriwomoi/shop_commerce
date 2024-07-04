@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import ProductCard from '../pages/components/productcard/productcard';
+import ProductCard from "../pages/components/productcard/productcard";
 import { Frame } from "../pages/components/frame";
 import { Frame2 } from "../pages/components/frame";
 import "../css/productlistingcss/productlisting.css";
@@ -11,42 +11,44 @@ const products = [
   {
     productName: "Necklace",
     price: 2500,
-    imageUrl: "necklace.jpeg"
+    imageUrl: "necklace.jpeg",
   },
   {
     productName: "Jesus Bangles Bracelet",
     price: 2000,
-    imageUrl: "Jesus Bangles Bracelet for Women Stainless Steel Gold Color Luxury Bracelets 2024 Free Shipping Jewelry pulseras mujer bijoux - B1261G.jpeg"
+    imageUrl:
+      "Jesus Bangles Bracelet for Women Stainless Steel Gold Color Luxury Bracelets 2024 Free Shipping Jewelry pulseras mujer bijoux - B1261G.jpeg",
   },
   {
     productName: "Silver ring",
     price: 2000,
-    imageUrl: "ring.jpeg"
+    imageUrl: "ring.jpeg",
   },
   {
     productName: "Handbracelet",
     price: 2000,
-    imageUrl: "handbrace.jpg"
+    imageUrl: "handbrace.jpg",
   },
   {
     productName: "Basket",
     price: 11000,
-    imageUrl: "Doghouse.jpg"
+    imageUrl: "Doghouse.jpg",
   },
   {
     productName: "Rings Butterfly",
     price: 2500,
-    imageUrl: "2pcs_set Rings Butterfly All-match Butterfly Hollow Simple Couple Rings Alloy.jpeg"
+    imageUrl:
+      "2pcs_set Rings Butterfly All-match Butterfly Hollow Simple Couple Rings Alloy.jpeg",
   },
   {
     productName: "Buffalo artifact",
     price: 7100,
-    imageUrl: "gor.jpg"
+    imageUrl: "gor.jpg",
   },
   {
     productName: "Calabash",
     price: 6500,
-    imageUrl: "cal.jpg"
+    imageUrl: "cal.jpg",
   },
   // Add more products as needed
 ];
@@ -56,8 +58,10 @@ const ProductListing = () => (
     <NavBar />
     <div className="product-list-page">
       <div className="div-2">
-        <Frame className="" />
-        <Frame2 className="" />
+        <div>
+          <Frame className="" />
+          <Frame2 className="" />
+        </div>
         <div className="divider1"></div>
 
         <div className="frame-2">
@@ -92,5 +96,3 @@ const ProductListing = () => (
   </>
 );
 export default ProductListing;
-
-

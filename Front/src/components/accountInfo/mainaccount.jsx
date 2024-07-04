@@ -64,7 +64,7 @@ const MyAccount = () => {
                         </svg>
                         <div className={`name ${activeLink === 4 ? 'active' : ''}`}>Vouchers</div>
                     </a>
-                    <form method="get" className="btn-logout" action="">
+                    <form method="get" className="btn-logout" action="/">
                         <button className="btnLG">Logout</button>
                     </form>
                 </nav>

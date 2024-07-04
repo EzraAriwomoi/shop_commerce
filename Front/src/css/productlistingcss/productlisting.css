@@ -9,11 +9,15 @@
 }
 
 .product-list-page .div-2 {
-  background-color: #ffffff;
-  height: auto;
+  min-height: 100vh;
+  max-height: auto;
   position: relative;
   width: 66%;
   padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-list-page .group-3 {
@@ -239,8 +243,6 @@
   display: inline-flex;
   gap: 5px;
   left: 600px;
-  position: absolute;
-  top: 1182px;
 }
 
 .product-list-page .frame-6 {
@@ -297,7 +299,7 @@
     width: 100%;
   }
 
-  .product-list-page .div-2  {
+  .product-list-page .div-2 {
     width: 100%;
   }
 
@@ -312,9 +314,8 @@
     height: 300px;
   }
 
-  .plpd-details>h4{
+  .plpd-details > h4 {
     font-size: 14px;
-
   }
 
   .frame-5 {

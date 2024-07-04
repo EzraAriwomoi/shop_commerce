@@ -36,18 +36,31 @@ h2 {
   display: flex;
   align-items: center;
   gap: 2rem;
+  font-size: 20px;
+  color: black;
+  /* background-color: #d9d9d9; */
+  padding: 30px;
+  border-radius: 15px;
 }
 
 .story-image {
   width: 50%;
   max-width: 500px;
-  border-radius: 8px;
+  border-radius: 2px;
+}
+
+.our-process {
+  margin: 20px;
 }
 
 .process-steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  background-color: #faf5f5;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 18px;
 }
 
 .step {
@@ -67,6 +80,10 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  /* background-color: #d9d9d9; */
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 18px;
 }
 
 .team-member {
@@ -100,17 +117,17 @@ h2 {
 
 .cta-button {
   display: inline-block;
-  background-color: var(--secondary-color);
+  background-color: rgb(168, 111, 35);
   color: white;
   padding: 1rem 2rem;
-  border-radius: 5px;
+  border-radius: 2px;
   text-decoration: none;
   font-size: 1.1rem;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
 
 @media (max-width: 768px) {
