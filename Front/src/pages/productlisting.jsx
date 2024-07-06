@@ -1,6 +1,6 @@
-// ProductListing.jsx
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ProductCard from "../pages/components/productcard/productcard";
 import { Frame } from "../pages/components/frame";
 import { Frame2 } from "../pages/components/frame";
@@ -11,13 +11,35 @@ import Component from "../components/slide";
 
 const ProductListing = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         fetch('http://127.0.0.1:5000/products/')
-            .then(response => response.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error('Error fetching products:', error));
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                setProducts(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching products:', error);
+                setError(error);
+                setLoading(false);
+            });
     }, []);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
 
     return (
         <>
@@ -33,7 +55,7 @@ const ProductListing = () => {
                         {products.map(product => (
                             <ProductCard
                                 key={product.id}
-                                productId={product.id}  // Pass productId here
+                                productId={product.id}
                                 productName={product.name}
                                 price={product.price}
                                 imageUrl={product.image_url}

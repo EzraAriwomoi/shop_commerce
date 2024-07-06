@@ -22,10 +22,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<HomePage />} />
           <Route path="/auth" element={<CustomerAuth />} />
-          <Route
-            path="/productdetails/:productName"
-            element={<ProductDetails />}
-          />
+          <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/shoppingcart" element={<ShoppingcartPage />} />
           <Route path="/products" element={<ProductListPage />} />
           <Route path="/faq" element={<FAQPage />} />

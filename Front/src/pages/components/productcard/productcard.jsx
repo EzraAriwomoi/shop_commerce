@@ -1,13 +1,12 @@
-// ProductCard.jsx
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "../../../css/productlistingcss/productlisting.css";
-import { Button } from "../../../components/shoppingcartcomponent";
 
 const ProductCard = ({ productId, productName, price, imageUrl }) => (
   <div className="plp-card">
-    <Link to={`/productdetails/${productId}`} className="plp-image">
+    <Link to={`/products/${productId}`} className="plp-image">
       <img src={imageUrl} alt={productName} />
     </Link>
     <div className="plp-details">
