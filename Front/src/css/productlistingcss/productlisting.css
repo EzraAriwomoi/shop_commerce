@@ -138,14 +138,17 @@
 
 .product-list-page .frame-3 {
   align-items: center;
-  background-color: #8b4513;
-  border-radius: 20px;
+  background-color: #8b4513; /* You can change this color to your preferred secondary color */
+  border-radius: 2px; /* Changed border-radius to 2px */
   display: inline-flex;
-  gap: 10px;
   justify-content: center;
-  overflow: hidden;
-  padding: 13px 16px;
+  padding: 10px 16px; /* Adjusted padding for a better look */
   position: relative;
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.product-list-page .frame-3:hover {
+  background-color: #6e3710; /* Darker shade for hover effect */
 }
 
 .product-list-page .text-wrapper-4 {
@@ -153,12 +156,9 @@
   font-family: "Inter-Regular", Helvetica;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: normal;
-  margin-top: -1px;
-  position: relative;
   text-align: center;
   width: fit-content;
+  margin: 0;
 }
 
 .plp-card {
@@ -212,6 +212,7 @@
 .plpd-details > span {
   color: green;
   font-size: 14px;
+  margin-top: 5px; /* Added margin-top to create space between text and price */
 }
 
 .plpd-btn {
@@ -225,9 +226,30 @@
 .plpd-btn > button {
   height: 35px;
   width: 95%;
-  border-radius: 20px;
-  background-color: var(--secondary-color);
+  border-radius: 2px; /* Border radius of 2px */
+  background-color: var(
+    --secondary-color
+  ); /* Use your defined secondary color */
   color: white;
+  border: none; /* Remove border */
+  font-size: 14px; /* Font size for better readability */
+  font-weight: 500; /* Slightly bolder font weight */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.plpd-btn > button:hover {
+  background-color: darken(
+    var(--secondary-color),
+    10%
+  ); /* Darker shade on hover */
+}
+
+.plpd-btn > button:active {
+  background-color: darken(
+    var(--secondary-color),
+    20%
+  ); /* Even darker shade on click */
 }
 
 .product-list-page .line {
@@ -238,11 +260,14 @@
   top: 286px;
   width: 1268px;
 }
+
 .product-list-page .frame-5 {
   align-items: flex-end;
   display: inline-flex;
   gap: 5px;
   left: 600px;
+  margin-top: 20px; /* Add margin to create space above the numbers */
+  margin-bottom: 20px; /* Add margin to create space below the numbers */
 }
 
 .product-list-page .frame-6 {
@@ -286,6 +311,7 @@
   white-space: nowrap;
   width: fit-content;
 }
+
 .divider1 {
   width: 94%;
   height: 1.5px;

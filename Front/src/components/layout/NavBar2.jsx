@@ -1,4 +1,4 @@
-import "../../css/layoutcss/layout.css"
+import "../../css/layoutcss/layout.css";
 import { useState } from "react";
 import "../../css/layoutcss/layout.css";
 
@@ -12,20 +12,20 @@ const NotificationMenu = () => {
     {
       productName: "Ring",
       prodcutId: 1,
-      timeStamp: "12am",
-      imageSrc: "/ring.jpeg",
+      timeStamp: "12:00 a.m",
+      imageSrc: "public/23.jpg",
     },
     {
       productName: "Ring",
       prodcutId: 1,
-      timeStamp: "12am",
-      imageSrc: "/ring.jpeg",
+      timeStamp: "12:00 a.m",
+      imageSrc: "public/25.jpg",
     },
     {
       productName: "Ring",
       prodcutId: 1,
-      timeStamp: "12am",
-      imageSrc: "/ring.jpeg",
+      timeStamp: "12:00 a.m",
+      imageSrc: "public/26.jpg",
     },
   ]);
 

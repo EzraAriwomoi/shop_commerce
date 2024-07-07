@@ -1,7 +1,8 @@
+/* Container Styles */
 .container {
   width: 100vw;
-  background-color: #F0F4F8;
-  padding: 12px 15px; /* Reduced padding */
+  background-color: #f0f4f8;
+  padding: 12px 15px;
   box-sizing: border-box; /* Ensure padding and border are included in the element's total width */
 }
 
@@ -10,9 +11,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 100%; /* Ensure the container does not overflow */
+  max-width: 100%;
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
 .relative-container {
   position: relative;
   height: 38px;
@@ -41,29 +43,33 @@
   background: linear-gradient(to bottom right, #ffffff, #000000);
   padding-left: 5px;
   padding-top: 1px;
-  font-family: 'Lato', sans-serif;
-  color: #FFFFFF;
+  font-family: "Lato", sans-serif;
+  color: #ffffff;
 }
 
+/* Flex Div */
 .fdiv {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   align-self: stretch;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding-top: 68px;
   padding-left: 40px;
 }
+
 .fdiv .dot::after {
   content: ".";
   margin-left: 20px;
   color: #000;
 }
+
 .fdiv p {
   margin-left: 60px;
   margin-top: 45px;
 }
 
+/* Text Styling */
 .text-stylingn {
   margin-left: 20px;
   margin-top: 20px;
@@ -74,13 +80,15 @@
 .itms {
   margin-bottom: 0.5rem;
 }
+
 .divider {
   width: 92%;
   height: 1.5px;
-  background-color: #D1D5DB;
+  background-color: #d1d5db;
   margin: 20px 0;
 }
 
+/* Container 2 */
 .container2 {
   margin-left: auto;
   margin-right: auto;
@@ -94,6 +102,7 @@
   box-sizing: border-box;
 }
 
+/* Container 3 */
 .container3 {
   display: flex;
   width: 63%;
@@ -103,6 +112,7 @@
   box-sizing: border-box;
 }
 
+/* Container 4 */
 .container4 {
   display: flex;
   flex-direction: column;
@@ -111,31 +121,35 @@
   align-self: stretch;
 }
 
-.Dis {
+/* Discount Section */
+.discount-code {
   display: flex;
-  width: 30%;
-  justify-content: flex-start;
-  border-radius: 28px;
-  background-color: #D9D9D9;
-  padding-left: 20px;
-  margin-right: 800px;
-  box-sizing: border-box;
-}
-
-.discode {
-  display: flex;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  margin-top: 20px;
+  width: 100%;
 }
 
-.txtheading {
-  color: #747474 !important;
-  font-size: 15px;
-  font-family: 'arial';
+.discount-code input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  margin-right: 10px;
 }
 
+.discount-code button {
+  padding: 10px 20px;
+  background-color: #bfa102;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Apply Button */
 .applybtn {
   display: flex;
   height: 40px;
@@ -144,16 +158,17 @@
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  background-color: #BFA102;
+  background-color: #bfa102;
   padding-left: 20px;
   padding-right: 20px;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
-  color: #FFFFFF;
+  color: #ffffff;
   box-sizing: border-box;
 }
 
+/* Order Summary */
 .order-summ {
   display: flex;
   width: 28%;
@@ -163,10 +178,10 @@
   gap: 1rem;
   margin-right: 30px;
   border-radius: 24px;
-  border: 2px solid #D1D5DB;
-  background-color: #D9D9D9;
+  border: 2px solid #d1d5db;
+  background-color: #d9d9d9;
   padding: 1rem;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 .div-sub {
@@ -187,6 +202,7 @@
   align-self: flex-end;
 }
 
+/* Cash */
 .cash {
   color: #029522 !important;
   font-size: 16px;
@@ -197,6 +213,7 @@
   width: 20px;
 }
 
+/* Payment Button */
 .payment {
   display: flex;
   height: 40px;
@@ -206,7 +223,7 @@
   justify-content: center;
   gap: 1.5rem;
   border-radius: 12px;
-  background-color: #BFA102;
+  background-color: #bfa102;
   padding-left: 20px;
   padding-right: 10px;
   text-align: center;
@@ -216,7 +233,7 @@
   box-sizing: border-box;
 }
 
-/* ul */
+/* List Styles */
 .ul {
   list-style: none;
   padding: 0;
@@ -239,4 +256,134 @@
 
 .ul a:hover {
   color: black;
+}
+
+/* Flex Container for Cart Items */
+.flex-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 2px solid #d1d5db;
+  background-color: #d9d9d9;
+  flex: 1;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.flex-full {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.image-cover {
+  height: 106px;
+  width: 100px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.flex-column-start {
+  display: flex;
+  flex: 1;
+  padding-left: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.flex-start-between {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  align-self: stretch;
+  width: 100%;
+}
+
+.h5txt {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.kescountertext {
+  margin-top: 8px;
+  color: #029522;
+  font-size: 16px;
+  font-family: "Arial", sans-serif;
+  font-weight: 600;
+}
+
+.bdy {
+  margin-top: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.oneqtytext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  align-self: flex-end;
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.oneqtytext button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.oneqtytext input {
+  width: 30px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+.kescountertext1 {
+  color: #029522;
+  font-size: 20px;
+  padding-top: 12px;
+  padding-right: 12px;
+}
+
+.divhead {
+  margin-bottom: 8px;
+  display: flex;
+  width: 15%;
+  height: 33px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-radius: 0;
+  border: 2px solid #000;
+  background-color: #ffffff;
+}
+
+.imgcont {
+  padding-top: 5px;
 }

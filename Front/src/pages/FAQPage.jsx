@@ -183,7 +183,7 @@ const faqData = {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f9f9f9;
 `;
 
@@ -204,7 +204,7 @@ const SearchBar = styled.input`
 
 const Sidebar = styled.div`
   width: 250px;
-  background-color: #8b4513;
+  background-color: rgb(202, 142, 63);
   color: white;
   padding: 20px;
 `;

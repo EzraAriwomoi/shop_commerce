@@ -4,7 +4,7 @@ const HMExplore = () => {
   return (
     <div className="home-explore">
       <section className="he-image">
-        <img src="https://us.missoma.com/cdn/shop/products/squiggle-chubby-two-tone-enamel-hoop-earrings-18ct-gold-plated-hot-pink-earrings-missoma-603334.jpg" />
+        <img src="https://img.freepik.com/premium-photo/radiant-trio-african-women-traditional-head-wraps_1109505-209.jpg" />
       </section>
       <section className="he-details">
         <h1>Breathtakingly Beautiful</h1>

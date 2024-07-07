@@ -103,6 +103,10 @@ const Navbar = () => {
             )}
           </div>
         </div>
+
+        <button className="sign-in-button">
+            <Link to="/auth">Sign In</Link>
+        </button>
       </div>
     </nav>
   );

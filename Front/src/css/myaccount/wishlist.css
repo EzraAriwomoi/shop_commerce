@@ -1,101 +1,117 @@
-.rowpass{
-    padding: 8px;
-    display: flex;
-    flex-shrink: 1;
-    max-width: 1184px;
-    width: 872px;
+.rowpass {
+  padding: 8px;
+  display: flex;
+  flex-shrink: 1;
+  max-width: 1184px;
+  width: 872px;
 }
-.colu{
-    display: block;
-    padding: 8px;
-    width: 856px;
+
+.colu {
+  display: block;
+  padding: 8px;
+  width: 856px;
 }
-.article{
-    display: flex;
-    border-color: rgb(212, 212, 214);
-    border-radius: 16px;
-    border-style: solid;
-    border-width: 1px;
-    height: 106px;
-    color: rgb(49, 49, 51);
+
+.article {
+  display: flex;
+  border-color: rgb(212, 212, 214);
+  border-radius: 16px;
+  border-style: solid;
+  border-width: 1px;
+  height: 106px;
+  color: rgb(49, 49, 51);
+  overflow: hidden; /* Ensure children stay within the container */
 }
-.linkimg{
-    color: rgb(49, 49, 51);
-    cursor: pointer;
-    display: block;
-    padding-right: 8px;
+
+.linkimg {
+  color: rgb(49, 49, 51);
+  cursor: pointer;
+  display: block;
+  padding-right: 8px;
 }
-.imgprod{
-    border-top-left-radius: 16px;
-    border-bottom-left-radius: 16px;
-    height: 104px;
-    width: 104px;
+
+.imgprod {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  height: 100%; /* Ensure the image takes full height of its container */
+  width: auto; /* Adjust width automatically to maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container */
+  margin: 0;
 }
-.details{
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
+
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text vertically */
+  padding: 8px;
 }
-.nameproduct{
-    cursor: pointer;
-    display: block;
-    font-size: 15px;
-    text-decoration: none;
-    color: black;
+
+.nameproduct {
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+  text-align: center; /* Center text horizontally */
+  margin-bottom: 8px; /* Add margin to separate from the price */
 }
-.gp{
-    display: block;
-    margin-top: 25px;
+
+.price {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Roboto";
+  display: block;
+  text-align: center; /* Center text horizontally */
 }
-.price{
-    font-size: 15px;
-    font-weight: 500;
-    font-family: 'Roboto';
-    display: block;
-    text-align: left;
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center buttons vertically */
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 8px;
 }
-.btns{
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    flex-shrink: 0;
-    padding: 8px;
+
+.btn_buy {
+  align-items: flex-start;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: rgb(168, 111, 35);
+  padding-bottom: 12px;
+  padding-top: 12px;
+  height: 44px;
+  padding-right: 16px;
+  padding-left: 16px;
+  width: 100%; /* Make the button take full width */
+  position: relative;
 }
-.btn_buy{
-    align-items: flex-start;
-    border-radius: 14px;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 500;
-    background-color: gold;
-    padding-bottom: 12px;
-    padding-top: 12px;
-    height: 44px;
-    padding-right: 16px;
-    padding-left: 16px;
-    width: 6.1vw;
-    position: relative;
+
+.btnremove {
+  align-items: center;
+  color: rgb(168, 111, 35);
+  cursor: pointer;
+  display: inline-flex;
+  margin-right: 8px;
+  text-indent: 8px;
+  position: relative;
+  height: 38px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: #e7e4e4;
+  width: 100%; /* Make the button take full width */
 }
-.btnremove{
-    align-items: center;
-    color: gold;
-    cursor: pointer;
-    display: inline-flex;
-    margin-right: 8px;
-    text-indent: 8px;
-    position: relative;
-    height: 38px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 500;
-    background-color: #f3f3f3;
+
+.bin {
+  fill: rgb(168, 111, 35);
+  height: 16px;
+  width: 16px;
 }
-.bin{
-    fill: gold;
-    height: 16px;
-    width: 16px;
-}
-.b-remove{
-    padding-top: 8px;
+
+.b-remove {
+  padding-top: 8px;
 }

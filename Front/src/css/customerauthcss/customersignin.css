@@ -5,13 +5,12 @@
   height: 85vh;
   min-height: 300px;
   border-radius: 20px;
-  background-color: white;
+  background-color: #d9d9d9;
   box-shadow: 0px 2px 10px rgba(128, 128, 128, 0.1);
 }
 
 .csc-heading {
   height: 10%;
-  margin-bottom: 43px;
   width: 100%;
 }
 
@@ -35,7 +34,7 @@
 .csc-input-div > label {
   width: 100%;
   padding: 5px 0px;
-  color: darkgray;
+  color: black;
 }
 
 .csc-input-div > input {
@@ -47,7 +46,9 @@
   width: 70%;
   font-size: 14px;
   justify-content: flex-start;
-  color: var(--link-color);
+  color: rgb(53, 50, 50);
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .csc-buttons {
@@ -60,20 +61,22 @@
 .csc-buttons > button {
   height: 50px;
   width: 50%;
-  background-color: var(--primary-color);
+  background-color: rgb(202, 142, 63);
+  border-radius: 2px;
 }
 
 .register-section {
   font-size: 14px;
-  margin-top: 84px;
   color: darkgray;
+  font-weight: 500;
 }
 
 .register-action {
-  color: var(--link-color);
+  color: rgb(104, 95, 83);
   transition: 0.3s ease-in-out;
   user-select: none;
   font-size: 14px;
+  cursor: pointer;
 }
 
 .register-action:hover {

@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import "./style.css";
-// import { Button } from "../../../components/shoppingcartcomponent";
 
 export const Frame = () => {
   return (

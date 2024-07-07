@@ -34,7 +34,7 @@
 .crc-input-div > label {
   width: 100%;
   padding: 5px 0px;
-  color: darkgray;
+  color: black;
   font-size: 14px;
 }
 
@@ -53,16 +53,19 @@
 .crc-buttons > button {
   height: 50px;
   width: 50%;
-  background-color: var(--primary-color);
+  background-color: rgb(202, 142, 63);
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .crc-sign-section {
   font-size: 14px;
   color: darkgray;
+  cursor: pointer;
 }
 
 .crc-sign-in-action {
-  color: var(--link-color);
+  color: #d9d9d9;
   font-size: 14px;
 }
 

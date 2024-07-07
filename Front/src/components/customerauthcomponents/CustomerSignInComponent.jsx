@@ -1,38 +1,37 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../../css/customerauthcss/customersignin.css";
 
-// eslint-disable-next-line react/prop-types
-const CustomerSignInComponent = ({ onToggle }) => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+const CustomerSignInComponent = ({ onToggle, setIsLoggedIn }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:5000/auth/signin', formData);
-      console.log(response.data); // Assuming response contains token or user data upon successful login
-
-      // Example: If successful, you might set authentication state and redirect
-      // For simplicity, assuming a successful login will redirect to homepage
-      // You may want to manage token storage and authentication state in a more secure manner
-
-      // Example redirection (you can replace this with your logic)
-      window.location.href = '/'; // Redirect to homepage after successful login
-
+      const response = await fetch('http://127.0.0.1:5000/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Sign-in successful:', data);
+        localStorage.setItem('token', data.token);
+        // setIsLoggedIn(true); 
+        navigate('/');
+      } else {
+        const errorMessage = data.error || 'Sign-in failed';
+        setError(errorMessage);
+        console.error('Sign-in failed:', errorMessage);
+      }
     } catch (error) {
-      setError(error.response.data.error);
+      setError('An error occurred. Please try again.');
+      console.error('Error during sign-in:', error);
     }
   };
 
@@ -41,25 +40,25 @@ const CustomerSignInComponent = ({ onToggle }) => {
       <div className="csc-heading flex">
         <h1>SIGN IN</h1>
       </div>
-      <form className="csc-inputs flex-col" onSubmit={handleSubmit}>
+      <form onSubmit={handleSignIn} className="csc-inputs flex-col">
         <div className="csc-input-div flex-col-left">
           <label>Email</label>
-          <input 
-            type="email" 
-            name="email" 
+          <input
+            type="email"
             placeholder="Enter email"
-            value={formData.email} 
-            onChange={handleChange} 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
         <div className="csc-input-div flex-col-left">
           <label>Password</label>
-          <input 
-            type="password" 
-            name="password" 
+          <input
+            type="password"
             placeholder="Enter Password"
-            value={formData.password} 
-            onChange={handleChange} 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </div>
         <a className="forgot-password flex">Forgot Password?</a>
@@ -68,12 +67,12 @@ const CustomerSignInComponent = ({ onToggle }) => {
           <button type="submit">Sign In</button>
         </div>
       </form>
-      <div className="register-section">
-        <span>Don&apos;t have an account?{" "}</span>
+      <span className="register-section">
+        Don&apos;t have an account?{" "}
         <span className="register-action" onClick={onToggle}>
           Register
         </span>
-      </div>
+      </span>
     </div>
   );
 };

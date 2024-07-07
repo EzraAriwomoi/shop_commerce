@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React from "react";
 import "../css/contactuscss/contactus.css";
 import NavBar from "../components/layout/NavBar";
 import Footer from "../components/layout/Footer";
@@ -15,13 +15,17 @@ const ContactUs = () => {
               <div>
                 <h2 className="head-contactus">CONTACT US</h2>
                 <p className="text-muted-foreground">
-                  Have a question or want to work together? Fill out the form below and we&apos;ll get back to you as soon as possible.
+                  Have a question or want to work together? Fill out the form
+                  below and we&apos;ll get back to you as soon as possible.
                 </p>
               </div>
               <form className="space-y-4">
                 <div className="space-y-4">
                   <div>
-                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="name">
+                    <label
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      htmlFor="name"
+                    >
                       Name
                     </label>
                     <input
@@ -32,7 +36,10 @@ const ContactUs = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="email">
+                    <label
+                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      htmlFor="email"
+                    >
                       Email
                     </label>
                     <input
@@ -44,7 +51,10 @@ const ContactUs = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="message">
+                  <label
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    htmlFor="message"
+                  >
                     Message
                   </label>
                   <textarea
@@ -54,12 +64,14 @@ const ContactUs = () => {
                     placeholder="Enter your message"
                   ></textarea>
                 </div>
-                <button className="send-button" type="submit">Send</button>
+                <button className="send-button" type="submit">
+                  Send
+                </button>
               </form>
             </div>
             <div className="space-y-6">
               <img
-                src="contact_img.jpg"
+                src="https://img.freepik.com/premium-photo/black-woman-secretary-business-telephone-call-working-communication-calling-clients-african-lady-girl-receptionist-speaking-with-office-management-person-corporate-company-call_590464-83800.jpg"
                 alt="Company Location"
                 className="rounded-lg w-full h-auto image-fit"
               />
