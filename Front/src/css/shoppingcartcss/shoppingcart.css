@@ -340,9 +340,9 @@
   align-self: flex-end;
   font-weight: 600;
   font-size: 13px;
-  border: 1px solid #d1d5db;
+  border: 1px solid transparent;
   border-radius: 20px;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 .oneqtytext button {

@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "../css/shoppingcartcss/shoppingcart.css";
@@ -19,26 +21,74 @@ const CloseIcon = (
 );
 
 function ShoppingCartItems({
+  product_id,
   image_url,
   product_name,
   product_price,
-  total,
+  quantity: initialQuantity, // Use initial quantity from props
+  fetchCartItems,
   ...props
 }) {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(initialQuantity); // Use initialQuantity as initial state
+  const [subtotal, setSubtotal] = useState(parseFloat(product_price * initialQuantity).toFixed(2));
 
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
+  const increaseQuantity = async () => {
+    const newQuantity = quantity + 1;
+    await updateQuantity(newQuantity);
+    setQuantity(newQuantity);
   };
 
-  const decreaseQuantity = () => {
+  const decreaseQuantity = async () => {
     if (quantity > 1) {
-      setQuantity(quantity - 1);
+      const newQuantity = quantity - 1;
+      await updateQuantity(newQuantity);
+      setQuantity(newQuantity);
     }
   };
 
+  const updateQuantity = async (newQuantity) => {
+    try {
+      const token = localStorage.getItem("token");
+      await axios.put(`http://localhost:5000/cart/update`, {
+        product_id: product_id,
+        quantity: newQuantity,
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+      fetchCartItems(); // Refresh cart items after update
+    } catch (error) {
+      console.error("Error updating quantity:", error);
+    }
+  };
+
+  useEffect(() => {
+    const newSubtotal = (parseFloat(product_price) * quantity).toFixed(2);
+    setSubtotal(newSubtotal);
+  }, [quantity, product_price]);
+
+  const handleRemoveItem = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      const response = await axios.delete(`http://localhost:5000/cart/remove/${product_id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      if (response.status === 200) {
+        console.log("Item removed successfully");
+        fetchCartItems(); // Fetch updated cart items after deletion
+      } else {
+        console.error("Failed to remove item:", response.data.error);
+      }
+    } catch (error) {
+      console.error("Error removing item:", error);
+    }
+  };  
+
   return (
-    // eslint-disable-next-line react/prop-types
     <div {...props} className={`${props.className} flex-container`}>
       <div className="flex-full">
         <img src={image_url} alt="image" className="image-cover" />
@@ -48,25 +98,41 @@ function ShoppingCartItems({
             <button
               className="close-button"
               aria-label="Close"
-              onClick={() => console.log("Close button clicked")}
+              onClick={handleRemoveItem}
             >
               {CloseIcon}
             </button>
           </div>
-          <p className="kescountertext">{product_price}</p>
+          <p className="kescountertext">Kes. {product_price}</p>
           <div className="bdy">
             <div className="divhead">
-              <h6 className="oneqtytext">{quantity} qty</h6>
+              <h6 className="oneqtytext">
+                {quantity} qty
+              </h6>
               <div className="quantity-controls">
                 <button className="quantity-button" onClick={increaseQuantity}>
-                  +
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                    width="10"
+                    height="10"
+                  >
+                    <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+                  </svg>
                 </button>
                 <button className="quantity-button" onClick={decreaseQuantity}>
-                  -
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 384 512"
+                    width="10"
+                    height="10"
+                  >
+                    <path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                  </svg>
                 </button>
               </div>
             </div>
-            <h5 className="kescountertext1">{total}</h5>
+            <h5 className="kescountertext1">Kes. {subtotal}</h5>
           </div>
         </div>
       </div>
@@ -95,12 +161,28 @@ export default function ShoppingcartPage() {
         throw new Error("Failed to fetch cart items");
       }
       const data = await response.json();
-      console.log("Cart items fetched:", data); // Log the fetched cart items
+      console.log("Cart items fetched:", data);
       setCartItems(data);
     } catch (error) {
       console.error("Error fetching cart items:", error);
-      // Handle error (e.g., show error message)
     }
+  };
+
+  // Function to calculate subtotal
+  const calculateSubtotal = () => {
+    let subtotal = 0;
+    cartItems.forEach(item => {
+      subtotal += parseFloat(item.product_price) * item.quantity;
+    });
+    return subtotal.toFixed(2);
+  };
+
+  // Function to calculate total
+  const calculateTotal = () => {
+    const subtotal = parseFloat(calculateSubtotal());
+    const discount = subtotal * (6.12 / 100); // Example discount percentage
+    const shipping = 500.00; // Example shipping cost
+    return (subtotal + shipping - discount).toFixed(2);
   };
 
   return (
@@ -122,10 +204,12 @@ export default function ShoppingcartPage() {
               {cartItems.map((item, index) => (
                 <ShoppingCartItems
                   key={`cart-item-${index}`}
+                  product_id={item.product_id}
                   image_url={item.image_url}
                   product_name={item.product_name}
-                  product_price={`Kes: ${item.product_price}`}
-                  total={`Kes. ${item.total}`}
+                  product_price={item.product_price}
+                  quantity={item.quantity} // Pass quantity to maintain state
+                  fetchCartItems={fetchCartItems}
                 />
               ))}
             </div>
@@ -135,7 +219,7 @@ export default function ShoppingcartPage() {
             <div className="div-sub">
               <div className="sub">
                 <p>Subtotal</p>
-                <p>Kes: {calculateSubtotal(cartItems)}</p>
+                <p>Kes: {calculateSubtotal()}</p>
               </div>
               <div className="sub">
                 <p>Shipping</p>
@@ -143,11 +227,11 @@ export default function ShoppingcartPage() {
               </div>
               <div className="sub">
                 <p>Discount (6.12%)</p>
-                <p>Kes: {calculateDiscount(cartItems)}</p>
+                <p>Kes: {(parseFloat(calculateSubtotal()) * (6.12 / 100)).toFixed(2)}</p>
               </div>
               <div className="sub">
                 <h3 className="self-end">Total</h3>
-                <h4 className="cash">Kes: {calculateTotal(cartItems)}</h4>
+                <h4 className="cash">Kes: {calculateTotal()}</h4>
               </div>
             </div>
             <button className="payment">
@@ -167,22 +251,4 @@ export default function ShoppingcartPage() {
       </div>
     </>
   );
-}
-
-// Helper functions to calculate subtotal, discount, and total
-function calculateSubtotal(items) {
-  return items.reduce((total, item) => total + item.price, 0).toFixed(2);
-}
-
-function calculateDiscount(items) {
-  const subtotal = calculateSubtotal(items);
-  const discountPercentage = 6.12; // Example discount percentage
-  return (subtotal * (discountPercentage / 100)).toFixed(2);
-}
-
-function calculateTotal(items) {
-  const subtotal = parseFloat(calculateSubtotal(items));
-  const discount = parseFloat(calculateDiscount(items));
-  const shipping = 500.00; // Example shipping cost
-  return (subtotal + shipping - discount).toFixed(2);
 }

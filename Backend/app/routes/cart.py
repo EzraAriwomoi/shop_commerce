@@ -41,7 +41,8 @@ def add_cart_item():
     if not product:
         return jsonify({'error': 'Product not found'}), 404
 
-    cart_item = CartItem(user_id=user_id, product_id=product_id, quantity=quantity)
+    # Check if the cart item already exists
+    cart_item = CartItem.query.filter_by(user_id=user_id, product_id=product_id).first()
     if cart_item:
         # If the item already exists in the cart, update the quantity
         cart_item.quantity += quantity
@@ -55,37 +56,40 @@ def add_cart_item():
 
 @cart_bp.route('/update', methods=['PUT'])
 @cross_origin()
-@csrf.exempt
 @jwt_required()
 def update_cart_item():
     user_id = get_jwt_identity()
     data = request.get_json()
+
     product_id = data.get('product_id')
     quantity = data.get('quantity')
 
     if not all([product_id, quantity]):
         return jsonify({'error': 'Product ID and quantity are required'}), 400
 
-    cart_item = CartItem.query.filter_by(user_id=user_id, product_id=product_id).first()
-    if not cart_item:
-        return jsonify({'error': 'Cart item not found'}), 404
+    try:
+        cart_item = CartItem.query.filter_by(user_id=user_id, product_id=product_id).first()
 
-    cart_item.quantity = quantity
-    db.session.commit()
+        if not cart_item:
+            return jsonify({'error': 'Cart item not found'}), 404
 
-    return jsonify({'message': 'Cart item updated successfully'}), 200
+        cart_item.quantity = quantity
+        db.session.commit()
 
-@cart_bp.route('/remove', methods=['DELETE'])
+        return jsonify({'message': 'Cart item updated successfully'}), 200
+
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'error': f'Failed to update cart item: {str(e)}'}), 500
+    
+@cart_bp.route('/remove/<int:product_id>', methods=['DELETE'])
 @cross_origin()
 @csrf.exempt
 @jwt_required()
-def remove_cart_item():
+def remove_cart_item(product_id):
     user_id = get_jwt_identity()
-    data = request.get_json()
-    product_id = data.get('product_id')
 
-    if not product_id:
-        return jsonify({'error': 'Product ID is required'}), 400
+    # No need to get JSON data from request body since product_id is in the URL
 
     cart_item = CartItem.query.filter_by(user_id=user_id, product_id=product_id).first()
     if not cart_item:

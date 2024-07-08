@@ -10,6 +10,7 @@ const ProductDetails = () => {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [addingToCart, setAddingToCart] = useState(false);
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -39,25 +40,37 @@ const ProductDetails = () => {
     }, [id]);
 
     const addToCart = async () => {
+        const token = localStorage.getItem('token');
+        
+        if (!token) {
+            alert('You need to be logged in to add items to the cart.');
+            return;
+        }
+
+        setAddingToCart(true);
+        
         try {
-            const token = localStorage.getItem('token'); // Assuming token is stored in localStorage
+            const user_id = localStorage.getItem('user_id'); // Assuming user_id is stored in localStorage
+
             const response = await fetch(`http://127.0.0.1:5000/cart/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify({ product_id: id, quantity: 1 }), // Assuming quantity is 1 for simplicity
+                body: JSON.stringify({ user_id, product_id: product.id, quantity: 1 }), // Use fetched product details
             });
-    
+
             if (!response.ok) {
                 throw new Error(`Failed to add to cart. HTTP status ${response.status}`);
             }
-    
+
             alert('Product added to cart!');
         } catch (error) {
             console.error('Error adding to cart:', error);
             alert('Failed to add to cart.');
+        } finally {
+            setAddingToCart(false);
         }
     };
 
@@ -89,7 +102,9 @@ const ProductDetails = () => {
                         <p>
                             {product.description}
                         </p>
-                        <button onClick={addToCart}>Add to Cart</button>
+                        <button onClick={addToCart} disabled={addingToCart}>
+                            {addingToCart ? 'Adding...' : 'Add to Cart'}
+                        </button>
                     </section>
                 </div>
             </div>
