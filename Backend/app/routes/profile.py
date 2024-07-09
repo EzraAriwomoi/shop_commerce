@@ -6,8 +6,9 @@ from flask_cors import CORS
 from flask_cors import cross_origin
 
 app = Flask(__name__)
-CORS(app)
+
 profile_bp = Blueprint('profile', __name__)
+CORS(profile_bp, resources={r"/*"})
 
 @profile_bp.route('/', methods=['GET'])
 @jwt_required()

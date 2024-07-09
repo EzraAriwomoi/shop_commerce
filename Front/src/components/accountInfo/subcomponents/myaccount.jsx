@@ -1,17 +1,56 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../../css/myaccount/myaccount.css";
 import Edit from '.././subcomponents/edit';
+import EditPassword from '.././subcomponents/editpassword';
 
 const AccountOverview = () => {
     const [editing, setEditing] = useState(false);
+    const [editingPassword, setEditingPassword] = useState(false);
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+
+    useEffect(() => {
+        // Function to fetch user profile data
+        const fetchProfileData = async () => {
+            try {
+                const token = localStorage.getItem('token');
+                const response = await fetch('http://localhost:5000/profile/', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to fetch profile data');
+                }
+                const data = await response.json();
+                setFullName(data.full_name);
+                setEmail(data.email);
+            } catch (error) {
+                console.error('Error fetching profile:', error);
+                // Handle error fetching profile data
+            }
+        };
+
+        fetchProfileData(); // Call the function to fetch profile data when component mounts
+    }, []); // Empty dependency array ensures it runs only once when component mounts
 
     const handleEditClick = () => {
         setEditing(true);
     };
 
+    const handleEditPasswordClick = () => {
+        setEditingPassword(true);
+    };
+
     if (editing) {
         return <Edit />;
+    }
+
+    if (editingPassword) {
+        return <EditPassword />;
     }
 
     return (
@@ -30,13 +69,21 @@ const AccountOverview = () => {
                                 <h2 className="head1">Account details</h2>
                             </header>
                             <div className="fig1">
-                                Name:
-                                <p className="nam-user">user</p>
+                                Full names:
+                                <p className="nam-user">{fullName}</p>
                                 Email:
-                                <p className="email-pass-user">email</p>
-                                Password:
-                                <p className="email-pass-user">********</p>
+                                <p className="email-pass-user">{email}</p>
                             </div>
+                        </article>
+                        <header className="header-password">
+                            <h1 className="ac-over">Change your password</h1>
+                            <button className="btn-changepass" aria-label="Change password" onClick={handleEditPasswordClick}>
+                                Change password
+                            </button>
+                        </header>
+                        <article className="card-password">
+                            Password:
+                            <p className="email-pass-user">********</p>
                         </article>
                     </div>
                     <div className="col">

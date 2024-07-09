@@ -1,8 +1,42 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../../css/myaccount/wishlist.css";
 
 const SavedItems = () => {
+  const [wishlistItems, setWishlistItems] = useState([]);
+
+  useEffect(() => {
+    // Fetch the wishlist items when the component mounts
+    fetch('http://127.0.0.1:5000/wishlist/', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => setWishlistItems(data))
+      .catch(error => console.error('Error fetching wishlist:', error));
+  }, []);
+
+  const handleRemove = (productId) => {
+    fetch(`http://127.0.0.1:5000/wishlist/${productId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          setWishlistItems(wishlistItems.filter(item => item.product_id !== productId));
+        } else {
+          return response.json().then(error => { throw new Error(error.error); });
+        }
+      })
+      .catch(error => console.error('Error removing item from wishlist:', error));
+  };
+
   return (
     <section className="sect">
       <div className="card">
@@ -10,33 +44,30 @@ const SavedItems = () => {
           <h2 className="">Saved items</h2>
         </header>
         <div className="rowpass">
-          <div className="colu">
-            <article className="article">
-              <a href="" className="linkimg">
-                <img
-                  src="public/26.jpg"
-                  className="imgprod"
-                  width="104"
-                  height="104"
-                />
-              </a>
-              <div className="details">
-                <div className="nameproduct">Product name :</div>
-                <div className="gp">
-                  <p className="price">Price :</p>
+          {wishlistItems.map(item => (
+            <div className="colu" key={item.product_id}>
+              <article className="article">
+                <a href="" className="linkimg">
+                  <img
+                    src={`public/${item.product_id}.jpg`}
+                    className="imgprod"
+                    width="104"
+                    height="104"
+                  />
+                </a>
+                <div className="details">
+                  <div className="nameproduct">Product name: {item.product_name}</div>
+                  <div className="gp">
+                    <p className="price">Price: {item.product_price}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="btns">
+                <div className="btns">
                 <form method="post" action="">
                   <button className="btn_buy">Buy Now</button>
-                </form>
-                <form
-                  className="b-remove"
-                  method="post"
-                  action=""
-                  data-track-onsubmit="true"
-                >
-                  <button className="btnremove">
+                  </form>
+                  <form
+                  className="b-remove">
+                  <button className="btnremove" onClick={() => handleRemove(item.product_id)}>
                     <svg
                       className="bin"
                       xmlns="http://www.w3.org/2000/svg"
@@ -46,15 +77,11 @@ const SavedItems = () => {
                     </svg>
                     Remove
                   </button>
-                  <input
-                    name="csrfToken"
-                    value="904ca39d82abb1fe6d4c1239da96a939"
-                    type="hidden"
-                  />
-                </form>
-              </div>
-            </article>
-          </div>
+                  </form>
+                </div>
+              </article>
+            </div>
+          ))}
         </div>
       </div>
     </section>

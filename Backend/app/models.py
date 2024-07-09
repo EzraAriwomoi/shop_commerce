@@ -241,6 +241,13 @@ class WishlistItem(db.Model):
     __table_args__ = (
         Index('idx_wishlist_item_user_product', user_id, product_id),
     )
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'product_id': self.product_id,
+            'created_at': self.created_at.isoformat()
+        }
 
 
 class PaymentMethod(db.Model):

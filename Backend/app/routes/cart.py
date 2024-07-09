@@ -54,10 +54,10 @@ def add_cart_item():
 
     return jsonify({'message': 'Item added to cart successfully'}), 201
 
-@cart_bp.route('/update', methods=['PUT'])
+@cart_bp.route('/update/<int:product_id>', methods=['PUT'])
 @cross_origin()
 @jwt_required()
-def update_cart_item():
+def update_cart_item(product_id):
     user_id = get_jwt_identity()
     data = request.get_json()
 

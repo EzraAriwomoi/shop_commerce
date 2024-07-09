@@ -191,7 +191,7 @@
 .eye svg {
   width: 20px;
   height: 20px;
-  fill: #000;
+  fill: rgb(197, 196, 196);
 }
 
 .eye svg:hover {

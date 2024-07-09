@@ -1,16 +1,17 @@
-from flask import Blueprint, Flask, jsonify, request
+from flask import Flask, Blueprint, jsonify, request
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from app.models import WishlistItem, Product
 from app.extensions import db
-from flask_cors import CORS
-from flask_cors import cross_origin
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 CORS(app)
+
 wishlist_bp = Blueprint('wishlist', __name__)
 
 @wishlist_bp.route('/', methods=['GET'])
 @jwt_required()
+@cross_origin()
 def get_wishlist():
     user_id = get_jwt_identity()
     wishlist_items = WishlistItem.query.filter_by(user_id=user_id).all()
@@ -18,6 +19,7 @@ def get_wishlist():
 
 @wishlist_bp.route('/', methods=['POST'])
 @jwt_required()
+@cross_origin()
 def add_to_wishlist():
     user_id = get_jwt_identity()
     data = request.get_json()
@@ -42,6 +44,7 @@ def add_to_wishlist():
 
 @wishlist_bp.route('/<int:product_id>', methods=['DELETE'])
 @jwt_required()
+@cross_origin()
 def remove_from_wishlist(product_id):
     user_id = get_jwt_identity()
 
@@ -53,3 +56,6 @@ def remove_from_wishlist(product_id):
     db.session.commit()
 
     return jsonify({'message': 'Product removed from wishlist successfully'}), 200
+
+# Register blueprint
+app.register_blueprint(wishlist_bp, url_prefix='/wishlist')
