@@ -1,10 +1,46 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import "../css/contactuscss/contactus.css";
 import NavBar from "../components/layout/NavBar";
 import Footer from "../components/layout/Footer";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    subject: "",
+    message: ""
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    const token = localStorage.getItem('token');
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:5000/support/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        // Handle success (e.g., show a success message)
+        console.log('Support ticket submitted successfully');
+      } else {
+        // Handle error response from server
+        const data = await response.json();
+        console.error('Failed to submit support ticket:', data.error);
+      }
+    } catch (error) {
+      console.error('Error submitting support ticket:', error);
+    }
+  };
+
   return (
     <>
       <NavBar />
@@ -19,50 +55,52 @@ const ContactUs = () => {
                   below and we&apos;ll get back to you as soon as possible.
                 </p>
               </div>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="space-y-4">
                   <div>
-                    <label
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      htmlFor="name"
-                    >
-                      Name
-                    </label>
+                    <label className="lblname" htmlFor="name">Name</label>
                     <input
-                      className="input-field"
                       id="name"
-                      placeholder="Enter your name"
+                      className="input-field"
                       type="text"
+                      placeholder="Enter your name"
+                      required
                     />
                   </div>
                   <div>
-                    <label
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                      htmlFor="email"
-                    >
-                      Email
-                    </label>
+                    <label className="lblname" htmlFor="email">Email</label>
                     <input
-                      className="input-field"
                       id="email"
+                      className="input-field"
                       type="email"
                       placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="lblname" htmlFor="subject">Subject</label>
+                    <input
+                      id="subject"
+                      className="input-field"
+                      type="text"
+                      placeholder="Enter subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                      required
                     />
                   </div>
                 </div>
                 <div>
-                  <label
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                    htmlFor="message"
-                  >
-                    Message
-                  </label>
+                  <label className="lblname" htmlFor="message">Message</label>
                   <textarea
-                    className="textarea-field"
                     id="message"
+                    className="textarea-field"
                     rows={5}
                     placeholder="Enter your message"
-                  ></textarea>
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                  />
                 </div>
                 <button className="send-button" type="submit">
                   Send

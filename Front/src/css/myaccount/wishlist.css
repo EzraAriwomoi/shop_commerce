@@ -1,26 +1,31 @@
 .rowpass {
   padding: 8px;
   display: flex;
-  flex-shrink: 1;
+  flex-direction: column;
   max-width: 1184px;
-  width: 872px;
+  width: 854px;
+  overflow-y: auto;
+  max-height: 70vh;
 }
+
 
 .colu {
   display: block;
   padding: 8px;
-  width: 856px;
+  width: 100%;
 }
 
 .article {
   display: flex;
+  flex-direction: row;
   border-color: rgb(212, 212, 214);
   border-radius: 16px;
   border-style: solid;
   border-width: 1px;
-  height: 106px;
+  height: 16.2vh;
   color: rgb(49, 49, 51);
-  overflow: hidden; /* Ensure children stay within the container */
+  overflow: hidden;
+  margin-bottom: 16px;
 }
 
 .linkimg {
@@ -33,16 +38,16 @@
 .imgprod {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
-  height: 100%; /* Ensure the image takes full height of its container */
-  width: auto; /* Adjust width automatically to maintain aspect ratio */
-  object-fit: cover; /* Ensure the image covers the container */
+  height: 100%;
+  width: auto;
+  object-fit: cover;
   margin: 0;
 }
 
 .details {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center text vertically */
+  justify-content: center;
   padding: 8px;
 }
 
@@ -52,8 +57,8 @@
   font-size: 15px;
   text-decoration: none;
   color: black;
-  text-align: center; /* Center text horizontally */
-  margin-bottom: 8px; /* Add margin to separate from the price */
+  text-align: center;
+  margin-bottom: 8px;
 }
 
 .price {
@@ -61,13 +66,13 @@
   font-weight: 500;
   font-family: "Roboto";
   display: block;
-  text-align: center; /* Center text horizontally */
+  text-align: center;
 }
 
 .btns {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center buttons vertically */
+  justify-content: center;
   margin-left: auto;
   flex-shrink: 0;
   padding: 8px;
@@ -86,7 +91,7 @@
   height: 44px;
   padding-right: 16px;
   padding-left: 16px;
-  width: 100%; /* Make the button take full width */
+  width: 100%;
   position: relative;
 }
 
@@ -103,7 +108,7 @@
   font-size: 13px;
   font-weight: 500;
   background-color: #e7e4e4;
-  width: 100%; /* Make the button take full width */
+  width: 100%;
 }
 
 .bin {

@@ -17,10 +17,10 @@ def get_wishlist():
     wishlist_items = WishlistItem.query.filter_by(user_id=user_id).all()
     return jsonify([item.to_dict() for item in wishlist_items]), 200
 
-@wishlist_bp.route('/', methods=['POST'])
+@wishlist_bp.route('/<int:product_id>', methods=['POST'])
 @jwt_required()
 @cross_origin()
-def add_to_wishlist():
+def add_to_wishlist(product_id):
     user_id = get_jwt_identity()
     data = request.get_json()
     product_id = data.get('product_id')
@@ -57,5 +57,16 @@ def remove_from_wishlist(product_id):
 
     return jsonify({'message': 'Product removed from wishlist successfully'}), 200
 
+@wishlist_bp.route('/check/<int:product_id>', methods=['GET'])
+@jwt_required()
+@cross_origin()
+def check_wishlist(product_id):
+    user_id = get_jwt_identity()
+    existing_item = WishlistItem.query.filter_by(user_id=user_id, product_id=product_id).first()
+    return jsonify({'exists': existing_item is not None}), 200
+
 # Register blueprint
 app.register_blueprint(wishlist_bp, url_prefix='/wishlist')
+
+if __name__ == '__main__':
+    app.run(debug=True)

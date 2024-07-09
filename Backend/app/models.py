@@ -86,7 +86,7 @@ class Product(db.Model):
     description = db.Column(db.String(200))
     price = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, nullable=False)
-    image_url = db.Column(db.String(200))  # Firebase Storage image URL
+    image_url = db.Column(db.String(200), nullable=True)  # Firebase Storage image URL
     created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
 
     # Featured product attributes
@@ -241,12 +241,15 @@ class WishlistItem(db.Model):
     __table_args__ = (
         Index('idx_wishlist_item_user_product', user_id, product_id),
     )
+    product = db.relationship('Product', backref='wishlist_items')
+
     def to_dict(self):
         return {
             'id': self.id,
             'user_id': self.user_id,
             'product_id': self.product_id,
-            'created_at': self.created_at.isoformat()
+            'created_at': self.created_at.isoformat(),
+            'image_url': self.product.image_url 
         }
 
 

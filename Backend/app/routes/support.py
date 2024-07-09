@@ -6,8 +6,8 @@ from flask_cors import CORS
 from flask_cors import cross_origin
 
 app = Flask(__name__)
-CORS(app)
 support_bp = Blueprint('support', __name__)
+CORS(support_bp, resources={r"/*"})
 
 @support_bp.route('/faqs', methods=['GET'])
 def get_faqs():

@@ -10,7 +10,7 @@
   padding: 0px;
   box-sizing: border-box;
   font-family: "Roboto Condensed", sans-serif;
-  transition: ease-in-out.5s;
+  /* transition: ease-in-out.5s; */
 }
 
 input,
