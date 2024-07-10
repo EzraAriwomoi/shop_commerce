@@ -1,7 +1,17 @@
+import sys
+import os
 from flask import Blueprint, Flask, jsonify, request
-from app.models import Category, Product, Banner, FeaturedProduct
+from flask_cors import CORS
+from flask_cors import cross_origin
+
+# Add the backend directory to the Python path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+
+from app.models import Category, FeaturedProduct, Banner, FlashSale, NewProduct, Offer
 from app.extensions import db, csrf
-from flask_cors import CORS, cross_origin
+
+
 
 app = Flask(__name__)
 CORS(app)
@@ -18,32 +28,31 @@ def get_categories():
 @cross_origin()
 @csrf.exempt
 def get_featured_products():
-    category_name = request.args.get('category')
+    category_name = request.args.get('category', None)
+    print(f"Requested category: {category_name}")
 
     if category_name:
-        # Query products that are featured and belong to the specified category
-        featured_products = Product.query \
-            .join(Product.categories) \
-            .filter(Product.is_featured == True, Category.name == category_name) \
-            .all()
+        print("Category name provided. Fetching featured products for the category.")
+        try:
+            featured_products = (FeaturedProduct.query
+                                 .join(Category, FeaturedProduct.category_id == Category.id)
+                                 .filter(Category.name == category_name)
+                                 .all())
+            print(f"Number of featured products found: {len(featured_products)}")
+        except Exception as e:
+            print(f"Error fetching featured products for category {category_name}: {e}")
+            return jsonify({'error': 'Failed to fetch featured products'}), 500
     else:
-        # Query all featured products
-        featured_products = Product.query.filter(Product.is_featured == True).all()
+        print("No category name provided. Fetching all featured products.")
+        try:
+            featured_products = FeaturedProduct.query.all()
+            print(f"Number of featured products found: {len(featured_products)}")
+        except Exception as e:
+            print(f"Error fetching all featured products: {e}")
+            return jsonify({'error': 'Failed to fetch featured products'}), 500
 
-    # Filter to get the first 4 unique categories
-    unique_categories = set()
-    filtered_products = []
-    for product in featured_products:
-        # Assuming each product can have multiple categories
-        for category in product.categories:
-            if category.name not in unique_categories:
-                unique_categories.add(category.name)
-                filtered_products.append(product)
-                break  # Proceed to next product if one of the categories is added
-        if len(filtered_products) >= 4:
-            break
+    return jsonify([product.to_dict() for product in featured_products]), 200
 
-    return jsonify([product.to_dict() for product in filtered_products]), 200
 
 @misc_bp.route('/banners', methods=['GET'])
 @cross_origin()
@@ -51,3 +60,31 @@ def get_featured_products():
 def get_banners():
     banners = Banner.query.all()
     return jsonify([banner.to_dict() for banner in banners]), 200
+
+@misc_bp.route('/flashsales', methods=['GET'])
+@cross_origin()
+@csrf.exempt
+def get_flashsales():
+    flashsales = FlashSale.query.all()
+    return jsonify([flashsale.to_dict() for flashsale in flashsales]), 200
+
+@misc_bp.route('/offers', methods=['GET'])
+@cross_origin()
+@csrf.exempt
+def get_offers():
+    offers = Offer.query.all()
+    return jsonify([offer.to_dict() for offer in offers]), 200
+
+@misc_bp.route('/newproducts', methods=['GET'])
+@cross_origin()
+@csrf.exempt
+def get_new_products():
+    new_products = NewProduct.query.all()
+    return jsonify([new_product.to_dict() for new_product in new_products]), 200
+
+
+app.register_blueprint(misc_bp, url_prefix='/miscellaneous')
+
+
+if __name__ == '_main_':
+    app.run(debug=True)

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import "../../css/customerauthcss/resetpassword.css";
 
@@ -9,38 +10,45 @@ const ResetPasswordComponent = () => {
 
   useEffect(() => {
     return () => {
-      // Clear the interval when component unmounts
       clearInterval(timerId);
     };
   }, [timerId]);
 
   const handleResetPassword = () => {
     if (email.trim() !== "") {
-      // Simulating sending reset password email with a small delay
-      setTimeout(() => {
-        setShowConfirmation(true);
-        startCountdown();
-      }, 1000); // 1 second delay
+      fetch("/auth/request-password-reset", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.message) {
+            setShowConfirmation(true);
+            startCountdown();
+          }
+        })
+        .catch((error) => console.error("Error:", error));
     }
   };
 
   const startCountdown = () => {
-    // Restart countdown timer
-    setCountdown(20); // Reset countdown to 20 seconds
+    setCountdown(20);
     const id = setInterval(() => {
       setCountdown((prevCount) => {
         if (prevCount === 1) {
-          clearInterval(id); // Clear timer when countdown reaches 0
+          clearInterval(id);
         }
         return prevCount - 1;
       });
-    }, 1000); // Timer ticks every 1 second
-    setTimerId(id); // Save timer id to state
+    }, 1000);
+    setTimerId(id);
   };
 
   const handleResendEmail = () => {
     if (!timerId) {
-      // Only allow resend if timer is not running
       startCountdown();
     }
   };
@@ -68,9 +76,7 @@ const ResetPasswordComponent = () => {
           <p>
             <strong>{email}</strong>
           </p>
-          <p>
-            Check your email and follow the instructions to reset your password.
-          </p>
+          <p>Check your email and follow the instructions to reset your password.</p>
           <div className="timer">
             <p>
               Resend email in <strong>{countdown} seconds</strong>

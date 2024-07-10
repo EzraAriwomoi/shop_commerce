@@ -61,7 +61,7 @@ const CustomerSignInComponent = ({ onToggle, setIsLoggedIn }) => {
             required
           />
         </div>
-        <a className="forgot-password flex">Forgot Password?</a>
+        <a href="/resetpassword" className="forgot-password flex">Forgot Password?</a>
         {error && <p className="error-message">{error}</p>}
         <div className="csc-buttons flex">
           <button type="submit">Sign In</button>

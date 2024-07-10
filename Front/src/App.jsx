@@ -10,7 +10,7 @@ import ProductDetails from "./pages/ProductDetails";
 import ShoppingcartPage from "./pages/shoppingcart";
 import ProductListPage from "./pages/productlisting";
 import FAQPage from "./pages/FAQPage";
-import ResetPasswordPage from "./pages/ResetPasswordPage";
+import ResetPasswordPage from "./components/customerauthcomponents/ResetPasswordComponent";
 import MainAccount from "./components/accountInfo/mainaccount";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/aboutus";

@@ -8,7 +8,6 @@ from app.extensions import db, csrf, mail
 from app.services.email_service import send_email, send_login_alert_email, send_password_reset_email
 from app.utils.validation import validate_email, validate_password
 from app.utils.token import token_required, generate_token, validate_input, verify_token
-import logging
 from flask_cors import CORS, cross_origin
 from flask_mail import Message
 

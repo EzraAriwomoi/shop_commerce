@@ -66,9 +66,11 @@
   font-family: Arial, sans-serif;
   padding-left: 8px;
 }
+
 .ic.active {
   fill: white;
 }
+
 .name.active {
   color: white;
 }
@@ -84,6 +86,7 @@
   width: 888px;
   padding-top: 100px;
 }
+
 .card {
   background-color: rgb(255, 255, 255);
   border-radius: 4px;
@@ -92,6 +95,7 @@
   display: block;
   height: 522px;
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -105,7 +109,8 @@
   padding-top: 8px;
   width: 62.5vw;
 }
-.header-password{
+
+.header-password {
   display: flex;
   align-items: center;
   border-color: rgb(241, 241, 242);
@@ -118,6 +123,7 @@
   padding-top: 8px;
   width: 61.5vw;
 }
+
 .ac-over {
   font-size: 1.25rem;
   white-space: nowrap;
@@ -127,6 +133,7 @@
   display: block;
   color: rgb(49, 49, 51);
 }
+
 .row {
   padding: 8px;
   display: flex;
@@ -136,6 +143,7 @@
   font-size: 13px;
   width: 872px;
 }
+
 .col {
   display: block;
   flex-basis: 50%;
@@ -144,6 +152,7 @@
   padding: 8px;
   width: 428px;
 }
+
 .card-blw {
   border-color: rgb(212, 212, 214);
   border-radius: 4px;
@@ -153,7 +162,8 @@
   flex-direction: column;
   height: 238px;
 }
-.card-password{
+
+.card-password {
   border-color: rgb(212, 212, 214);
   border-radius: 4px;
   border-width: 1px;
@@ -165,6 +175,7 @@
   height: 100px;
   width: 61.5vw;
 }
+
 .hdr {
   align-items: center;
   border-color: rgb(212, 212, 214);
@@ -174,6 +185,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .head1 {
   display: block;
   font-weight: 500;
@@ -181,16 +193,19 @@
   text-transform: uppercase;
   font-size: 13px;
 }
+
 .fig1 {
   display: block;
   padding: 10px;
 }
+
 .nam-user {
   display: block;
   font-size: 15px;
   font-family: "Roboto";
   padding: 12px;
 }
+
 .email-pass-user {
   color: rgb(117, 117, 122);
   display: block;
@@ -198,6 +213,7 @@
   font-family: "Roboto";
   padding: 12px;
 }
+
 .btn-pen {
   display: flex;
   align-items: center;
@@ -212,7 +228,8 @@
   width: 60px;
   border-radius: 8px;
 }
-.btn-changepass{
+
+.btn-changepass {
   display: flex;
   align-items: center;
   background-color: rgb(232, 232, 233);
@@ -226,11 +243,13 @@
   width: 112px;
   border-radius: 8px;
 }
+
 .pv {
   display: block;
   padding-bottom: 8px;
   padding-top: 8px;
 }
+
 .def {
   display: block;
   font-size: 15px;
@@ -239,6 +258,7 @@
   padding-right: 16px;
   padding-top: 8px;
 }
+
 .address {
   color: rgb(117, 117, 122);
   display: block;
@@ -251,6 +271,7 @@
   padding-top: 8px;
   text-align: left;
 }
+
 .ic-loc {
   color: rgb(49, 49, 51);
   cursor: pointer;
@@ -262,13 +283,16 @@
   padding-top: 2px;
   box-sizing: border-box;
 }
+
 .join {
   display: flex;
   align-items: center;
 }
+
 .def {
   margin: 0;
 }
+
 .btn-logout {
   color: rgb(49, 49, 51);
   display: block;
@@ -276,6 +300,7 @@
   position: relative;
   text-align: center;
 }
+
 .btnLG {
   display: inline-block;
   cursor: pointer;
