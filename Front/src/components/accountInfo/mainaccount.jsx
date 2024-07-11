@@ -70,8 +70,8 @@ export default function Component() {
             <div className="avatar-fallback">User</div>
           </div>
           <div className={isMobileMenuOpen ? 'hidden' : ''}>
-            <h2 className="text-lg font-semibold">John Doe</h2>
-            <p className="text-sm text-muted-foreground">john@example.com</p>
+            <h2 className="text-lg font-semibold">User</h2>
+            <p className="text-sm text-muted-foreground">email@example.com</p>
           </div>
         </div>
         {/* Navigation links */}
@@ -105,8 +105,8 @@ export default function Component() {
                 <div className="avatar-fallback">User</div>
               </div>
               <div>
-                <h1 className="component-title">John Doe</h1>
-                <p className="component-subtitle">john@example.com</p>
+                <h1 className="component-title">User</h1>
+                <p className="component-subtitle">email@example.com</p>
               </div>
             </div>
             <button
