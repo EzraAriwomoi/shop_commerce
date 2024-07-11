@@ -1,104 +1,322 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import "../../css/myaccount/myaccount.css";
-import NavBar from "../layout/NavBar";
+import "../accountInfo/subcomponents/Component.css";
 
-import AccountOverview from "./subcomponents/myaccount";
-import OrderHistory from "./subcomponents/orderhistory";
-import SavedItems from "./subcomponents/wishlist";
+export default function Component() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-const MyAccount = () => {
-  const [activeLink, setActiveLink] = useState(1); // Default to "My Account"
-
-  const handleLinkClick = (index) => {
-    setActiveLink(index);
-  };
-
-  const handleAccountClick = () => {
-    setActiveLink(1);
-  };
+  const locations = [
+    "A.S.K. Showground/Wanye",
+    "Adams Arcade / Dagoretti Corner",
+    "Bahati / Marish / Viwandani / Jeri",
+    "Bomas/CUEA/Galleria",
+    "Buruburu / Hamza / Harambee",
+    "CBD - GPO/City Market/Nation Centre",
+    "CBD - KICC/Parliament/Kencom",
+    "CBD - Luthuli/Afya Centre/ R. Ngala",
+    "CBD - UON/Globe/Koja/River Road",
+    "City Stadium/Makongeni/Mbotela",
+    "Embakasi East-Pipeline/Transami/Airport North Rd",
+    "Embakasi North - Dandora / Kariobangi North",
+    "Embakasi South - Bunyala Road / South B",
+    "Embakasi South - Mombasa Road/Sameer Park/General Motors/ICD",
+    "Embakasi South-Landimawe/KwaReuben/Kware/Pipeline",
+    "Garden Estate/Thome/Marurui",
+    "Gigiri/Village market/UN",
+    "Githurai/Kahawa Sukari",
+    "Hurlingham/DOD/Yaya center",
+    "Huruma / Kiamaiko / Mbatini / Ngei",
+    "Imara Daima/AA/Maziwa/Kwa Njenga",
+    "Kahawa Wendani/ Kenyatta University",
+    "Kahawa west/Githurai 44",
+    "Kamukunji - Airbase/Mlango Kubwa",
+    "Kamukunji - Eastleigh/California/Shauri Moyo",
+    "Kamulu",
+    "Karen",
+    "Kariobangi South/Dandora/Airbase",
+    "Kawangware/Stage 56",
+    "Kilimani/State House/Denis Pritt",
+    "Kinoo/Zambezi/Ngecha",
+    "Kiserian/Corner Baridi/Ongata Rongai",
+    "Korogocho / Baraka / Gitathuru / Grogan",
+    "Langata/Hardy/Mbagathi",
+    "Lavington/Mziima/James Gichuru",
+    "Muthaiga/Parklands",
+    "Ngara/Pangani",
+    "Ngong/Kibiku",
+    "Nyayo Highrise/Nairobi West",
+    "Roy Sambu/Kasarani",
+    "Ruai",
+    "Ruiru",
+    "Runda/Estate/Muthaiga",
+    "Rwaka/Two Rivers",
+    "South C",
+    "Thindigua/Kasarini",
+    "Umoja/Infill",
+    "Utawala",
+    "Valley Road / Community / Kenyatta Hospital",
+    "Waiyaki Way/Kangemi",
+    "Westlands",
+    "Ziwani/Zimmerman/Githurai 45"
+  ];
 
   return (
-    <div className="container1">
-      <NavBar />
-      <div className="side">
-        <nav className="sidemenu" aria-labelledby="account-menu">
-          <a
-            href="#"
-            className={`eachpiece ${activeLink === 1 ? "active" : ""}`}
-            id="account-menu"
-            onClick={handleAccountClick}
-          >
-            <svg
-              className={`ic ${activeLink === 1 ? "active" : ""}`}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-            >
-              <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
-            </svg>
-            <div className={`name ${activeLink === 1 ? "active" : ""}`}>
-              My Account
-            </div>
+    <div className="container">
+      {/* Sidebar */}
+      <div className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`}>
+        {/* Sidebar content */}
+        <div className="flex items-center gap-4 mb-8">
+          <div className="avatar">
+            <img src="/placeholder-user.jpg" alt="User Avatar" className="avatar-image" />
+            <div className="avatar-fallback">User</div>
+          </div>
+          <div className={isMobileMenuOpen ? 'hidden' : ''}>
+            <h2 className="text-lg font-semibold">John Doe</h2>
+            <p className="text-sm text-muted-foreground">john@example.com</p>
+          </div>
+        </div>
+        {/* Navigation links */}
+        <nav className="nav-link">
+          <a href="#" className="custom-link">
+            <PackageIcon className="icon" />
+            <span className="label">Orders</span>
           </a>
-          <a
-            href="#"
-            className={`eachpiece ${activeLink === 2 ? "active" : ""}`}
-            onClick={() => handleLinkClick(2)}
-          >
-            <svg
-              className={`ic ${activeLink === 2 ? "active" : ""}`}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-            >
-              <path d="M388.3 104.1a4.7 4.7 0 0 0 -4.4-4c-2 0-37.2-.8-37.2-.8s-21.6-20.8-29.6-28.8V503.2L442.8 472S388.7 106.5 388.3 104.1zM288.7 70.5a116.7 116.7 0 0 0 -7.2-17.6C271 32.9 255.4 22 237 22a15 15 0 0 0 -4 .4c-.4-.8-1.2-1.2-1.6-2C223.4 11.6 213 7.6 200.6 8c-24 .8-48 18-67.3 48.8-13.6 21.6-24 48.8-26.8 70.1-27.6 8.4-46.8 14.4-47.2 14.8-14 4.4-14.4 4.8-16 18-1.2 10-38 291.8-38 291.8L307.9 504V65.7a41.7 41.7 0 0 0 -4.4 .4S297.9 67.7 288.7 70.5zM233.4 87.7c-16 4.8-33.6 10.4-50.8 15.6 4.8-18.8 14.4-37.6 25.6-50 4.4-4.4 10.4-9.6 17.2-12.8C232.2 54.9 233.8 74.5 233.4 87.7zM200.6 24.4A27.5 27.5 0 0 1 215 28c-6.4 3.2-12.8 8.4-18.8 14.4-15.2 16.4-26.8 42-31.6 66.5-14.4 4.4-28.8 8.8-42 12.8C131.3 83.3 163.8 25.2 200.6 24.4zM154.2 244.6c1.6 25.6 69.3 31.2 73.3 91.7 2.8 47.6-25.2 80.1-65.7 82.5-48.8 3.2-75.7-25.6-75.7-25.6l10.4-44s26.8 20.4 48.4 18.8c14-.8 19.2-12.4 18.8-20.4-2-33.6-57.2-31.6-60.8-86.9-3.2-46.4 27.2-93.3 94.5-97.7 26-1.6 39.2 4.8 39.2 4.8L221.4 225.4s-17.2-8-37.6-6.4C154.2 221 153.8 239.8 154.2 244.6zM249.4 82.9c0-12-1.6-29.2-7.2-43.6 18.4 3.6 27.2 24 31.2 36.4Q262.6 78.7 249.4 82.9z" />
-            </svg>
-            <div className={`name ${activeLink === 2 ? "active" : ""}`}>
-              Order History
-            </div>
+          <a href="#" className="custom-link">
+            <HeartIcon className="icon" />
+            <span className="label">Wishlist</span>
           </a>
-          <a
-            href="#"
-            className={`eachpiece ${activeLink === 3 ? "active" : ""}`}
-            onClick={() => handleLinkClick(3)}
-          >
-            <svg
-              className={`ic ${activeLink === 3 ? "active" : ""}`}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 384 512"
-            >
-              <path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" />
-            </svg>
-            <div className={`name ${activeLink === 3 ? "active" : ""}`}>
-              My Wishlist
-            </div>
+          <a href="#" className="custom-link">
+            <UserIcon className="icon" />
+            <span className="label">Account</span>
           </a>
-          <a
-            href="#"
-            className={`eachpiece ${activeLink === 4 ? "active" : ""}`}
-            onClick={() => handleLinkClick(4)}
-          >
-            <svg
-              className={`ic ${activeLink === 4 ? "active" : ""}`}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 576 512"
-            >
-              <path d="M64 64C28.7 64 0 92.7 0 128v64c0 8.8 7.4 15.7 15.7 18.6C34.5 217.1 48 235 48 256s-13.5 38.9-32.3 45.4C7.4 304.3 0 311.2 0 320v64c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V320c0-8.8-7.4-15.7-15.7-18.6C541.5 294.9 528 277 528 256s13.5-38.9 32.3-45.4c8.3-2.9 15.7-9.8 15.7-18.6V128c0-35.3-28.7-64-64-64H64zm64 112l0 160c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H144c-8.8 0-16 7.2-16 16zM96 160c0-17.7 14.3-32 32-32H448c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V160z" />
-            </svg>
-            <div className={`name ${activeLink === 4 ? "active" : ""}`}>
-              Vouchers
-            </div>
-          </a>
-          <form method="get" className="btn-logout" action="/">
-            <button className="btnLG">Logout</button>
-          </form>
+          <button className="custom-link">
+            <LogOutIcon className="icon" />
+            <span className="label">Logout</span>
+          </button>
         </nav>
       </div>
 
-      {activeLink === 1 && <AccountOverview />}
-      {activeLink === 2 && <OrderHistory />}
-      {activeLink === 3 && <SavedItems />}
+      {/* Main content container */}
+      <div className="component-container">
+        <div className="component-inner-container">
+          <div className="component-header">
+            <div className="component-header-content">
+              <div className="avatar">
+                <img src="/placeholder-user.jpg" alt="User Avatar" className="avatar-image" />
+                <div className="avatar-fallback">User</div>
+              </div>
+              <div>
+                <h1 className="component-title">John Doe</h1>
+                <p className="component-subtitle">john@example.com</p>
+              </div>
+            </div>
+            <button
+                className="icon-button"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                <MenuIcon className="menu-icon" />
+              </button>
+          </div>
+          <div className="component-body">
+            <Section title="Personal Details">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="lbl">First Name</label>
+                  <InputField id="firstName"/>
+                </div>
+                <div>
+                  <label className="lbl">Last Name</label>
+                  <InputField id="lastName"/>
+                </div>
+              </div>
+              <div>
+                <label className="lbl">Email</label>
+                <InputField id="email"/>
+              </div>
+              <div>
+                <label className="lbl">Phone Number</label>
+                <InputField id="phone"/>
+              </div>
+            </Section>
+            <Section title="Shipping Address">
+              <div>
+                <label className="lbl">Location</label>
+                <SelectField id="location" options={locations}/>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-4">
+                <div>
+                  <label className="lbl">County</label>
+                  <InputField id="county"/>
+                </div>
+                <div>
+                  <label className="lbl">Zip code</label>
+                  <InputField id="zip"/>
+                </div>
+              </div>
+            </Section>
+            <Section title="Payment Information">
+              <div>
+                <label className="lbl">M-PESA Number</label>
+                <InputField id="phone"/>
+              </div>
+              <div className="available-payments">
+                Current available payments : 
+                <img src="/mpesa.png" className="mpesa-logo" alt="M-Pesa" width={90} height={60} />
+              </div>
+            </Section>
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
+}
 
-export default MyAccount;
+function Section({ title, children }) {
+  return (
+    <section>
+      <div className="section-header">
+        <h2 className="section-title">{title}</h2>
+        <button className="button-outline small-button">
+          <PencilIcon className="pencil-icon" />
+          Edit
+        </button>
+      </div>
+      <div className="section-body">{children}</div>
+    </section>
+  );
+}
+
+function InputField({ label, id, type = "text"}) {
+  return (
+    <div className="inputField">
+      <label htmlFor={id}>{label}</label>
+      <input id={id} type={type} />
+    </div>
+  );
+}
+
+function SelectField({ id, options }) {
+  return (
+    <div className="select-field">
+      <label htmlFor={id}></label>
+      <select id={id}>
+        {options.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
+function PencilIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+      <path d="m15 5 4 4" />
+    </svg>
+  );
+}
+
+function UserIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function HeartIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+    </svg>
+  );
+}
+
+function PackageIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="2" y="7" width="20" height="13" rx="2" ry="2" />
+      <line x1="7" y1="2" x2="17" y2="7" />
+      <line x1="7" y1="14" x2="17" y2="14" />
+      <line x1="3" y1="9" x2="7" y2="9" />
+      <line x1="3" y1="15" x2="7" y2="15" />
+    </svg>
+  );
+}
+
+function LogOutIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 3h-13a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-14a2 2 0 0 0-2-2z" />
+      <line x1="8" y1="12" x2="16" y2="12" />
+      <line x1="12" y1="8" x2="12" y2="16" />
+    </svg>
+  );
+}
+
+function MenuIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3 12h18M3 6h18M3 18h18" />
+    </svg>
+  );
+}
