@@ -38,16 +38,46 @@ def populate_database():
     db.session.commit()
 
     # Create products and associate them with categories
-    products = [
-        Product(name='Gold Watch', description='A luxurious gold watch', price=199.99, stock=10, image_url='https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelet%20en%20acier%20inoxydable%20plaqu%C3%A9%20or%20pour%20femme%20-%20Bracelet%20en%20acier%20inoxydable%20plaqu%C3%A9%20or%20pour%20femme.jpeg?alt=media&token=63d8ba87-2a5b-41e2-bde0-72b8a639a873', is_featured=True, featured_priority=1, categories=[categories[0]]),
-        Product(name='Silver Bracelet', description='A shiny silver bracelet', price=49.99, stock=25, image_url='https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelet%20en%20acier%20inoxydable%20plaqu%C3%A9%20or%20pour%20femme%20-%20Bracelet%20en%20acier%20inoxydable%20plaqu%C3%A9%20or%20pour%20femme.jpeg?alt=media&token=63d8ba87-2a5b-41e2-bde0-72b8a639a873', is_featured=True, featured_priority=2, categories=[categories[1]]),
-        Product(name='Silver Bracelet', description='A shiny silver bracelet', price=49.99, stock=25, image_url='https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelet%20en%20acier%20inoxydable%20plaqu%C3%A9%20or%20pour%20femme%20-%20Bracelet%20en%20acier%20inoxydable%20plaqu%C3%A9%20or%20pour%20femme.jpeg?alt=media&token=63d8ba87-2a5b-41e2-bde0-72b8a639a873', is_featured=True, featured_priority=2, categories=[categories[3]]),
-        Product(name='Diamond Ring', description='A beautiful diamond ring', price=299.99, stock=5, image_url='https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/ring.jpeg?alt=media&token=2679d07e-02c9-417a-9446-9670aece0b66', is_featured=True, featured_priority=3, categories=[categories[2]]),
-        Product(name='Diamond Ring', description='A beautiful diamond ring', price=299.99, stock=5, image_url='https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/ring.jpeg?alt=media&token=2679d07e-02c9-417a-9446-9670aece0b66', is_featured=True, featured_priority=3, categories=[categories[4]]),
-        Product(name='Pearl Earrings', description='Elegant pearl earrings', price=89.99, stock=15, image_url='https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/2pcs_set%20Rings%20Butterfly%20All-match%20Butterfly%20Hollow%20Simple%20Couple%20Rings%20Alloy.jpeg?alt=media&token=4d7fb973-9a3d-43e6-9349-a0a108fa6f11', is_featured=True, featured_priority=4, categories=[categories[3]]),
-        Product(name='Pearl Earrings', description='Elegant pearl earrings', price=89.99, stock=15, image_url='https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/2pcs_set%20Rings%20Butterfly%20All-match%20Butterfly%20Hollow%20Simple%20Couple%20Rings%20Alloy.jpeg?alt=media&token=4d7fb973-9a3d-43e6-9349-a0a108fa6f11', is_featured=True, featured_priority=4, categories=[categories[0]]),
-        Product(name='Gold Necklace', description='A stunning gold necklace', price=149.99, stock=20, image_url='https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/necklace.jpeg?alt=media&token=c16f8458-a7eb-497f-b343-99d72894fd58', is_featured=True, featured_priority=5, categories=[categories[4]])
+    image_urls = [
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/African%20Print%20fans%2F1.jpg?alt=media&token=1218beff-b090-4bac-b730-d021c0ba11ec",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/African%20Print%20fans%2F3.jpg?alt=media&token=3d5deca5-6644-4982-ad6d-b79bda04ca26",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/African%20Print%20fans%2F4.jpg?alt=media&token=d7c285e0-743e-4565-a9d1-bc4dfd1cfe77",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Artifacts%2FAfrican%20stool%20made%20from%20hard%20wood%20(available%20in%20various%20sizes)%20-%209%2C000.jpg?alt=media&token=fb6f63a7-ecf7-43fb-9aec-40ddd63e9272",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Artifacts%2FAfrican%20woman%20-%203%2C000.jpg?alt=media&token=3b527ae3-40ea-4cc6-840e-7e1117059a38",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Artifacts%2FAfrican%20woman%20and%20child%20-%203%2C100.jpg?alt=media&token=a99393b0-e79f-48cb-b750-656b108bb2c6",
+        # "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Artifacts%2FAfrican%20woman%20carrying%20her%20child%20-%203%2C000.jpg?alt=media&token=919379e",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F1200%2F17.jpg?alt=media&token=e047fa86-b33d-40c8-a2b4-5c86221e50f7",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F1200%2F18.jpg?alt=media&token=7cafd85d-186c-47fa-b2d4-c22880024316",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F2000%2F12.jpg?alt=media&token=94a2d4bc-7b8d-402f-a476-23c483715628",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F2000%2F21.jpg?alt=media&token=af530eae-293f-480a-9234-ccbdece8c65a",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F2000%2F22.jpg?alt=media&token=13805484-2477-4e7b-b972-7b45dd87667a",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F2000%2F23.jpg?alt=media&token=8356b19f-2c5a-4322-a186-986695803462",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F2000%2F25.jpg?alt=media&token=236d1c63-239d-4736-baf1-31ed5fdd311a6",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F2000%2F26.jpg?alt=media&token=0fa2ecb2-c35c-4169-a6ab-cea2db8dde52",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F2000%2F27.jpg?alt=media&token=b64890db-673f-460b-9f48-0c0bce78b289",
+        "https://firebasestorage.googleapis.com/v0/b/kletos-d86bc.appspot.com/o/Bracelets%2F1200%2F20.jpg?alt=media&token=3a954663-c789-4947-8712-074ff8732490"
     ]
+
+    # Define your products
+    products = [
+        Product(name='African Print Fan 1', description='Beautiful African print fan.', price=1000, stock=10, image_url=image_urls[0], is_featured=True, featured_priority=1, categories=[categories[0]]),
+        Product(name='African Print Fan 2', description='Elegant African print fan.', price=1200, stock=15, image_url=image_urls[1], is_featured=True, featured_priority=2, categories=[categories[1]]),
+        Product(name='African Print Fan 3', description='Stylish African print fan.', price=1000, stock=12, image_url=image_urls[2], is_featured=True, featured_priority=3, categories=[categories[2]]),
+        Product(name='African Stool', description='Handcrafted African stool made from hard wood.', price=2500, stock=5, image_url=image_urls[3], is_featured=True, featured_priority=4, categories=[categories[3]]),
+        Product(name='African Woman', description='Beautiful statue of an African woman.', price=3000, stock=8, image_url=image_urls[4], is_featured=True, featured_priority=5, categories=[categories[4]]),
+        Product(name='African Woman and Child', description='Elegant statue of an African woman and her child.', price=3000, stock=7, image_url=image_urls[5], is_featured=True, featured_priority=6, categories=[categories[0]]),
+        # Product(name='African Woman Carrying Child', description='Graceful statue of an African woman carrying her child.', price=3000, stock=9, image_url=image_urls[6], is_featured=True, featured_priority=7, categories=[categories[1]]),
+        Product(name='Bracelet 17', description='Stylish bracelet.', price=1200, stock=20, image_url=image_urls[7], is_featured=True, featured_priority=8, categories=[categories[2]]),
+        Product(name='Bracelet 18', description='Elegant bracelet.', price=1200, stock=18, image_url=image_urls[8], is_featured=True, featured_priority=9, categories=[categories[3]]),
+        Product(name='Bracelet 12', description='Beautiful bracelet.', price=1000, stock=15, image_url=image_urls[9], is_featured=True, featured_priority=10, categories=[categories[4]]),
+        Product(name='Bracelet 21', description='Luxurious bracelet.', price=2500, stock=10, image_url=image_urls[10], is_featured=True, featured_priority=11, categories=[categories[0]]),
+        # Product(name='Bracelet 22', description='Handcrafted bracelet.', price=2500, stock=12, image_url=image_urls[11], is_featured=True, featured_priority=12, categories=[categories[1]]),
+        # Product(name='Bracelet 23', description='Shiny bracelet.', price=3000, stock=14, image_url=image_urls[12], is_featured=True, featured_priority=13, categories=[categories[2]]),
+        Product(name='Bracelet 25', description='Exquisite bracelet.', price=3000, stock=11, image_url=image_urls[13], is_featured=True, featured_priority=14, categories=[categories[3]]),
+        Product(name='Bracelet 26', description='Elegant and stylish bracelet.', price=1200, stock=16, image_url=image_urls[14], is_featured=True, featured_priority=15, categories=[categories[4]])
+    ]
+
+    # Add to session
     db.session.add_all(products)
     db.session.commit()
 

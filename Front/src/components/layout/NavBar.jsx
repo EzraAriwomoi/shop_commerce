@@ -2,7 +2,13 @@ import "../../css/layoutcss/layout.css";
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaShoppingCart, FaBell, FaUser, FaBars } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaBell,
+  FaUser,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 
 const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
@@ -10,9 +16,20 @@ const Navbar = () => {
   const [profileOpen, setProfileOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [notificationOpen, setNotificationOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // User authentication state
 
   const toggleDropdown = (setter) => {
     setter((prev) => !prev);
+  };
+
+  const handleSignOut = () => {
+    setIsAuthenticated(false);
+    setProfileOpen(false);
+  };
+
+  const handleSignIn = () => {
+    setIsAuthenticated(true);
+    setProfileOpen(false);
   };
 
   return (
@@ -63,7 +80,7 @@ const Navbar = () => {
               onClick={() => toggleDropdown(setCartOpen)}
               className="icon-button"
             >
-              {cartOpen ? "close" : <FaShoppingCart />}
+              {cartOpen ? <FaTimes /> : <FaShoppingCart />}
             </button>
             {cartOpen && (
               <div className="dropdown-content">
@@ -76,7 +93,7 @@ const Navbar = () => {
               onClick={(e) => setNotificationOpen(!notificationOpen)}
               className="icon-button"
             >
-              {notificationOpen ? "close" : <FaBell />}
+              {notificationOpen ? <FaTimes /> : <FaBell />}
             </button>
             {notificationOpen && <NotificationMenu />}
             {notificationsOpen && (
@@ -91,22 +108,26 @@ const Navbar = () => {
               onClick={() => toggleDropdown(setProfileOpen)}
               className="icon-button"
             >
-              {profileOpen ? "close" : <FaUser />}
+              {profileOpen ? <FaTimes /> : <FaUser />}
             </button>
             {profileOpen && (
               <div className="dropdown-content">
                 <Link to="/myaccount">My Profile</Link>
                 <Link to="/orders">My Orders</Link>
                 <Link to="/settings">Settings</Link>
-                <a href="/">Logout</a>
+                {isAuthenticated ? (
+                  <a href="#" onClick={handleSignOut}>
+                    Logout
+                  </a>
+                ) : (
+                  <a href="/auth" onClick={handleSignIn}>
+                    Sign-In
+                  </a>
+                )}
               </div>
             )}
           </div>
         </div>
-
-        <button className="sign-in-button">
-            <Link to="/auth">Sign In</Link>
-        </button>
       </div>
     </nav>
   );

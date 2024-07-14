@@ -1,113 +1,196 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
-import "../../../css/myaccount/myaccount.css";
-import Edit from '.././subcomponents/edit';
-import EditPassword from '.././subcomponents/editpassword';
+import React, { useState } from "react";
 
-const AccountOverview = () => {
-    const [editing, setEditing] = useState(false);
-    const [editingPassword, setEditingPassword] = useState(false);
-    const [fullName, setFullName] = useState('');
-    const [email, setEmail] = useState('');
+export default function MyAccount() {
 
-    useEffect(() => {
-        // Function to fetch user profile data
-        const fetchProfileData = async () => {
-            try {
-                const token = localStorage.getItem('token');
-                const response = await fetch('http://localhost:5000/profile/', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json'
-                    },
-                });
-                if (!response.ok) {
-                    throw new Error('Failed to fetch profile data');
-                }
-                const data = await response.json();
-                setFullName(data.full_name);
-                setEmail(data.email);
-            } catch (error) {
-                console.error('Error fetching profile:', error);
-                // Handle error fetching profile data
-            }
-        };
+    const [editMode, setEditMode] = useState(false);
 
-        fetchProfileData(); // Call the function to fetch profile data when component mounts
-    }, []); // Empty dependency array ensures it runs only once when component mounts
+  const toggleEditMode = () => {
+    setEditMode(!editMode);
+  };
 
-    const handleEditClick = () => {
-        setEditing(true);
-    };
+  const locations = [
+    "A.S.K. Showground/Wanye",
+    "Adams Arcade / Dagoretti Corner",
+    "Bahati / Marish / Viwandani / Jeri",
+    "Bomas/CUEA/Galleria",
+    "Buruburu / Hamza / Harambee",
+    "CBD - GPO/City Market/Nation Centre",
+    "CBD - KICC/Parliament/Kencom",
+    "CBD - Luthuli/Afya Centre/ R. Ngala",
+    "CBD - UON/Globe/Koja/River Road",
+    "City Stadium/Makongeni/Mbotela",
+    "Embakasi East-Pipeline/Transami/Airport North Rd",
+    "Embakasi North - Dandora / Kariobangi North",
+    "Embakasi South - Bunyala Road / South B",
+    "Embakasi South - Mombasa Road/Sameer Park/General Motors/ICD",
+    "Embakasi South-Landimawe/KwaReuben/Kware/Pipeline",
+    "Garden Estate/Thome/Marurui",
+    "Gigiri/Village market/UN",
+    "Githurai/Kahawa Sukari",
+    "Hurlingham/DOD/Yaya center",
+    "Huruma / Kiamaiko / Mbatini / Ngei",
+    "Imara Daima/AA/Maziwa/Kwa Njenga",
+    "Kahawa Wendani/ Kenyatta University",
+    "Kahawa west/Githurai 44",
+    "Kamukunji - Airbase/Mlango Kubwa",
+    "Kamukunji - Eastleigh/California/Shauri Moyo",
+    "Kamulu",
+    "Karen",
+    "Kariobangi South/Dandora/Airbase",
+    "Kawangware/Stage 56",
+    "Kilimani/State House/Denis Pritt",
+    "Kinoo/Zambezi/Ngecha",
+    "Kiserian/Corner Baridi/Ongata Rongai",
+    "Korogocho / Baraka / Gitathuru / Grogan",
+    "Langata/Hardy/Mbagathi",
+    "Lavington/Mziima/James Gichuru",
+    "Muthaiga/Parklands",
+    "Ngara/Pangani",
+    "Ngong/Kibiku",
+    "Nyayo Highrise/Nairobi West",
+    "Roy Sambu/Kasarani",
+    "Ruai",
+    "Ruiru",
+    "Runda/Estate/Muthaiga",
+    "Rwaka/Two Rivers",
+    "South C",
+    "Thindigua/Kasarini",
+    "Umoja/Infill",
+    "Utawala",
+    "Valley Road / Community / Kenyatta Hospital",
+    "Waiyaki Way/Kangemi",
+    "Westlands",
+    "Ziwani/Zimmerman/Githurai 45"
+  ];
 
-    const handleEditPasswordClick = () => {
-        setEditingPassword(true);
-    };
-
-    if (editing) {
-        return <Edit />;
-    }
-
-    if (editingPassword) {
-        return <EditPassword />;
-    }
-
-    return (
-        <section className="sect">
-            <div className="card">
-                <header className="header">
-                    <h1 className="ac-over">Account Overview</h1>
-                    <button className="btn-pen" aria-label="Edit Address" onClick={handleEditClick}>
-                        Update
-                    </button>
-                </header>
-                <div className="row">
-                    <div className="col">
-                        <article className="card-blw">
-                            <header className="hdr">
-                                <h2 className="head1">Account details</h2>
-                            </header>
-                            <div className="fig1">
-                                Full names:
-                                <p className="nam-user">{fullName}</p>
-                                Email:
-                                <p className="email-pass-user">{email}</p>
-                            </div>
-                        </article>
-                        <header className="header-password">
-                            <h1 className="ac-over">Change your password</h1>
-                            <button className="btn-changepass" aria-label="Change password" onClick={handleEditPasswordClick}>
-                                Change password
-                            </button>
-                        </header>
-                        <article className="card-password">
-                            Password:
-                            <p className="email-pass-user">********</p>
-                        </article>
-                    </div>
-                    <div className="col">
-                        <article className="card-blw">
-                            <header className="hdr">
-                                <h2 className="head1">Shipping Details</h2>
-                            </header>
-                            <div className="pv">
-                                <div className="join">
-                                    <svg className="ic-loc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                        <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
-                                    </svg>
-                                    <p className="def">Your shipping address:</p>
-                                </div>
-                                <address className="address">
-                                    <p>Your location</p>
-                                </address>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+  return (
+    <div className="component-body">
+      <Section title="Personal Details">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label className="lbl">First Name</label>
+            <InputField id="firstName" />
+          </div>
+          <div>
+            <label className="lbl">Last Name</label>
+            <InputField id="lastName" />
+          </div>
+        </div>
+        <div>
+          <label className="lbl">Email</label>
+          <InputField id="email" type="email"/>
+        </div>
+        <div>
+          <label className="lbl">Phone Number</label>
+          <InputField id="phone" type="phone"/>
+        </div>
+      </Section>
+      <Section title="Account Password">
+        {editMode ? (
+          <>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label className="lbl">Old Password</label>
+                <InputField id="oldPassword" type="password" />
+              </div>
+              <div>
+                <label className="lbl">New Password</label>
+                <InputField id="newPassword" type="password" />
+              </div>
             </div>
-        </section>
-    );
-};
+            <div>
+              <label className="lbl">Confirm Password</label>
+              <InputField id="confirmPassword" type="password" />
+            </div>
+            <button className="button-outline small-button" onClick={toggleEditMode}>
+              Save
+            </button>
+          </>
+        ) : (
+          <div>
+            <label className="lbl">Password</label>
+            <InputField id="password" type="password" />
+            <button className="button-outline small-button" onClick={toggleEditMode}>
+              Edit
+            </button>
+          </div>
+        )}
+      </Section>
+      <Section title="Shipping Address">
+        <div>
+          <label className="lbl">Location</label>
+          <SelectField id="location" options={locations} />
+        </div>
+      </Section>
+      <Section title="Payment Information">
+        <div>
+          <label className="lbl">M-PESA Number</label>
+          <InputField id="phone" />
+        </div>
+        <div className="available-payments">
+          Current available payments : 
+          <img src="/mpesa.png" className="mpesa-logo" alt="M-Pesa" width={90} height={60} />
+        </div>
+      </Section>
+    </div>
+  );
+}
 
-export default AccountOverview;
+function PencilIcon(props) {
+    return (
+      <svg
+        {...props}
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z" />
+        <path d="m15 5 4 4" />
+      </svg>
+    );
+  }
+
+function Section({ title, children }) {
+    return (
+      <section>
+        <div className="section-header">
+          <h2 className="section-title">{title}</h2>
+          <button className="button-outline small-button">
+            <PencilIcon className="pencil-icon" />
+            Edit
+          </button>
+        </div>
+        <div className="section-body">{children}</div>
+      </section>
+    );
+  }
+  
+  function InputField({ label, id, type = "text"}) {
+    return (
+      <div className="inputField">
+        <label htmlFor={id}>{label}</label>
+        <input id={id} type={type} />
+      </div>
+    );
+  }
+  
+  function SelectField({ id, options }) {
+    return (
+      <div className="select-field">
+        <label htmlFor={id}></label>
+        <select id={id}>
+          {options.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+    );
+  }

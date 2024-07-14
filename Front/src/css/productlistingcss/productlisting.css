@@ -226,10 +226,10 @@
 .plpd-btn > button {
   height: 35px;
   width: 95%;
-  border-radius: 2px; /* Border radius of 2px */
+  border-radius: 6px; 
   background-color: var(
     --secondary-color
-  ); /* Use your defined secondary color */
+  );
   color: white;
   border: none; /* Remove border */
   font-size: 14px; /* Font size for better readability */

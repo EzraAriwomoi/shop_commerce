@@ -4,7 +4,7 @@ const HMExplore = () => {
   return (
     <div className="home-explore">
       <section className="he-image">
-        <img src="https://img.freepik.com/premium-photo/radiant-trio-african-women-traditional-head-wraps_1109505-209.jpg" />
+        <img src="exploreimage.jpeg" />
       </section>
       <section className="he-details">
         <h1>Breathtakingly Beautiful</h1>

@@ -12,8 +12,8 @@ from flask_cors import CORS, cross_origin
 from flask_mail import Message
 
 app = Flask(__name__)
-CORS(app)
 auth_bp = Blueprint('auth', __name__)
+CORS(auth_bp, resources={r"/*"})
 
 @auth_bp.route('/signup', methods=['POST'])
 @cross_origin()
@@ -79,6 +79,18 @@ def signin():
     else:
         return jsonify({'error': 'Invalid credentials'}), 401
     
+@auth_bp.route('/status', methods=['GET'])
+@jwt_required()
+def check_auth_status():
+    current_user_id = get_jwt_identity()
+    if current_user_id:
+        user = User.query.get(current_user_id)
+        if user:
+            return jsonify({'authenticated': True, 'user_id': user.id, 'email': user.email}), 200
+        else:
+            return jsonify({'error': 'User not found'}), 404
+    else:
+        return jsonify({'authenticated': False}), 401
 
 @auth_bp.route('/resend-verification', methods=['POST'])
 @cross_origin()

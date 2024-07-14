@@ -1,70 +1,84 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React from "react";
 import "../../../css/myaccount/orderhistory.css";
 
-const OrderHistory = () => {
-  // Sample order history data
+function EyeIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+      <circle cx="12" cy="12" r="3" />
+    </svg>
+  );
+}
+
+export default function OrderHistory() {
   const orders = [
-    {
-      image: "public/21.jpg",
-      date: "2024-07-01",
-      productName: "Product A",
-      price: "price",
-      details: "Details about Product A",
-    },
-    {
-      image: "public/25.jpg",
-      date: "2024-06-30",
-      productName: "Product B",
-      price: "price",
-      details: "Details about Product B",
-    },
-    {
-      image: "public/27.jpg",
-      date: "2024-06-29",
-      productName: "Product C",
-      price: "price",
-      details: "Details about Product C",
-    },
+    { id: "#12345", date: "2023-04-15", total: "kes 176.00", status: "Delivered" },
+    { id: "#12346", date: "2023-10-20", total: "kes 429.79", status: "Processing" },
+    { id: "#12347", date: "2024-02-10", total: "kes 7000.00", status: "Cancelled" }
   ];
 
-  // State to manage which order's details are shown
-  const [expandedOrderIndex, setExpandedOrderIndex] = useState(null);
-
-  const toggleDetails = (index) => {
-    setExpandedOrderIndex(expandedOrderIndex === index ? null : index);
+  const getStatusColor = (status) => {
+    switch (status.toLowerCase()) {
+      case "delivered":
+        return "text-green-600";
+      case "processing":
+        return "text-yellow-600";
+      case "cancelled":
+        return "text-red-600";
+      default:
+        return "";
+    }
   };
 
   return (
     <div className="order-history">
-      <h2 className="ord">Order History</h2>
-      {orders.map((order, index) => (
-        <div key={index} className="order-item">
-          <div className="order-summary">
-            <img
-              src={order.image}
-              alt={`Product ${order.productName}`}
-              className="order-image"
-            />
-            <span>{order.date}</span>
-            <span>{order.productName}</span>
-            <span>{order.price}</span>
-            <button
-              onClick={() => toggleDetails(index)}
-              className="details-button"
-            >
-              {expandedOrderIndex === index ? "▲" : "▼"}
-            </button>
-          </div>
-          {expandedOrderIndex === index && (
-            <div className="order-details">
-              <p>{order.details}</p>
-            </div>
-          )}
-        </div>
-      ))}
+      <h2 className="text-xl font-semibold mb-4">Order History</h2>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Order #</th>
+            <th>Date</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders.map((order) => (
+            <tr key={order.id}>
+              <td>
+                <a href="#" className="text-primary hover:underline">
+                  {order.id}
+                </a>
+              </td>
+              <td>{order.date}</td>
+              <td>{order.total}</td>
+              <td>
+                <span className={`status ${getStatusColor(order.status)}`}>
+                  {order.status}
+                </span>
+              </td>
+              <td>
+                <button size="sm">
+                  <EyeIcon className="h-4 w-4" />
+                  View
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
-};
-
-export default OrderHistory;
+}
