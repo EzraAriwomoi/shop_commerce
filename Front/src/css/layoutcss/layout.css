@@ -373,7 +373,6 @@ a {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px;
     position: relative;
   }
   .mobile-menu-button {
@@ -383,7 +382,7 @@ a {
   .mobile-bell-icon,
   .mobile-cart-icon {
     display: block;
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
     margin: 0px 10px;
   }

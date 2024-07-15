@@ -107,7 +107,7 @@ const ContactUs = () => {
                 </button>
               </form>
             </div>
-            <div className="space-y-6">
+            <div className="img-container">
               <img
                 src="https://img.freepik.com/premium-photo/black-woman-secretary-business-telephone-call-working-communication-calling-clients-african-lady-girl-receptionist-speaking-with-office-management-person-corporate-company-call_590464-83800.jpg"
                 alt="Company Location"

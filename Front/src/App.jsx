@@ -13,6 +13,7 @@ import FAQPage from "./pages/FAQPage";
 import ResetPasswordPage from "./components/customerauthcomponents/ResetPasswordComponent";
 import MainAccount from "./components/accountInfo/mainaccount";
 import ContactUs from "./pages/ContactUs";
+import Checkout from "./pages/checkout";
 import AboutUs from "./pages/aboutus";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/myaccount" element={<MainAccount />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/checkout" element={<Checkout />} />
           
         </Routes>
       </main>

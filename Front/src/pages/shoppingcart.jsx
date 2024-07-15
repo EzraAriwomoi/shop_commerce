@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "../css/shoppingcartcss/shoppingcart.css";
-import "../css/shoppingcartcss/details.css";
 import NavBar from "../components/layout/NavBar";
 import Footer from "../components/layout/Footer";
 import axios from 'axios';
@@ -25,11 +24,11 @@ function ShoppingCartItems({
   image_url,
   product_name,
   product_price,
-  quantity: initialQuantity, // Use initial quantity from props
+  quantity: initialQuantity,
   fetchCartItems,
   ...props
 }) {
-  const [quantity, setQuantity] = useState(initialQuantity); // Use initialQuantity as initial state
+  const [quantity, setQuantity] = useState(initialQuantity);
   const [subtotal, setSubtotal] = useState(parseFloat(product_price * initialQuantity).toFixed(2));
 
   const increaseQuantity = async () => {
@@ -49,10 +48,11 @@ function ShoppingCartItems({
   const updateQuantity = async (newQuantity) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.put(`http://localhost:5000/cart/update`, {
+      await axios.put(`http://localhost:5000/cart/update/${product_id}`, {
         product_id: product_id,
         quantity: newQuantity,
       }, {
+        method:'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -147,6 +147,10 @@ export default function ShoppingcartPage() {
     fetchCartItems();
   }, []);
 
+  const proceedtocheckout = () => {
+    window.location.href = "/checkout";
+  };
+
   const fetchCartItems = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -214,37 +218,46 @@ export default function ShoppingcartPage() {
               ))}
             </div>
           </div>
-          <div className="order-summ">
-            <h2>Order summary</h2>
-            <div className="div-sub">
-              <div className="sub">
-                <p>Subtotal</p>
-                <p>Kes: {calculateSubtotal()}</p>
-              </div>
-              <div className="sub">
-                <p>Shipping</p>
-                <p>Kes: 500.00</p>
-              </div>
-              <div className="sub">
-                <p>Discount (6.12%)</p>
-                <p>Kes: {(parseFloat(calculateSubtotal()) * (6.12 / 100)).toFixed(2)}</p>
-              </div>
-              <div className="sub">
-                <h3 className="self-end">Total</h3>
-                <h4 className="cash">Kes: {calculateTotal()}</h4>
+          <div className="container5">
+            <div className="container6">
+              <div className="container7">
+                <h2>Order summary</h2>
+                <div className="container8">
+                  <div className="divider3"></div>
+                  <div className="l1">
+                    <p className="text-styling">Sub-total</p>
+                    <p className="text-styling1">Kes. {calculateSubtotal()}</p>
+                  </div>
+                  <div className="l2">
+                    <p className="text-styling">Shipping Fee</p>
+                    <p className="text-styling1">Kes. 500.00</p>
+                  </div>
+                  <div className="l3">
+                    <p className="text-styling">Discount</p>
+                    <p className="text-styling1">Kes. {(calculateSubtotal() * 0.0612).toFixed(2)}</p>
+                  </div>
+                  <div className="divider3"></div>
+                  <div className="l4">
+                    <h5 className="text-stylingh">Total</h5>
+                    <h5 className="text-stylingh1">Kes. {calculateTotal()}</h5>
+                  </div>
+                </div>
+                <button className="payment" onClick={proceedtocheckout}>
+                  <img src="images/img_arrowright.svg" alt="arrow_right" className="arrow-rght" />
+                  Checkout
+                </button>
               </div>
             </div>
-            <button className="payment">
-              <img src="images/img_arrowright.svg" alt="arrow_right" className="arrow-rght" />
-              Proceed to payment
-            </button>
           </div>
         </div>
         <div className="divider"></div>
-        <div className="Dis">
-          <div className="discode">
-            <h1 className="txtheading">Discount code</h1>
-            <button className="applybtn">Apply</button>
+        <div className="discount-code">
+          <div className="">
+            <div className="coupon">Have a coupon? Enter your code here</div>
+            <div className="inpu-btn">
+              <input className="" placeholder="Discount code"></input>
+              <button className="applybtn">Apply</button>
+            </div>
           </div>
         </div>
         <Footer />

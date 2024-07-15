@@ -8,7 +8,6 @@
 }
 
 .containerr {
-  max-width: 1200px;
   padding: 3rem 1rem;
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -16,8 +15,12 @@
 }
 
 @media (min-width: 768px) {
-  .container {
+  .containerr {
     padding: 0 0rem;
+    max-width: 90%;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -26,11 +29,6 @@
   gap: 2rem;
 }
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 .space-y-6 > * + * {
   margin-top: 1.5rem;

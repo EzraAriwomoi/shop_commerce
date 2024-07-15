@@ -32,6 +32,10 @@ const Navbar = () => {
     setProfileOpen(false);
   };
 
+  const handleCartClick = () => {
+    window.location.href = "/shoppingcart";
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -48,7 +52,7 @@ const Navbar = () => {
           <FaBell />
           {notificationOpen && <NotificationMenu />}
         </div>
-        <div className="mobile-cart-icon">
+        <div className="mobile-cart-icon" onClick={handleCartClick}>
           <FaShoppingCart />
         </div>
         <button
@@ -77,16 +81,11 @@ const Navbar = () => {
         <div className="navbar-icons">
           <div className="dropdown">
             <button
-              onClick={() => toggleDropdown(setCartOpen)}
+              onClick={handleCartClick}
               className="icon-button"
             >
-              {cartOpen ? <FaTimes /> : <FaShoppingCart />}
+              <FaShoppingCart />
             </button>
-            {cartOpen && (
-              <div className="dropdown-content">
-                <Link to="/shoppingcart">View Cart</Link>
-              </div>
-            )}
           </div>
           <div className="dropdown">
             <button
