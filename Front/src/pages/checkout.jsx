@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "../css/checkout/checkout.css";
@@ -9,6 +7,7 @@ import axios from 'axios';
 
 export default function Checkout() {
     const [cartItems, setCartItems] = useState([]);
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("creditCard");
 
     useEffect(() => {
         fetchCartItems();
@@ -47,6 +46,10 @@ export default function Checkout() {
         return (subtotal + shipping - discount).toFixed(2);
     };
 
+    const handlePaymentMethodChange = (method) => {
+        setSelectedPaymentMethod(method);
+    };
+
     return (
         <>
             <Helmet>
@@ -55,89 +58,154 @@ export default function Checkout() {
             </Helmet>
             <NavBar />
             <div className="containerA">
-                <div className="fdiv">
-                    <p className="text-stylingn dot">My Orders</p>
+                <div className="head-order">
+                    <p className="text-order-style">My Orders</p>
                 </div>
                 <div className="divider"></div>
-                <div className="container2">
-                    <div className="container5">
+                <div className="main-checkout-container">
+                    <div className="checkout-container-divide">
                         <div className="checkout-container">
                             <div className="payment-info">
-                                <h2>Payment Information</h2>
-                                <div className="payment-container">
-                                    <div className="payment-header">
-                                        <p className="payment-description">All transactions are secure and encrypted.</p>
+                                <div className="div-two-details">
+                                    <div className="shipping-container">
+                                        <h2 className="header-info-h2">Shipping information</h2>
+                                        <div className="shipping-header">
+                                            <p className="shipping-description">Confirm your shipping location or update it.</p>
+                                        </div>
+                                        <div className="shipping-field">
+                                            <div className="field-container">
+                                                <div className="input-wrapper">
+                                                    <input className="row-input-shipping" title="shipping address" />
+                                                    <button className="change-button">Change</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="payment-methods">
-                                        <div className="payment-method">
-                                            <fieldset id="basic">
-                                                <legend className="payment-legend">Choose a payment method</legend>
-                                                <div className="payment-options">
-                                                    <div className="payment-option">
-                                                        <label htmlFor="basic-creditCards" className="payment-label">
-                                                            <div className="r-box">
-                                                                <div className="payment-radio">
-                                                                    <input type="radio" id="basic-creditCards" name="basic" className="payment-input" />
-                                                                </div>
-                                                                <div className="payment-option-details">
-                                                                <span className="payment-option-title">Credit card</span>
-                                                                <div className="payment-icons">
-                                                                    <img alt="VISA" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/0169695890db3db16bfe.svg" width="38" height="24" className="payment-icon" />
-                                                                    <img alt="MASTERCARD" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/ae9ceec48b1dc489596c.svg" width="38" height="24" className="payment-icon" />
-                                                                    <img alt="AMEX" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/f11b90c2972f3811f2d5.svg" width="38" height="24" className="payment-icon" />
-                                                                    <img alt="DISCOVER" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/4cde67b4ecfa33d21851.svg" width="38" height="24" className="payment-icon" />
-                                                                    <button type="button" aria-pressed="false" className="more-button">+4</button>
-                                                                </div>
-                                                            </div>
-                                                            </div>
-                                                        </label>
-                                                        <div id="basic-creditCards-collapsible" className="collapsible-content">
-                                                            <div className="payment-details">
-                                                                <div className="payment-field">
-                                                                    <label htmlFor="number" className="field-label">Card number</label>
-                                                                    <div className="field-container">
-                                                                        <iframe className="card-fields-iframe" title="Field container for: Card number"></iframe>
-                                                                        <span className="field-icon">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.5 6.3c0-2.298 1.131-4.9 3.5-4.9s3.5 2.602 3.5 4.9m-8.4.47v5.36c0 .26.21.47.47.47h8.86c.26 0 .47-.21.47-.47V6.77a.47.47 0 0 0-.47-.47H2.57a.47.47 0 0 0-.47.47"></path></svg>
-                                                                        </span>
+                                    <h2 className="header-info-h2">Payment Method</h2>
+                                    <div className="payment-container">
+                                        <div className="payment-header">
+                                            <p className="payment-description">All transactions are secure and encrypted. Select a payment menthod.</p>
+                                        </div>
+                                        <div className="payment-methods">
+                                            <div className="payment-method">
+                                                <div id="basic">
+                                                    <legend className="payment-legend">Choose a payment method</legend>
+                                                    <div className="payment-options">
+                                                        <div className="payment-option">
+                                                            <label htmlFor="basic-creditCards" className={`payment-label ${selectedPaymentMethod === "creditCard" ? "checked" : ""}`}>
+                                                                <div className="r-box">
+                                                                    <div className="payment-radio">
+                                                                        <input
+                                                                            type="radio"
+                                                                            id="basic-creditCards"
+                                                                            name="basic"
+                                                                            className="payment-input"
+                                                                            checked={selectedPaymentMethod === "creditCard"}
+                                                                            onChange={() => handlePaymentMethodChange("creditCard")}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="payment-option-details">
+                                                                        <span className="payment-option-title">Credit card</span>
+                                                                        <div className="payment-icons">
+                                                                            <img alt="VISA" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/0169695890db3db16bfe.svg" width="38" height="24" className="payment-icon" />
+                                                                            <img alt="MASTERCARD" src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/ae9ceec48b1dc489596c.svg" width="38" height="24" className="payment-icon" />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className="payment-field">
-                                                                    <label htmlFor="expiry" className="field-label">Expiration date (MM / YY)</label>
-                                                                    <div className="field-container">
-                                                                        <iframe className="card-fields-iframe" title="Field container for: Expiration date (MM / YY)"></iframe>
+                                                            </label>
+                                                            <div className={`collapsible-content ${selectedPaymentMethod === "creditCard" ? "active" : ""}`}>
+                                                                <div className="payment-details">
+                                                                    <div className="payment-field">
+                                                                        <input type="" placeholder="Card number" className="field-input"></input>
                                                                     </div>
-                                                                </div>
-                                                                <div className="payment-field">
-                                                                    <label htmlFor="verification_value" className="field-label">Security code</label>
-                                                                    <div className="field-container">
-                                                                        <iframe className="card-fields-iframe" title="Field container for: Security code"></iframe>
-                                                                        <button type="button" aria-label="More information" className="info-button">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-label="More information"><circle cx="7" cy="7" r="5.6"></circle><path d="M5.6 5.1c.2-1.3 2.6-1.3 2.8 0S6.95 6.4 6.95 7.45m.055 2.35H7v.005h.005z"></path><circle cx="7" cy="9.7" r="0.1"></circle></svg>
-                                                                        </button>
+                                                                    <div className="row-pay">
+                                                                        <div className="payment-field">
+                                                                            <div className="field-container">
+                                                                                <input className="row-input-frame" placeholder="Expiration date (MM / YY)" title="Expiration date (MM / YY)"></input>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="payment-field">
+                                                                            <div className="field-container">
+                                                                                <input className="row-input-frame" placeholder="Security code" title="Security code"></input>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                <div className="payment-field">
-                                                                    <label htmlFor="name" className="field-label">Name on card</label>
-                                                                    <div className="field-container">
-                                                                        <iframe className="card-fields-iframe" title="Field container for: Name on card"></iframe>
-                                                                        <button type="button" aria-label="Clear" className="clear-button">
-                                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" aria-hidden="true"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L7 6.293l1.646-1.647a.5.5 0 0 1 .708.708L7.707 7l1.647 1.646a.5.5 0 0 1-.708.708L7 7.707l-1.646 1.647a.5.5 0 0 1-.708-.708L6.293 7 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg>
-                                                                        </button>
+                                                                    <div className="payment-field">
+                                                                        <div className="field-container">
+                                                                            <input className="field-input" placeholder="Name on card" title="Name on card"></input>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <div className="mpesa-component">
+                                                            <label htmlFor="basic-mpesa" className={`payment-label ${selectedPaymentMethod === "mpesa" ? "checked" : ""}`}>
+                                                                <div className="r-box">
+                                                                    <div className="payment-radio">
+                                                                        <input
+                                                                            type="radio"
+                                                                            id="basic-mpesa"
+                                                                            name="basic"
+                                                                            className="payment-input"
+                                                                            checked={selectedPaymentMethod === "mpesa"}
+                                                                            onChange={() => handlePaymentMethodChange("mpesa")}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="payment-option-details">
+                                                                        <span className="payment-option-title">M-PESA</span>
+                                                                        <div className="payment-icons">
+                                                                            <img alt="M-PESA" src="mpesa.png" width="66" height="52" className="mpesa-icon" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </label>
+                                                            <div className={`collapsible-content ${selectedPaymentMethod === "mpesa" ? "active" : ""}`}>
+                                                                <div className="payment-details">
+                                                                    <div className="message-header">
+                                                                        <p className="mpesa-description">You will be prompt with a pop-up window to enter your M-PESA pin once you place the order.</p>
+                                                                    </div>
+                                                                    <div className="payment-field">
+                                                                        <input type="phone" placeholder="Enter your m-pesa number" className="field-input"></input>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="cash-component">
+                                                            <label htmlFor="basic-cash" className={`payment-label ${selectedPaymentMethod === "cash" ? "checked" : ""}`}>
+                                                                <div className="r-box">
+                                                                    <div className="payment-radio">
+                                                                        <input
+                                                                            type="radio"
+                                                                            id="basic-cash"
+                                                                            name="basic"
+                                                                            className="payment-input"
+                                                                            checked={selectedPaymentMethod === "cash"}
+                                                                            onChange={() => handlePaymentMethodChange("cash")}
+                                                                        />
+                                                                    </div>
+                                                                    <div className="payment-option-details">
+                                                                        <span className="payment-option-title">Cash on delivery</span>
+                                                                    </div>
+                                                                </div>
+                                                            </label>
+                                                            <div className={`collapsible-content ${selectedPaymentMethod === "cash" ? "active" : ""}`}>
+                                                                <div className="payment-details">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        {/* Add other payment methods here if needed */}
                                                     </div>
-                                                    {/* Add other payment methods here if needed */}
                                                 </div>
-                                            </fieldset>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="order-summary">
-                                <h2>Order Summary</h2>
+                                <h2 className="header-info-h2">Order Summary</h2>
                                 {cartItems.map((product) => (
                                     <div key={product.product_id} className="product-item">
                                         <img src={product.image_url} alt={`Image of ${product.product_name}`} className="product-image" />
