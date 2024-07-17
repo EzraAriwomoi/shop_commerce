@@ -66,6 +66,7 @@ export default function MyAccount() {
   return (
     <div className="component-body">
       <Section title="Personal Details">
+        <div className="contain">
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
             <label className="lbl">First Name</label>
@@ -83,6 +84,7 @@ export default function MyAccount() {
         <div>
           <label className="lbl">Phone Number</label>
           <InputField id="phone" type="phone"/>
+        </div>
         </div>
       </Section>
       <Section title="Account Password">
@@ -129,7 +131,7 @@ export default function MyAccount() {
         </div>
         <div className="available-payments">
           Current available payments : 
-          <img src="/mpesa.png" className="mpesa-logo" alt="M-Pesa" width={90} height={60} />
+          <img src="/mpesa.png" className="mpesa-logo" alt="M-Pesa" width={70} height={50} />
         </div>
       </Section>
     </div>

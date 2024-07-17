@@ -21,7 +21,7 @@ body{
     margin-left: 20px;
     margin-top: 20px;
     letter-spacing: -1.28px;
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 
 .checkout-container {
@@ -42,9 +42,9 @@ body{
     flex: 1;
     margin: 10px;
     padding: 20px;
-    background-color: #fff;
+    background-color: transparent;
     border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Media queries for responsiveness */
@@ -161,6 +161,7 @@ body{
 
 .cost-item span {
     font-weight: bold;
+    font-size: .9rem;
 }
 
 .cost-item span:last-child {
@@ -197,6 +198,8 @@ body{
 
 .productname {
     margin-right: 5px;
+    font-size: .9rem;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 .product-qty {
@@ -205,6 +208,7 @@ body{
 
 .product-price {
     font-weight: bold;
+    color: #029522;
 }
 
 .pay-now-button {
@@ -213,8 +217,9 @@ body{
     background-color: #8b4513;
     color: #fff;
     border: none;
+    height: 6vh;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -242,7 +247,7 @@ body{
   .payment-description,
   .shipping-description,
   .mpesa-description {
-    font-size: 1rem;
+    font-size: .88rem;
     color: #555;
   }
   .mpesa-description{
@@ -301,7 +306,7 @@ body{
   }
   
   .payment-label {
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     display: block;
     padding: 15px;
@@ -315,41 +320,40 @@ body{
   .payment-label.checked ::before{
     border-color: rgb(23, 115, 176);
     border-style: solid;
-    border-width: 2.4px;
-    border-radius: 5px;
+    border-width: 2px;
+    border-radius: 6px;
     content: "";
     cursor: pointer;
     display: block;
     position: absolute;
     inset: -1px;
-    top: -1px;
   }
 
   .payment-label ::before{
     border-color: rgb(222, 222, 222);
     border-style: solid;
-    border-width: 2.4px;
-    border-radius: 5px;
+    border-width: 1px;
+    border-radius: 6px;
     content: "";
     cursor: pointer;
     display: block;
     position: absolute;
-    inset: -1px;
-    top: -1px;
+    inset: 5px;
   }
 
   .r-box{
     display: grid;
     letter-spacing: normal;
     row-gap: 10px;
-    column-gap: 10px;
+    color: #5c5a5a;
+    column-gap: 5px;
     grid-template-columns: auto 1fr;
   }
   
   .payment-radio input {
     margin-right: 0.5rem;
     display: block;
-    width: 1.4rem;
+    width: 1rem;
     margin-block-start: 1.8px;
     margin-top: 1.8px;
   }
@@ -359,7 +363,7 @@ body{
   }
   
   .payment-option-title {
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: bold;
     padding-top: 20px;
   }
@@ -367,7 +371,7 @@ body{
   .payment-icons {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
   }
   
   .payment-icon {
@@ -401,15 +405,14 @@ body{
     color: black;
     cursor: text;
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 14px;
     font-weight: 400;
-    height: 4rem;
+    height: 7vh;
     text-align: start;
     transition: padding 0.2s ease-out;
     border: 1px solid;
     border-color: rgb(222, 222, 222);
     letter-spacing: normal;
-    
     width: 100%;
   }
   .field-input:focus-within,
@@ -424,9 +427,9 @@ body{
     color: black;
     cursor: text;
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 14px;
     font-weight: 400;
-    height: 4rem;
+    height: 7vh;
     text-align: start;
     transition: padding 0.2s ease-out;
     border: 1px solid;
@@ -444,13 +447,15 @@ body{
   
   .row-input-shipping {
     width: 100%;
+    height: 7vh;
+    font-size: 14px;
     padding-right: 80px;
   }
   
   .change-button {
     position: absolute;
     right: 25px;
-    font-size: 1rem;
+    font-size: 13px;
     background-color: transparent;
     color: rgb(23, 115, 176);
     border: none;
@@ -512,3 +517,31 @@ body{
   padding: 1.25rem;
   box-sizing: border-box;
 }
+
+/* arrow-back */
+.header-sum-order{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f2;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .edit-summary {
+    cursor: pointer;
+    display: block;
+    padding-right: 12px;
+  }
+
+  .header-info-h2 {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: .3rem;
+    color: #616060;
+  }
+  
+  .svg-back {
+    height: 18px;
+    fill: grey;
+  }

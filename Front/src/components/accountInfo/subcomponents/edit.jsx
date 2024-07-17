@@ -70,7 +70,7 @@ const Edit = () => {
 
     useEffect(() => {
         fetchProfile();
-    }, []);
+    });
 
     return (
         <div className="card1">

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "../css/checkout/checkout.css";
@@ -156,7 +157,7 @@ export default function Checkout() {
                                                                     <div className="payment-option-details">
                                                                         <span className="payment-option-title">M-PESA</span>
                                                                         <div className="payment-icons">
-                                                                            <img alt="M-PESA" src="mpesa.png" width="66" height="52" className="mpesa-icon" />
+                                                                            <img alt="M-PESA" src="mpesa.png" width="54" height="48" className="mpesa-icon" />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -205,7 +206,14 @@ export default function Checkout() {
                                 </div>
                             </div>
                             <div className="order-summary">
-                                <h2 className="header-info-h2">Order Summary</h2>
+                                <header className="header-sum-order">
+                                    <a className="edit-summary" href="/shoppingcart">
+                                        <svg className="svg-back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                                        </svg>
+                                    </a>
+                                    <h2 className="header-info-h2">Order Summary</h2>
+                                </header>
                                 {cartItems.map((product) => (
                                     <div key={product.product_id} className="product-item">
                                         <img src={product.image_url} alt={`Image of ${product.product_name}`} className="product-image" />
@@ -227,7 +235,7 @@ export default function Checkout() {
                                         <span>Enter shipping address</span>
                                     </div>
                                     <div className="cost-item">
-                                        <span>Total</span>
+                                        <span>TOTAL</span>
                                         <span>{`Kes. ${calculateTotal()}`}</span>
                                     </div>
                                 </div>
