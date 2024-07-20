@@ -185,7 +185,7 @@
 }
 
 .select-field option{
-  /* border: 1px solid #a3a3a6; */
+  border: 1px solid #a3a3a6;
   border-radius: 4px;
   color: #313133;
   cursor: default;
