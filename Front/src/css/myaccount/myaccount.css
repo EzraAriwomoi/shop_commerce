@@ -177,7 +177,12 @@
   font-size: 14px;
 }
 
-
+.select-field select {
+  /* padding: 0.5rem; */
+  border: 1px solid var(--muted-foreground);
+  border-radius: 0.25rem;
+  font-size: 14px;
+}
 
 .select-field option{
   border: 1px solid #a3a3a6;
